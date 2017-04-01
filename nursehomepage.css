@@ -1,0 +1,124 @@
+@charset "UTF-8";
+html {font-size: 62.5%;}
+* {margin: 0;padding: 0;}
+body{
+    font-family: SimHei;
+    width: 100%;
+    max-width: 720px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+.header {
+    background: #5fc0cd;
+    width: 100%;
+    font-size: 3.2rem;
+    color: #ffffff;
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+    max-width: 720px;
+}
+.header span {
+    position: absolute;
+    top: 2.65rem;
+    left: 3rem;
+}
+.header p {
+    padding: 2.65rem 0;
+}
+.empty {
+    text-align: center;
+    font-size: 3.2rem;
+}
+.empty p {
+    padding: 2.65rem 0;
+}
+.wall {
+    background-image: url(7.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    position: relative;
+}
+.portrait {
+    padding: 12.1% 0;
+    margin: 0 4.1%;
+    width: 26.56%;
+}
+img {
+    max-width: 100%;
+}
+.datum {
+    width: 60%;
+    position: absolute;
+    top: 38%;
+    left: 37.5%;
+}
+.name {
+    font-size: 3.2rem;
+}
+.name span {
+    font-size: 2.6rem;
+}
+.location {
+    font-size: 2rem;
+    margin-top: 1%;
+}
+.skill {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 5.5% 5%;
+    border-left: solid 2px #5fc0cd;
+    text-indent: 2.5%;
+}
+.details {
+    font-size: 3rem;
+    margin-left: 5%;
+}
+ul {
+    list-style-type: none;
+    text-indent: 2.5%;
+}
+hr {color: #bfbfbf;}
+.all {
+    color: #bfbfbf;
+}
+li {
+    margin: 5% 0;
+}
+#red {
+    color: #e26163;
+}
+.foot {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+    text-indent: 0;
+}
+.case {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    max-width: 720px;
+}
+button {
+    font-size: 3.4rem;
+    float: left;
+    width: 40%;
+    padding: 2% 0;
+    margin: 0 5%;
+    border-radius: 5%;
+    border: solid 2px #5fc0cd;
+}
+.message {
+    color: #5fc0cd;
+    background: white;
+}
+.contace {
+    background: #5fc0cd;
+    color: white;
+}
+.space {
+    padding: 10%;
+}
