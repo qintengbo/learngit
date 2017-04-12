@@ -19,8 +19,7 @@ body {
 button {
     border: none;
     border-radius: 8%;
-    padding: 2.8% 0;
-    width: 20%;
+    padding: 2.8% 4%;
     font-size: 3rem;
 }
 .leftbon {
@@ -47,22 +46,36 @@ button {
 }
 .listheader {
     font-size: 2.5rem;
-    color: #999999;
     border-bottom: solid 1px #999999;
 }
 ul {
     list-style: none;
 }
-.listheader li {
+.nav >li {
     float: left;
+}
+ul a {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+.drop-down {
+    position: relative;
     width: 33%;
     margin: 3% 0;
-    text-align: center;
-    position: relative;
 }
-.bosom {
-    border-left: solid 1px #999999;
-    border-right: solid 1px #999999;
+.drop-down-content {
+    display: none;
+    position: absolute;
+    margin-left: 25%;
+    background: #f8fafb;
+}
+.drop-down-content li:hover a {
+    background: #5fc0cd;
+}
+.nav .drop-down:hover .drop-down-content {
+    display: block;
 }
 .clear {
     clear: both;
@@ -82,7 +95,7 @@ ul {
     border-bottom: solid 1px #999999;
 }
 .list ul {
-    margin-left: 9%;
+    margin-left: 11%;
 }
 .list li {
     font-size: 2.5rem;
@@ -90,7 +103,7 @@ ul {
     margin: 3% 0 0 0;
 }
 .data {
-    background-image: url(../images/17.png);
+    background-image: url(17.png);
     background-repeat: no-repeat;
     width: 24px;
     height: 24px;
@@ -100,7 +113,7 @@ ul {
     left: 4%;
 }
 .loct {
-    background-image: url(../images/17.png);
+    background-image: url(17.png);
     background-repeat: no-repeat;
     width: 24px;
     height: 24px;
@@ -112,6 +125,9 @@ ul {
 .black {
     color: black;
     vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .red {
     color: #e63b0e;
