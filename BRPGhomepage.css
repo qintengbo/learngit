@@ -1,0 +1,97 @@
+@charset "UTF-8";
+*{ margin: 0; padding: 0;}
+html { font-size: 62.5%;}
+body {
+    background: #f0f0f0;
+    font-family: SimHei;
+}
+header {
+    background: #29bde0;
+}
+img {
+    max-width: 100%;
+    display: inline-block;
+    height: auto;
+}
+.icon {
+    padding: 4.7% 0 4.7% 3.6%;
+}
+.lastgame {
+    background: white;
+    margin: 4% 5.46%;
+    font-size: 2.3rem;
+    font-weight: 100;
+    color: #9a9a9a;
+    border: solid 1px #e7e7e7;
+    text-align: center;
+    position: relative;
+}
+p {
+    padding: 5.7% 0;
+}
+.sign {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #e7e7e7;
+}
+.homepage {
+    background: white;
+    border: solid 1px #e7e7e7;
+    margin: 0 5.46%;
+}
+.head {
+    font-size: 3rem;
+    color: #fbb435;
+    text-align: center;
+    border-bottom: solid 1px #fbb435;
+    padding: 5% 0;
+}
+.edition {
+    background: #69d1e9;
+    margin: 4.37% 8.28%;
+    font-size: 2.3rem;
+    color: white;
+    text-align: center;
+    padding: 8.12% 0;
+}
+.count {
+    font-size: 1.8rem;
+    color: #9a9a9a;
+    text-align: center;
+}
+.empty { padding: 4% 0;}
+.dot {
+    text-align: center;
+}
+.dot1 {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #69d1e9;
+    margin: 1% 1% 0 1%;
+    display: inline-block;
+}
+.dot2 {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    margin: 1% 1% 0 1%;
+    display: inline-block;
+}
+.box { position: relative;}
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 1.4rem solid transparent;
+    border-left: 1.4rem solid #fbb435;
+    border-bottom: 1.4rem solid transparent;
+    position: absolute;
+    top: 50%;
+    right: 1.5%;
+    transform: translateY(-50%);
+}

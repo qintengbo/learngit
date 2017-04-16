@@ -1,0 +1,17 @@
+@charset "UTF-8";
+* { margin: 0; padding: 0;}
+html { font-size: 62.5%;}
+body {
+    background: #f0f0f0;
+    font-family: SimHei;
+}
+img {
+    max-width: 100%;
+    display: inline-block;
+    height: auto;
+}
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 40%;
+    }
+}
