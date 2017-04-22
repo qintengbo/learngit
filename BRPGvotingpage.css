@@ -1,0 +1,137 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+html { font-size: 62.5%;}
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    background: #29bde0;
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+}
+.head {
+    position: relative;
+    padding: 3.12% 0 2.65% 0;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffffff;
+    background: #29bde0;
+}
+.left-icon {
+    float: left;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 4%;
+}
+.right-icon {
+    float: right;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 4%;
+}
+.clear {
+    clear: both;
+}
+.tips {
+    position: relative;
+    font-size: 2rem;
+    background: #b9e9f5;
+}
+.tips p {
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    transform: translateY(-50%);
+    display: inline-block;
+}
+.head span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.play-button {
+    display: inline-block;
+    float: right;
+    width: 8vw;
+    height: 8vw;
+    margin: 3% 2% 3% 0;
+    padding: 2.4% 0;
+    background-image: url(21.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.tips:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+    content: "";
+}
+.triangle {
+    position: absolute;
+    left: 10.78%;
+    bottom: -16px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #b9e9f5 transparent transparent;
+}
+.empty {
+    text-align: center;
+    font-size: 3rem;
+}
+.empty p {
+    padding: 11% 0;
+}
+.col-xs-4 {
+    width: 19.58vw;
+    height: 19.58vw;
+    border:3px solid #fff;
+    margin: 12% 6.25% 0 6.25%;
+}
+.row {
+    position: relative;
+}
+.col-xs-12 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+.function {
+    margin-left: 6.25%;
+    width: 100%;
+    height: 4.425vw;
+}
+.img {
+    float: left;
+    width: 4.425vw;
+    height: 100%;
+    margin-right: 0.625vw;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100vw;
+    text-align: center;
+    background: #29bde0;
+}
+.btn {
+    width: 70%;
+    margin: 6.5% 0;
+    border-radius: 0;
+    font-size: 3rem;
+    color: #fff;
+    background: #fbb435;
+}
+.seat {
+    padding: 13.3% 0;
+}
