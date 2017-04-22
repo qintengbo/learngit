@@ -1,0 +1,19 @@
+@charset "UTF-8";
+* {margin: 0;padding: 0;}
+html {
+    font-size: 62.5%
+}
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+img {
+    max-width: 100%;
+}
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 40%;
+    }
+    .accent span {
+        letter-spacing: 13px;
+    }
+}
