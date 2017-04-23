@@ -3,7 +3,7 @@
 html { font-size: 62.5%;}
 body {
     background: #f0f0f0;
-    font-family: SimHei;
+    font-family: "SimHei";
 }
 header {
     background: #29bde0;
@@ -12,6 +12,10 @@ img {
     max-width: 100%;
     display: inline-block;
     height: auto;
+}
+a:link, a:visited, a:hover {
+    text-decoration: none;
+    color: #fff;
 }
 .icon {
     padding: 4.7% 0 4.7% 3.6%;

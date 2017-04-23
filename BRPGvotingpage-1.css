@@ -6,6 +6,10 @@ html {
 body {
     font-family: "Microsoft YaHei", sans-serif;
 }
+html,body {
+    overflow: hidden;
+    overflow-y: auto;
+}
 @media screen and (max-width: 480px) {
     html {
         font-size: 40%;
