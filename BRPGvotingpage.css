@@ -98,7 +98,7 @@ audio {
     padding: 11% 0;
 }
 .col-xs-4 {
-    margin-top: 10vw;
+    height: 29.58vw;
 }
 .degree {
     width: 19.58vw;
@@ -117,8 +117,8 @@ audio {
     text-align: center;
 }
 .option {
-    margin-top: 2.7875vw;
     display: none;
+    margin-top: 2.7875vw;
 }
 .function {
     margin: 0 auto;
