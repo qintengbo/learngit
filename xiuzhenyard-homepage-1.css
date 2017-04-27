@@ -1,0 +1,137 @@
+@charset "UTF-8";
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+    footer span {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 767px) {
+    header span {
+        left: 9%;
+    }
+    .soct-icon {
+        margin: 5px 9% 5px -8%;
+    }
+    .navigation a {
+        width: auto;
+    }
+    .custom {
+        margin: 0 9% 0 -8%;
+    }
+    .word {
+        text-align: center;
+    }
+    .count {
+        position: static;
+        top: auto;
+        right: auto;
+        transform: none;
+        text-align: center;
+    }
+    .adv {
+        margin-top: 4%;
+    }
+    .adv-1 {
+        border-right: 0;
+    }
+    .adv-2 {
+        margin-top: 6%;
+    }
+    .adv-3 {
+        margin-bottom: 10%;
+    }
+    .count-2 {
+        margin-top: 5%;
+    }
+    .flow {
+        margin: 8% auto 8%;
+    }
+    .flow-1 {
+        float: left;
+        display: block;
+        vertical-align: inherit;
+        width: 100%;
+        padding: auto;
+        margin-top: 3%;
+    }
+    .flow-2 {
+        float: left;
+        display: block;
+        vertical-align: inherit;
+        text-align: center;
+        width: 100%;
+        padding: auto;
+        margin: 5% 0;
+    }
+    .flow-3 {
+        float: left;
+        display: block;
+        vertical-align: inherit;
+        width: 100%;
+        padding: auto;
+    }
+    .show-img {
+        transform: rotate(90deg);
+    }
+    .join {
+        display: block;
+        margin: -8% 0;
+    }
+    .order {
+        position: relative;
+        width: 50px;
+        padding-bottom: 50px;
+        margin: 0 auto;
+    }
+    .show {
+        margin: 8% 0 1%;
+    }
+    .show-word {
+        width: 85%;
+        margin: 0 auto 6%;
+        padding: 8% 9% 9%;
+        box-shadow: 1px 2px 2px 1px #e7e7e7;
+        background: #fff;
+    }
+    .company {
+        width: 100%;
+        padding: 5% 3%;
+    }
+    .catenation-head {
+        margin-top: 5%;
+        margin-bottom: 8%;
+    }
+    .catenation-word {
+        width: 27%;
+        margin: 0 3.16%;
+    }
+    .slogan {
+        margin-bottom: 5%;
+    }
+    .website {
+        margin: 5% 0 2%;
+    }
+    .website-1 {
+        margin-bottom: 5%;
+    }
+    .website-2 {
+        margin-bottom: 2%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .catenation-word {
+        width: 14%;
+        margin: 0 3%;
+    }
+    .flow-word {
+        margin-left: 0;
+    }
+    footer {
+        padding: 2% 0 3%;
+    }
+    .footer-1 {
+        width: 30%;
+    }
+}

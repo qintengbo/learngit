@@ -11,6 +11,7 @@ body {
 img {
     display: block;
     max-width: 100%;
+    height: auto;
 }
 .clear {
     clear: both;
@@ -111,16 +112,36 @@ div.item img{
 .flow {
     margin: 5% auto 8%;
 }
+.flow-1 {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 4%;
+    padding: 0;
+}
+.flow-2 {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 16%;
+    padding: 0;
+    margin-left: 0.5%;
+}
+.flow-3 {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 4%;
+    padding: 0;
+}
 .order {
     position: relative;
-    display: inline-block;
-    width: 4%;
-    padding-bottom: 4%;
+    width: 100%;
+    padding-bottom: 100%;
     height: 0;
     border-bottom: 1px solid #dedede;
     border-radius: 50%;
     box-shadow: 1px 1px 2px #e7e7e7;
-    vertical-align: middle;
     background: #fff;
 }
 .order-num {
@@ -131,15 +152,10 @@ div.item img{
     color: #29b078;
 }
 .flow-word {
-    display: inline-block;
-    width: 16%;
-    margin-left: 0.5%;
-    vertical-align: middle;
+    width: 100%;
 }
-.flow-img {
-    display: inline-block;
-    margin: 0 1%;
-    vertical-align: middle;
+.join {
+    display: none;
 }
 .show {
     margin: 5% 0 1%;
@@ -185,6 +201,7 @@ div.item img{
     border-bottom: 1px solid #dedede;
     border-right: 1px solid #dedede;
     box-shadow: 1px 1px 3px 1px #e7e7e7;
+    background: #fff;
 }
 .company {
     width: 20%;
