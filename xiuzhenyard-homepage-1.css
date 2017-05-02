@@ -14,11 +14,12 @@
     .soct-icon {
         margin: 5px 9% 5px -8%;
     }
-    .navigation a {
-        width: auto;
+    .navbar-header {
+        position: relative;
     }
-    .custom {
-        margin: 0 9% 0 -8%;
+    .navbar-nav > li > a {
+        width: 100%;
+        padding: 2% 0;
     }
     .word {
         text-align: center;

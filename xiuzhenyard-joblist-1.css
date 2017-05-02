@@ -1,0 +1,66 @@
+@charset "UTF-8";
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+    footer span {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 767px) {
+    header span {
+        left: 9%;
+    }
+
+    .soct-icon {
+        margin: 5px 9% 5px -8%;
+    }
+
+    .navbar-header {
+        position: relative;
+    }
+
+    .navbar-nav > li > a {
+        width: 100%;
+        padding: 2% 0;
+    }
+    .slogan {
+        margin-bottom: 5%;
+    }
+    .website {
+        margin: 5% 0 2%;
+    }
+    .website-1 {
+        margin-bottom: 5%;
+    }
+    .website-2 {
+        margin-bottom: 2%;
+    }
+}
+@media screen and (max-width: 991px) {
+    .job-int {
+        width: 100%;
+        margin: 5% 0 0;
+    }
+    .img-responsive {
+        margin: 0 auto;
+    }
+    .col-sm-8 {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .job-int-head {
+        padding: 0 15px;
+    }
+    .job-int-head-1 {
+        padding: 0 15px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    footer {
+        padding: 2% 0 3%;
+    }
+    .footer-1 {
+        width: 30%;
+    }
+}

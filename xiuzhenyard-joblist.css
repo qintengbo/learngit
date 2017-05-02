@@ -58,88 +58,118 @@ header span {
     border-bottom: 2px solid #fff;
     padding: 0;
 }
-.banner {
-    background: #f1a750;
-}
-.banner-img {
-    margin: 0 auto;
-}
-.enterprise {
-    margin: 2% 0;
-}
-.enterprise-1 {
-    width: 23%;
-    margin-right: 4%;
-    border: 1px solid #ededed;
-    box-shadow: 1px 1px 1px #e7e7e7;
-    background: #fff;
-}
-.enterprise-2 {
-    margin: 10% 0;
-}
-.enterprise-3 {
-    width: 90px;
-    margin: 0 auto;
-}
-.enterprise-word {
-    vertical-align: middle;
-    color: #29b078;
-}
-.enterprise-word-1 {
-    border-bottom: 1px solid #e6e6e6;
-    padding: 4% 0;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.5rem;
-}
-.dot{
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border: 1px solid #ff9052;
-    border-radius: 50%;
-    background: #fff;
-}
-.enterprise-3 a:hover .dot {
-    background: #f9a372;
-}
-.enterprise-3 a:hover .enterprise-word {
-    color: #f9a372;
-}
-.enterprise-3 a {
-    text-decoration: none;
-}
-.detail {
-    width: 73%;
-    border: 1px solid #ededed;
-    box-shadow: 1px 1px 1px #e7e7e7;
-    font-size: 1.6rem;
-    color: #a0a0a0;
-    background: #fff;
-}
-.detail-1 {
-    position: relative;
+.list-head {
+    padding: 2% 15px;
     border-bottom: 1px solid #e7e7e7;
 }
-.detail-2 {
+.list-word-color {
+    color: #29b078;
+}
+.list-nav {
+    padding: 1% 15px;
+    border-bottom: 1px solid #e7e7e7;
+}
+.list-nav-word-color {
+    color: #9a9a9a;
+}
+.list-nav span {
+    margin: 0 1%;
+}
+.list-nav a {
+    text-decoration: none;
+    color: #000;
+}
+.list-nav a:hover {
+    color: #fff;
+    background-color: #29b078;
+}
+.frontend {
+    margin-bottom: 3%;
+    padding: 2% 15px;
+    border-bottom: 1px solid #e7e7e7;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.job-int {
+    width: 30%;
+    margin: 0 1.66%;
+    padding: 0;
+    border: 1px solid #ededed;
+    box-shadow: 1px 1px 1px #e7e7e7;
+    background: #fff;
+}
+.col-sm-8 {
+    padding: 0;
+}
+.job-int-1 {
+    padding: 3%;
+}
+.job-int-head {
+    margin: 2.5% 0;
+    padding: 0 5px;
+    font-weight: 700;
+}
+.job-int-head-1 {
+    padding: 0 5px;
+}
+.table {
+    width: 100%;
+    margin-bottom: 0;
+}
+.table-word {
+    margin-right: 5%;
+    color: #999;
+}
+.table-word-1 {
+    vertical-align: middle;
+}
+.table-word-2 {
+    color: #999;
+    text-align: center;
+}
+.table-word-color {
+    color: #ff5c00;
+    font-weight: 700;
+}
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
+td {
+    width: 10%;
+}
+.table-word-data {
+    float: left;
+}
+.table-word-pay {
+    float: right;
+}
+.table-word-bold {
+    font-weight: 700;
+}
+.table-word-tip {
+    color: #999;
+}
+.work {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31,31,31,0.8);
+}
+.work-1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    padding: 0 8%;
+    font-size: 1.6rem;
+    color: #fff;
 }
-.detail-3 {
-    float: right;
-    padding: 3% 4% 3% 2%;
+.work-head {
+    text-align: center;
 }
-.detail-img {
+.job-int:hover .work {
     display: block;
-    margin: 0 auto;
-}
-.history {
-    text-indent: 3.2rem;
-    padding: 3% 4% 0;
-}
-.history-1 {
-    padding-bottom: 10%;
 }
 footer {
     margin-top: 10%;

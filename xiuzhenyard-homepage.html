@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>IT修真院-首页</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
@@ -24,13 +24,29 @@
     </div>
     <div class="clear"></div>
 </header>
-<ul class="navigation">
-    <li class="custom"><a href="#">关于</a></li>
-    <li class="custom"><a href="#">推荐</a></li>
-    <li class="custom"><a href="#">职业</a></li>
-    <li class="custom"><a href="#">首页</a></li>
-    <li class="clear"></li>
-</ul>
+<div class="navbar navbar-1" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">jnshu-cooperation</span>
+                <span class="icon-bar icon-bar-1"></span>
+                <span class="icon-bar icon-bar-1"></span>
+                <span class="icon-bar icon-bar-1"></span>
+            </button>
+            <a class="navbar-brand" href="xiuzhenyard-homepage.html">
+                <img src="./images/jnshu.jpg" class="img-responsive navbar-img">
+            </a>
+        </div>
+        <div class="collspse navbar-right" id="navbar-collapse">
+            <ul class="nav-1 navbar-nav">
+                <li class="custom"><a href="xiuzhenyard-homepage.html">首页</a></li>
+                <li class="custom"><a href="xiuzhenyard-joblist.html">职业</a></li>
+                <li class="custom"><a href="#">推荐</a></li>
+                <li class="custom"><a href="#">关于</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -401,7 +417,7 @@
                     <div class="col-sm-12">
                         <span class="alone"><a href="#">关于我们</a> |</span>
                         <span class="alone"><a href="#">联系我们</a> |</span>
-                        <span class="alone"><a href="#">合作企业</a></span>
+                        <span class="alone"><a href="xiuzhenyard-cooperation.html">合作企业</a></span>
                     </div>
                 </div>
             </div>
