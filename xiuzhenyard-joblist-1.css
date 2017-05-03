@@ -11,18 +11,24 @@
     header span {
         left: 9%;
     }
-
     .soct-icon {
         margin: 5px 9% 5px -8%;
     }
-
     .navbar-header {
         position: relative;
     }
-
+    .navbar-img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
     .navbar-nav > li > a {
         width: 100%;
         padding: 2% 0;
+    }
+    .job-int {
+        width: 85%;
+        margin: 0 7.5%;
     }
     .slogan {
         margin-bottom: 5%;
@@ -38,9 +44,8 @@
     }
 }
 @media screen and (max-width: 991px) {
-    .job-int {
-        width: 100%;
-        margin: 5% 0 0;
+    .job-int:hover .work {
+        display: block;
     }
     .img-responsive {
         margin: 0 auto;
@@ -54,6 +59,12 @@
     }
     .job-int-head-1 {
         padding: 0 15px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .job-int {
+        width: 48%;
+        margin: 2% 1%;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1200px) {
