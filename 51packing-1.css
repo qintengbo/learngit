@@ -1,0 +1,132 @@
+@charset "UTF-8";
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .HeaderWord {
+        left: 5%;
+    }
+    .LogRes-1 {
+        margin: 0 5% 0 -5%;
+    }
+    .LogRes-2 {
+        margin: 0 5% 0 -5%;
+    }
+    .container-1 {
+        padding: 0 5%;
+    }
+    .FlowPath {
+        text-align: center;
+    }
+    .FlowPath-Block {
+        margin: 3% -0.4%;
+    }
+    .Text {
+        margin: 0 1%;
+    }
+    .Interface .Radio-2 {
+        margin-right: 20%;
+        margin-bottom: 20px;
+    }
+    .CustomCondition {
+        margin: 0 5%;
+    }
+    .Company {
+        padding: 4% 5%;
+    }
+    .CompanyArea {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+    }
+    .CompanyArea-1 {
+        text-align: left;
+    }
+    .Bundle {
+        margin: 2% 0 2%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .HeaderWord {
+        left: 15px;
+    }
+    .LogRes-1 {
+        margin: 0 15px 0 -15px;
+    }
+    .LogRes-2 {
+        margin: 0 15px 0 -15px;
+    }
+    .container-1 {
+        padding: 0 15px;
+    }
+    .container>.navbar-collapse {
+        margin-left: 0;
+    }
+    .nav-1>li {
+        float: none;
+    }
+    .custom {
+        margin-left: 0;
+        border-radius: 0;
+        box-shadow: none;
+        text-align: center;
+        background: #f9f9f9;
+    }
+    .nav>li a:hover {
+        border-radius: 0;
+        background-color: #f9f9f9;
+    }
+    .custom a:hover {
+        color: #1d7ad9;
+    }
+    .custom-1 {
+        display: none!important;
+    }
+    .custom-2 {
+        display: block;
+    }
+    .FlowPath {
+        text-align: center;
+    }
+    .FlowPath-Block {
+        margin: 15px -2.5px;
+        width: 70px;
+    }
+    .CustomCondition {
+        margin: 0 15px;
+    }
+    .Interface .Radio {
+        display: block;
+    }
+    .Text {
+        display: block;
+        margin-left: inherit;
+        margin-bottom: 5px;
+    }
+    .Company {
+        padding: 4% 15px;
+    }
+    .CompanyArea {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+    }
+    .CompanyArea-1 {
+        text-align: left;
+    }
+    .Bundle {
+        margin: 2% 0 2%;
+    }
+    .CopyRight p {
+        display: block;
+        margin-bottom: 2px;
+    }
+    .CoRi-Word-1 {
+        margin-right: 0;
+    }
+    .CoRi-Word-2 {
+        margin-left: 0;
+    }
+}
+@media screen and (min-width: 768px) {
+    .custom-2 {
+        display: none!important;
+    }
+}

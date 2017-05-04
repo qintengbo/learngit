@@ -1,0 +1,288 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+html { font-size: 62.5%; }
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 1.4rem;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+label {
+    font-weight: 400;
+}
+.Clear { clear: both; }
+.Header {
+    position: relative;
+    height: 40px;
+    color: #fff;
+    background: #1d7ad9;
+}
+.HeaderWord {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+.LogRes-1 {
+    display: inline-block;
+    float: right;
+    padding: 10.5px 0.5%;
+    margin: 0 10% 0 -10%;
+    border-left: 1px solid #fff;
+}
+.LogRes-2 {
+    display: inline-block;
+    float: right;
+    padding: 10.5px 1.5%;
+    margin: 0 10% 0 -10%;
+    color: #000;
+    background: #fff;
+}
+.container-1 {
+    width: 100%;
+    padding: 0 10%;
+}
+.navbar-1 {
+    padding: 2% 0;
+    margin-bottom: 0;
+    background: #f9f9f9;
+}
+.icon-bar-1 {
+    background: #1d7ad9;
+}
+.nav-1>li {
+    float: right;
+}
+.custom {
+    margin-left: 40px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #e7e7e7;
+    background: #fff;
+}
+.custom a {
+    text-decoration: none;
+    color: black;
+}
+.custom a:hover {
+    color: #fff;
+}
+.nav>li a:hover {
+    border-radius: 5px;
+    background-color: #1d7ad9;
+}
+.FlowPath {
+    text-align: right;
+}
+.FlowPath-Block {
+    display: inline-block;
+    width: 12%;
+    margin: 3% 10% 3% -10.5%;
+}
+.Lump {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    margin-bottom: 20%;
+    border-radius: 8%;
+    background: #ccc;
+}
+.Lump-1 {
+    background: #ff7f02;
+}
+.Dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ccc;
+}
+.Dot-1 {
+    background: #ff7f02;
+}
+.Num {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 10px;
+    color: #fff;
+}
+.Num-Word {
+    text-align: center;
+    color: #ccc;
+}
+.Num-Word-1 {
+    color: #ff7f02;
+}
+.CustomCondition {
+    margin: 0 10%;
+}
+.CusCon-Head {
+    margin-bottom: 10px;
+    border-left: 3px solid #1d7ad9;
+    text-indent: 6px;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.HeadWord {
+    padding: 6px;
+    border-radius: 5px 5px 0 0;
+    font-size: 1.6rem;
+    background: #f3f3f3;
+}
+.HeadWord-1 {
+    border-radius: 0;
+}
+.HeadWord-img {
+    display: inline-block;
+    vertical-align: middle;
+}
+.Interface {
+    position: relative;
+    padding: 3%;
+    border: 1px solid #ededed;
+    font-size: 1.6rem;
+    color: #666;
+    background: #fbfcff;
+}
+.Interface-1 {
+    padding: 5% 3%;
+}
+label .replace {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    margin-left: -10px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.Radio {
+    margin: 0 3%;
+}
+.Interface label input[type="radio"]:checked +span {
+    width: 15px;
+    height: 15px;
+    border: 5px solid #1d7ad9;
+    border-radius: 50%;
+}
+.Interface label input[type="radio"] {
+    display: none;
+}
+.Select {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 100px;
+    padding: 8px 0 8px 6px;
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    border: 1px solid #e8e8e8;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(../images/arrow.png) no-repeat scroll right center transparent;
+}
+.Text {
+    margin: 0 3%;
+}
+.Text input[type="text"] {
+    width: 80px;
+}
+.Chunk {
+    margin-bottom: 2%;
+}
+.NextStep {
+    padding: 6% 0;
+    border: 1px solid #ededed;
+}
+.Submit {
+    display: block;
+    margin: 3% auto 0;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    color: #fff;
+    background: #e15053;
+    cursor: pointer;
+}
+.NextStep a {
+    text-decoration: none;
+}
+.Footer {
+    margin-top: 3%;
+}
+.Company {
+    background: #f9f9f9;
+    padding: 4% 10%;
+    color: #999;
+}
+.CompanyArea {
+    float: left;
+    width: 31%;
+    margin-right: 2%;
+}
+.CompanyArea-1 {
+    margin-right: 0;
+    text-align: right;
+}
+.Company-Head {
+    font-size: 1.6rem;
+}
+.Bundle {
+    margin-bottom: 4%;
+}
+.Bundle span {
+    margin-right: 7%;
+}
+.Bundle-word {
+    margin-right: 0;
+}
+.Bundle a {
+    text-decoration: none;
+    color: #999;
+}
+.Bundle a:hover {
+    color: #1d7ad9;
+}
+.Contact {
+    display: inline-block;
+}
+.Contact p {
+    text-align: left;
+}
+.Contact-Word {
+    margin-bottom: 6%;
+}
+.QR-Code {
+    display: inline-block;
+    vertical-align: top;
+}
+.CopyRight {
+    padding: 5px 0;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #fff;
+    background: #1d7ad9;
+}
+.CopyRight p {
+    display: inline;
+}
+.CoRi-Word-1 {
+    margin-right: 10px;
+}
+.CoRi-Word-2 {
+    margin-left: 10px;
+}
