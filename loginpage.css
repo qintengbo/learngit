@@ -1,0 +1,84 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  max-width: 720px;
+  margin: 0 auto 0 auto;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.wrap {
+  background: #eff0f4;
+}
+.header {
+  position: relative;
+  text-align: center;
+  font-size: 3.2rem;
+  color: #fff;
+  background: #5fc0cd;
+}
+.header span {
+  position: absolute;
+  top: 1.3rem;
+  left: 1.2rem;
+}
+.header .login {
+  font-weight: 400;
+  padding: 1.3rem 0 1.3rem 0;
+}
+.header p {
+  position: absolute;
+  top: 1.3rem;
+  right: 1.2rem;
+}
+ul {
+  margin: 1rem 0 7rem 0;
+  list-style-type: none;
+}
+ul li {
+  margin: 1rem 0;
+  padding: 3% 0;
+  background: #fff;
+}
+ul li label {
+  vertical-align: middle;
+  display: inline-block;
+  width: 5%;
+  padding: 0 3% 0 3%;
+  text-align: center;
+}
+ul li label img {
+  max-width: 100%;
+}
+ul li input {
+  vertical-align: middle;
+  width: 85%;
+  border: none;
+  border-left: solid 1px #bfbfbf;
+  outline: none;
+  font-size: 3.2rem;
+}
+ul li input::-webkit-input-placeholder {
+  color: #bfbfbf;
+  -webkit-transition: color.5s;
+}
+input[type=button] {
+  vertical-align: middle;
+  width: 100%;
+  padding: 3% 0;
+  border: none;
+  font-size: 3rem;
+  color: #fff;
+  background: #5fc0cd;
+  cursor: pointer;
+}
+.tips {
+  text-align: right;
+  margin: 1rem 1rem 1rem 1rem;
+  font-size: 3rem;
+  color: #5fc0cd;
+}

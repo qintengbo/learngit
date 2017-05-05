@@ -4,88 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <title>loginpage</title>
-    <style type="text/css">
-        *{margin:0;padding:0;}
-        html{font-size:10px;}
-        .wrap{
-            background:#eff0f4;
-            width:100%;
-        }
-        .header{
-            background:#5fc0cd;
-            color:white;
-            text-align:center;
-            position:relative;
-            font-family:黑体;
-            font-size:3.2rem;
-            height:5.8rem;
-            width:100%;
-        }
-        .header span{
-            position:absolute;
-            top:1.3rem;
-            left:1.2rem;
-        }
-        .login{
-            position:relative;
-            top:1.3rem;
-            font-weight:bold;
-        }
-        p{
-            position:absolute;
-            top:1.3rem;
-            right:1.2rem;
-        }
-        ul{
-            margin-bottom:7rem;
-            list-style-type:none;
-            margin-top:1rem;
-        }
-        li{
-            background:white;
-            margin-top:1rem;
-            padding:3% 0;
-        }
-        label{
-            display:inline-block;
-            width:5%;
-            padding:0 3%;
-            text-align:center;
-            vertical-align:middle;
-        }
-
-        img{
-            max-width:100%;
-        }
-        input{
-            border:0;
-            border-left:solid 1px #bfbfbf;
-            outline:none;
-            font-size:3.2rem;
-            width:85%;
-            vertical-align:middle;
-        }
-        input::-webkit-input-placeholder {
-            color:#bfbfbf;
-            -webkit-transition: color.5s;
-        }
-        input[type=button]{
-            padding:3% 0;
-            background:#5fc0cd;
-            font-family:黑体;
-            width:100%;
-            color:white;
-            vertical-align:middle;
-            border:none;
-        }
-        .tips{
-            color:#5fc0cd;
-            font-size:3rem;
-            text-align:right;
-            margin:1rem 1rem;
-            width：100%；
-        }
-    </style>
+    <link href="./css/loginpage.css" rel="stylesheet">
 </head>
 <body>
 <div class="wrap">
@@ -94,25 +13,24 @@
         <div class="login">登录</div>
         <p>关闭</p>
     </div>
-<form>
+    <form>
     <ul class="list">
         <li>
             <label for="username">
-            <img src="5.png">
+            <img src="./images/phone-icon.png">
             </label>
             <input type="text" maxlength="11" name="phonenumber" id="username" placeholder="&nbsp&nbsp请输入手机号">
         </li>
         <li>
             <label for="pw">
-            <img src="6.png">
+            <img src="./images/psw-icon.png">
             </label>
             <input type="password" name="psw" id="pw" placeholder="&nbsp&nbsp请输入密码">
         </li>
     </ul>
     <input type="button" value="登&nbsp&nbsp录" onclick="alert('密码错误')">
-</form>
+    </form>
 </div>
-    <div class="tips">忘记密码？
-    </div>
+<div class="tips">忘记密码？</div>
 </body>
 </html>
