@@ -1,0 +1,138 @@
+<div ng-controller="findElitePerson as vm">
+    <!-- Banner图 -->
+    <div>
+        <div uib-carousel active="vm.active" interval="vm.myInterval" no-transition="vm.noTransition" no-wrap="vm.noWrapSlides" template-url="findEliteBanner.html">
+            <div uib-slide ng-repeat="slide in vm.slides track by $index" index="$index">
+                <a ng-href="{{ slide.url }}" target="_blank"><img class="findEliteImg" ng-src="{{ slide.image }}"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 自定义轮播图模板 -->
+    <script type="text/ng-template" id="findEliteBanner.html">
+        <div class="carousel-inner findEliteCarous" ng-transclude></div>
+    </script>
+    <div class="findelite_page">
+        <!-- 优势模块 -->
+        <div class="findelite_advt findelite_advt_content">
+            <div class="container">
+                <div class="row">
+                    <div class="findelite_advt_text elite-mar-rig">
+                        <div class="findelite_title">0预付，无风险</div>
+                        <div class="findelite_title_text1">入职付一半，转正付一半</div>
+                        <div class="findelite_title_text2">普通猎头是三个月的薪水。非一般的我们只收一个月的薪水。如果试用期不通过，免费推荐另一个</div>
+                    </div>
+                    <div class="findelite_advt_img text-left"><img src="images/zjy-1fengxian.png"></div>
+                </div>
+            </div>
+        </div>
+        <div class="findelite_advt_content-mid">
+            <div class="container">
+                <div class="row">
+                    <div class="findelite_advt_img elite-mar-rig text-right"><img src="images/focus.png"></div>
+                    <div class="findelite_advt_text">
+                        <div class="findelite_title">专注于</div>
+                        <div class="findelite_title_text1">最新最热门的IT互联网运人才</div>
+                        <div class="findelite_title_text2">萝卜多自己开发了一套强大的IT互联网人才库系统，有业界最新最活跃最有效的人才库，这里有最新最热门的IT互联网运营和技术人才，在各大互联网公司都有足够强的人脉圈。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="findelite_advt findelite_advt_content-bot">
+            <div class="container">
+                <div class="row">
+                    <div class="findelite_advt_text elite-mar-rig elite-text_right">
+                        <div class="findelite_pack">
+                            <div class="findelite_title">优选人才，高效推荐</div>
+                            <div class="findelite_title_text2">
+                                <p>1-3天推荐首批候选人</p>
+                                <p>甄选人才 简历脱水 推荐人才</p>
+                            </div>
+                            <div class="findelite_title_text2">
+                                <p>3-5天安排候选人面试</p>
+                                <p>安排面试 协助客户选人用人</p>
+                            </div>
+                            <div class="findelite_title_text2">
+                                <p>平均15天推荐成功</p>
+                                <p>背景调查 多方洽谈 增值服务</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="findelite_advt_img text-left"><img src="images/optimization.png"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 服务流程模块 -->
+        <div class="container">
+            <div class="row findelite_serve_page">
+                <div class="findelite_serve_title">萝卜多，服务流程<span class="content_title_under"></span></div>
+                <div class="findelite_serve_container">
+                    <div>
+                        <div class="findelite_serve_content clearfix mar-lef260">
+                            <img src="images/elite-service-step1.png">
+                            <div class="findelite_serve_text mar-lef20 pull-right mar-top17">意向洽谈、深入评审、确认合作、签订合同、提出需求、提供jd、确立招聘标准</div>
+                        </div>
+                    </div>
+                    <div class="findelite_servr_arrow">
+                        <span class="line"></span>
+                        <img src="images/elite-arrow.png">
+                    </div>
+                    <div>
+                        <div class="findelite_serve_content clearfix mar-rig260">
+                            <div class="findelite_disp1 findelite_serve_text mar-rig20 pull-left mar-top27">开始招聘、候选人评审，初步确立聘用意向，背景调查</div>
+                            <img src="images/elite-service-step2.png">
+                            <div class="findelite_disp2 findelite_serve_text mar-rig20 pull-left mar-top27">开始招聘、候选人评审，初步确立聘用意向，背景调查</div>
+                        </div>
+                    </div>
+                    <div class="findelite_servr_arrow">
+                        <span class="line"></span>
+                        <img src="images/elite-arrow.png">
+                    </div>
+                    <div>
+                        <div class="findelite_serve_content clearfix mar-lef260">
+                            <img src="images/elite-service-step3.png">
+                            <div class="findelite_serve_text mar-lef20 pull-right mar-top27">发送聘请通知，候选人上岗，付款、转入售后服务</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 我们的优势模块 -->
+        <div class="findelite_advt findelite_ouradvt_page">
+            <div class="container">
+                <div class="row">
+                    <div class="findelite_serve_title">我们的优势<span class="content_title_under"></span></div>
+                    <div class="findelite_ouradvt_container">
+                        <div class="findelite_ouradvt_content col-sm-6 col-md-3">
+                            <img src="images/advantage-1.png">
+                            <div class="findelite_ouradvt_text">30%的行业标准收费水平</div>
+                        </div>
+                        <div class="findelite_ouradvt_content col-sm-6 col-md-3">
+                            <img src="images/advantage-2.png">
+                            <div class="findelite_ouradvt_text">一半一半无风险的收费模式</div>
+                        </div>
+                        <div class="findelite_ouradvt_content col-sm-6 col-md-3">
+                            <img src="images/advantage-3.png">
+                            <div class="findelite_ouradvt_text">试用期内不满重推的推荐制度</div>
+                        </div>
+                        <div class="findelite_ouradvt_content col-sm-6 col-md-3">
+                            <img src="images/advantage-4.png">
+                            <div class="findelite_ouradvt_text">高价值高数量的人才储备机制</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 成功案例模块 -->
+        <div class="container">
+            <div class="findelite_case_page row">
+                <div class="findelite_serve_title">成功案例<span class="content_title_under"></span></div>
+                <div class="findelite_case_content clearfix">
+                <div class="text-center mar-bot35 col-lg-3 col-sm-6" ng-repeat="item in vm.companyList track by $index">
+                    <div class="findelite_case_logo"><img class="findelite_case_img" ng-src="{{ item.logo }}"><span class="middle-img-box"></span></div>
+                </div>
+                </div>
+                <div class="text-center"><button class="findelite_btn" type="button" ui-sref="pageTab.companyList">更多合作公司</button></div>
+            </div>
+        </div>
+    </div>
+</div>

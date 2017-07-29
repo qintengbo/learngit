@@ -1,0 +1,81 @@
+<div class="container">
+    <div>
+        <span>公司</span><span>职业</span>
+    </div>
+    <div data-ui-view="">
+        <!-- 搜索条件选择 -->
+        <div class="row" ng-controller="searchCompanyPerson">
+            <div class="col-sm-12">
+                <label>关 键 词：
+                    <input type="text" ng-model="jobName"><span>当前关键词：{{ jobName }}</span>
+                </label>
+                <div>所在地区：
+                    <ul>
+                        <li>不限</li>
+                        <li ng-repeat=""></li>
+                    </ul>
+                </div>
+                <div>所属行业：
+                    <ul>
+                        <li>不限</li>
+                        <li ng-repeat=""></li>
+                    </ul>
+                </div>
+                <div>融资规模：
+                    <ul>
+                        <li>不限</li>
+                        <li ng-repeat=""></li>
+                    </ul>
+                </div>
+                <span>清空</span><button type="button">搜索</button>
+            </div>
+        </div>
+        <!-- 搜索结果 -->
+        <div class="row">
+            <div class="col-sm-4">
+                <div>
+                    <div><img src=""></div>
+                    <div>
+                        <div>北京慕课中心</div>
+                        <div>携程在手说走就走</div>
+                        <div>10个在招职位</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-sm-4">移动互联网</div>
+                    <div class="col-sm-4">上市</div>
+                    <div class="col-sm-4">北京</div>
+                </div>
+            </div>
+            <custom-flip conf="vm.paginationConf"></custom-flip>
+        </div>
+        <!-- 404页面 -->
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="/images/404.png">
+                <div>
+                    <div>暂时没有符合该搜索条件的内容</div>
+                    <div>请重新修改搜索条件后再次进行搜索</div>
+                </div>
+            </div>
+            <div>
+                <div>推荐公司</div>
+                <div class="col-sm-4">
+                    <div>
+                        <div><img src=""></div>
+                        <div>
+                            <div>北京慕课中心</div>
+                            <div>携程在手说走就走</div>
+                            <div>10个在招职位</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-sm-4">移动互联网</div>
+                        <div class="col-sm-4">上市</div>
+                        <div class="col-sm-4">北京</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

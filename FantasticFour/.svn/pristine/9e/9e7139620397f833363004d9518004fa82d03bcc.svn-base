@@ -1,0 +1,14 @@
+@charset "UTF-8";
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .search_menu1 {
+    margin-left: 81px;
+  }
+}
+.search_nav1 {
+  margin-left: 74px;
+}
+@media screen and (max-width: 767px) {
+  .search_nav1 {
+    margin-left: 0;
+  }
+}

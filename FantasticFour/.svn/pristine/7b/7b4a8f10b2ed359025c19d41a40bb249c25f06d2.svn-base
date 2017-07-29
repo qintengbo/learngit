@@ -1,0 +1,58 @@
+/**
+ * Created by qintengbo on 2017/7/13.
+ */
+
+'use strict';
+angular.module("app")
+    .controller("searchCompanyPerson", ['$scope', '$state', 'httpService', 'searchPanel', 'logicService', 'searchUtil', searchCompanyPerson]);
+    function searchCompanyPerson($scope, $state, httpService, searchPanel, logicService, searchUtil) {
+        var vm = this;
+        // 跳转到本页面保持顶部
+        logicService.scrollTo(0, 0);
+        // 读取本地存储数据
+        vm.option = logicService.judgeStorage(sessionStorage.companyOptions, searchPanel);
+        // 初始化
+        vm.paginationConf = {
+            pagesLength: 7
+        };
+        $state.params.page = $state.params.page? $state.params.page : 1;
+        // 选中的数据
+        vm.data = searchUtil.dataConvert(vm.option);
+        // 拼凑字段
+        vm.data.name = $state.params.name;
+        vm.data.page = $state.params.page;
+        vm.data.size = 9;
+        // 标签单选
+        vm.radioType = searchUtil.radioType;
+        // 搜索
+        vm.search = function() {
+            sessionStorage.companyOptions = JSON.stringify(vm.option);
+            $state.go('.', {page: 1, size: 9, name: vm.data.name}, {reload: true});
+        };
+        // 清空
+        vm.clear = function() {
+            sessionStorage.removeItem("companyOptions");
+            sessionStorage.companyOptions = JSON.stringify(searchPanel);
+            vm.data.page = 1;
+            $state.go('.', {page: 1, size: 9, name: ''}, {reload: true});
+        };
+        // 获取公司列表
+        httpService.getCompanyList('', vm.data)
+            .then(function(res) {
+                console.log(res)
+                if(res.data.code === 0) {
+                    vm.companyList = res.data.data;
+                    vm.paginationConf.totalItems = res.data.total;
+                }
+                else {
+                    alert(res.data.message);
+                }
+                // 404页面
+                if(res.data.code < 0 || res.data.data.length === 0) {
+                    httpService.getCompanyList(1, {size: 3})
+                        .then(function(response) {
+                            vm.groomCompany = response.data.data;
+                        });
+                }
+            });
+    }

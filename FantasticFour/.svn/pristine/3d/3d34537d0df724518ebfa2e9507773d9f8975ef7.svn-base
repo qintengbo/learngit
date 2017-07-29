@@ -1,0 +1,100 @@
+<div class="jobInfo_page" ng-controller="jobDescriptionPerson as vm">
+    <div class="container">
+        <!-- 职位详情 -->
+        <div class="jobInfo_main mar-top20 row">
+            <div class="clearfix">
+                <div class="jobInfo_bor col-md-8">
+                    <div class="jobInfo_container">
+                        <div class="jobInfo_head">
+                            <div class="jobInfo_name font16">{{ vm.jobInfo.name }}</div>
+                            <div class="jobInfo_product">{{ vm.companyInfo.companyName }}</div>
+                            <ul class="jobInfo_news">
+                                <li class="jobInfo_news_content"><span class="jobInfo_compen">{{ vm.jobInfo.compensation | compensationTypeFilter }}</span></li>
+                                <li class="jobInfo_news_content"><img src="images/location-jobdescripe.png"><span class="jobInfo_mid">{{ vm.companyInfo.city | cityFilter }}</span></li>
+                                <li class="jobInfo_news_content"><img src="images/description-2.png"><span class="jobInfo_mid">{{ vm.jobInfo.education | educationTypeFilter }}</span></li>
+                                <li class="jobInfo_news_content"><img src="images/description-1.png"><span class="jobInfo_mid">{{ vm.jobInfo.experience | experienceTypeFilter }}</span></li>
+                            </ul>
+                            <div class="jobInfo_tags">
+                                <div class="jobInfo_tag text-hidden" ng-repeat="item in vm.tags track by $index">{{ item }}</div>
+                            </div>
+                            <div class="jobInfo_time"><img src="images/date.png"><span class="jobInfo_mid">发布时间：{{ vm.jobInfo.updateAt | date: 'yyyy-MM-dd HH:mm:ss'}}</span></div>
+                        </div>
+                        <div class="jobInfo_text">
+                            <div class="jobInfo_title mar-bot15">职位描述</div>
+                            <div class="jobInfo_content_text">
+                                <div class="jobInfo_text_title">岗位职责：</div>
+                                <div class="jobInfo_detail">{{ vm.jobInfo.responsibility }}</div>
+                            </div>
+                            <div class="jobInfo_content_text">
+                                <div class="jobInfo_text_title">必备条件：</div>
+                                <div class="jobInfo_detail">{{ vm.jobInfo.requisite }}</div>
+                            </div>
+                            <div>
+                                <div class="jobInfo_text_title">公司福利：</div>
+                                <div class="jobInfo_detail">{{ vm.jobInfo.benefits }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="jobInfo_nav">
+                        <div class="jobInfo_text_lef text-center">
+                            <div class="jobInfo_logo"><img class="jobInfo_img" ng-src="{{ vm.companyInfo.companyLogo }}"></div>
+                        </div>
+                        <div class="jobInfo_name_text" ui-sref="pageTab.companyDetails.companyInfo({id: vm.companyInfo.companyId})">
+                            <span class="jobInfo_name font14 vermiddle">{{ vm.companyInfo.companyName }} </span>
+                            <img src="images/company-home-1.png">
+                        </div>
+                    </div>
+                    <div class="jobInfo_fot">
+                        <div class="jobInfo_fot_title">基本信息</div>
+                        <div class="jobInfo_fot_container">
+                            <div><img src="images/details01.png"><span class="vermiddle mar-lef15">{{ vm.companyInfo.companyStaffNum | companyStaffNumFilter }}</span></div>
+                            <div class="mar-top30">
+                                <img src="images/details02.png">
+                                <span class="vermiddle mar-lef10">{{ vm.companyInfo.industry | industryTypeFilter }}</span>
+                                <!--<span class="vermiddle mar-lef10" ng-repeat="item in vm.jobInfo.industryList track by $index">-->
+                                    <!--<span ng-if="!$first">/</span>{{ item.industry | industryTypeFilter }}</span>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="jobInfo_share">
+                    <div class="jobInfo_share_text vermiddle"><img src="images/sharing.png"><span class="jobInfo_mid">分享</span></div>
+                    <img class="mar-rig10 cursor-pon" data-toggle="collapse" data-target="#code-box" aria-expanded="false" ng-click="vm.share('weixin')" src="images/weixin.png">
+                    <img ng-click="vm.share('sqq')" class="mar-rig10 cursor-pon" src="images/qq.png">
+                    <img ng-click="vm.share('tsina')" class="mar-rig10 cursor-pon" src="images/weibo.png">
+                    <button class="jobInfo_btn" type="button" ng-click="vm.interest()">我感兴趣</button>
+                </div>
+                <!-- 分享朋友圈 -->
+                <div class="code-box collapse" id="code-box" aria-expanded="false">
+                    <span class="code-box-close" data-toggle="collapse" data-target="#code-box" aria-expanded="false">×</span>
+                    <div class="code-box-header">分享微信到朋友圈</div>
+                    <img src="images/erweima.png">
+                    <div class="code-box-footer">
+                        打开微信，点击底部的“发现”， 使用“扫一扫”即可将网页分享至朋友圈。
+                    </div>
+                </div>
+                <!-- 感兴趣模态框 -->
+                <script type="text/ng-template" id="shareModalContent.html">
+                    <div class="modal-header Modal_header">
+                        <span>我感兴趣</span>
+                        <img class="Modal_close" ng-click="vm.close()" src="images/shanchu.png">
+                    </div>
+                    <div class="modal-body Modal_body">
+                        <div class="Modal_container">
+                            <div class="Modal_title">模式介绍：萝卜多先技术面试-再推荐给用人单位</div>
+                            <div class="Modal_text">萝卜多是一个知根知底的社群招聘。萝卜多的合作企业和候选人，都是萝卜多精心筛选，
+                                认证，陪伴多年的伙伴。在萝卜多找工作快，工作有保障。值得您信任的招聘网站。
+                            </div>
+                            <div class="Modal_text1">您将感兴趣的职位、公司名称以及您的个人信息发送到我们的邮箱，我们会尽快帮您安排。</div>
+                            <div class="Modal_email">邮箱地址：hr@ptteng.com</div>
+                        </div>
+                    </div>
+                </script>
+            </div>
+        </div>
+    </div>
+</div>

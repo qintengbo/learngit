@@ -1,0 +1,108 @@
+<div class="companyList_page" ng-controller="companyListPerson as vm">
+    <div class="container">
+        <div class="companyList_banner row"><img src="/images/guanggao.png"></div>
+        <div class="row search_panel">
+            <div class="search_nav"><span class="search_option">公司地点：</span>
+                <ul class="search_menu">
+                    <li class="search_submenu" ng-repeat="item in vm.option.province track by $index"
+                        ng-class="{true: 'defaultChoice'}[item.choose]"
+                        ng-click="vm.radioType($index, vm.option.province); vm.search()">{{ item.name }}
+                    </li>
+                </ul>
+            </div>
+            <div class="search_nav"><span class="search_option">融资阶段：</span>
+                <ul class="search_menu">
+                    <li class="search_submenu" ng-repeat="item in vm.option.financing track by $index"
+                        ng-class="{true: 'defaultChoice'}[item.choose]"
+                        ng-click="vm.radioType($index, vm.option.financing); vm.search()">{{ item.name }}
+                    </li>
+                </ul>
+            </div>
+            <div class="search_nav"><span class="search_option">行业领域：</span>
+                <ul class="search_menu">
+                    <li class="search_submenu" ng-repeat="item in vm.option.industry track by $index"
+                        ng-class="{true: 'defaultChoice'}[item.choose]"
+                        ng-click="vm.radioType($index, vm.option.industry); vm.search()">{{ item.name }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 搜索结果 -->
+        <div class="companyList_main row clearfix" ng-hide="vm.paginationConf.totalItems == 0">
+            <div class="groom_content col-sm-4 mar-top20" ng-repeat="item in vm.companyList track by $index"
+                 ui-sref="pageTab.companyDetails.companyInfo({id: item.id})">
+                <div class="groom_head">
+                    <div class="groom_logo"><img class="groom_img" ng-src="{{ item.logo }}"><span class="middle-img-box"></span></div>
+                    <div class="groom_colu">
+                        <div style="width: 100%"><div class="groom_name1">{{ item.name }}</div></div>
+                        <div style="width: 100%"><div class="groom_name">{{ item.slogan }}</div></div>
+                        <div style="width: 100%"><div class="groom_name"><span class="red font-wei700">{{ item.professionNum }}</span>个在招职位</div></div>
+                    </div>
+                </div>
+                <div class="groom_fot clearfix">
+                    <div class="groom_fot_sub col-xs-4">
+                        <img src="/images/phone-url.png">
+                        <div class="groom_tab">
+                            <span class="groom_tab_text">{{ item.industry | industryTypeFilter }}</span>
+                            <!--<span class="groom_tab_text" ng-repeat="x in item.industryList track by $index">-->
+                        <!--<span ng-if="!$first">/</span>{{ $index | industryTypeFilter }}</span>-->
+                        </div>
+                    </div>
+                    <div class="groom_fot_sub col-xs-4">
+                        <img src="/images/shangshi.png">
+                        <span class="vermiddle">{{ item.financing | financingTypeFilter }}</span>
+                    </div>
+                    <div class="groom_fot_sub col-xs-4">
+                        <img src="/images/location-company.png">
+                        <span class="vermiddle">{{ item.province | provinceFilter }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="companyList_pagin"><custom-flip conf="vm.paginationConf"></custom-flip></div>
+        </div>
+        <!-- 404页面 -->
+        <div class="error_page row clearfix" ng-show="vm.paginationConf.totalItems == 0">
+            <div class="col-sm-12 error_img">
+                <div class="error_pack">
+                    <img src="/images/404.png">
+                    <div class="error_tips">
+                        <div class="font20 font-wei700">暂时没有符合该搜索条件的内容</div>
+                        <div class="font18 mar-top15">请重新修改搜索条件后再次进行搜索</div>
+                    </div>
+                </div>
+            </div>
+            <div class="error_title col-sm-12 error_mar-bot">推荐公司</div>
+            <div class="groom_page clearfix row">
+                <div class="groom_content col-sm-4 mar-top20" ng-repeat="item in vm.groomCompany track by $index"
+                     ui-sref="pageTab.companyDetails.companyInfo({id: item.id})">
+                    <div class="groom_head">
+                        <div class="groom_logo"><img class="groom_img" ng-src="{{ item.logo }}"><span class="middle-img-box"></span></div>
+                        <div class="groom_colu">
+                            <div style="width: 100%"><div class="groom_name1">{{ item.name }}</div></div>
+                            <div style="width: 100%"><div class="groom_name">{{ item.slogan }}</div></div>
+                            <div style="width: 100%"><div class="groom_name"><span class="red font-wei700">{{ item.professionNum }}</span>个在招职位</div></div>
+                        </div>
+                    </div>
+                    <div class="groom_fot clearfix">
+                        <div class="groom_fot_sub col-xs-4">
+                            <img src="/images/phone-url.png">
+                            <div class="groom_tab">
+                                <span class="groom_tab_text">{{ item.industry | industryTypeFilter }}</span>
+                                <!--<span class="groom_tab_text" ng-repeat="x in item.industryList track by $index">-->
+                        <!--<span ng-if="!$first">/</span>{{ $index | industryTypeFilter }}</span>-->
+                            </div>
+                        </div>
+                        <div class="groom_fot_sub col-xs-4">
+                            <img src="/images/shangshi.png">
+                            <span class="vermiddle">{{ item.financing | financingTypeFilter }}</span>
+                        </div>
+                        <div class="groom_fot_sub col-xs-4">
+                            <img src="/images/location-company.png">
+                            <span class="vermiddle">{{ item.province | provinceFilter }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

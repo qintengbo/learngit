@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.searchCompany_pagin {
+  width: 100%;
+  float: left;
+  padding-right: 15px;
+}
+.searchCompany_main {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0 5px 35px;
+  background: #fff;
+}

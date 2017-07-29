@@ -1,0 +1,51 @@
+<div class="comdeta_page" ng-controller="companyDetailsPerson as vm">
+    <div class="container">
+        <div class="comdeta_head row">
+            <div class="comdeta_head_logo">
+                <img class="comdeta_head_img" ng-src="{{ vm.data.logo }}">
+            </div>
+            <div class="comdeta_head_content">
+                <div class="comdeta_head_title">
+                    <span class="ver-mid">{{ vm.data.name }}</span>
+                    <img class="mar-lef10" ng-if="vm.data.company.approved == 1" src="images/renzheng_03.png">
+                </div>
+                <div style="width: 100%"><div class="mar-top25 text-hidden">{{ vm.data.slogan }}</div></div>
+                <div class="mar-top20" style="width: 100%">
+                    <span style="display: block" class="mar-rig10 text-hidden">{{ vm.data.productName }}</span>
+                    <!--<span style="display: block" class="mar-rig10 text-hidden" ng-repeat="item in vm.data.productList track by $index">{{ vm.data.productName }}</span>-->
+                </div>
+            </div>
+        </div>
+        <div class="comdeta_content row">
+            <div>
+                <div class="comdeta_content_text" ng-class="{'comdeta_choose': $state.includes('pageTab.companyDetails.companyInfo')}" ui-sref="pageTab.companyDetails.companyInfo({id: vm.id})">公司详情</div>
+                <div class="comdeta_content_text" ng-class="{'comdeta_choose': $state.includes('pageTab.companyDetails.biddingJob')}" ui-sref="pageTab.companyDetails.biddingJob({id: vm.id})">在招职位</div>
+            </div>
+            <ui-view></ui-view>
+            <!-- 公司信息及福利 -->
+            <div class="comdeta_fot_page col-md-4 col-xs-12">
+                <div class="comdeta_fot">
+                    <div class="comdeta_fot_title">公司信息</div>
+                    <div class="comdeta_fot_container">
+                        <div><img src="images/details01.png"><span class="comdeta_fot_text">{{ vm.data.staffNum | companyStaffNumFilter }}</span></div>
+                        <div class="mar-top30">
+                            <img src="images/details02.png">
+                            <span class="comdeta_fot_text1">{{ vm.data.industry | industryTypeFilter }}</span>
+                            <!--<span class="comdeta_fot_text1" ng-repeat="item in vm.data.industryList track by $index">-->
+                                <!--<span ng-if="!$first">/</span>{{ item.industry | industryTypeFilter }}</span>-->
+                        </div>
+                        <div class="mar-top30"><img src="images/details03.png"><span class="comdeta_fot_text">{{ vm.data.province | provinceFilter }}</span></div>
+                    </div>
+                </div>
+                <div class="comdeta_fot">
+                    <div class="comdeta_fot_title">公司标签</div>
+                    <div class="text-left clearfix">
+                        <div class="comdeta_tag" ng-repeat="item in vm.data.TagsList track by $index">
+                            <span class="comdeta_tag_text">{{ item }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

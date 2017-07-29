@@ -1,0 +1,134 @@
+<div ng-controller="searchJobListPerson as vm">
+    <!-- 搜索条件选择 -->
+    <div class="row search_panel">
+        <form class="clearfix">
+            <div class="col-sm-12">
+                <label><span class="search_option keyWord">关键词</span>:
+                    <input class="search_input" type="text" ng-model="vm.data.name" placeholder="输入职位关键词：如 产品经理等" maxlength="38">
+                    <span class="keyWordShow" ng-show="vm.data.name !== undefined && vm.data.name !== ''">当前关键词：{{ vm.data.name }}</span>
+                </label>
+                <div class="search_nav"><span class="search_option">所在地区：</span>
+                    <ul class="search_menu">
+                        <li class="search_submenu" ng-repeat="item in vm.option.city track by $index"
+                            ng-class="{true: 'defaultChoice'}[item.choose]"
+                            ng-click="vm.radioType($index, vm.option.city)">{{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="search_nav"><span class="search_option">职位类别：</span>
+                    <ul class="search_menu search_menu1">
+                        <li class="search_submenu" ng-repeat="item in vm.option.category track by $index"
+                            ng-class="{true: 'defaultChoice'}[item.choose]"
+                            ng-click="vm.radioType($index, vm.option.category); vm.selectSubCategoryFn($index, item.choose)">{{ item.name }}
+                        </li>
+                    </ul>
+                <div class="search_nav search_nav1" ng-if="!vm.option.category[0].choose && vm.selectNum < 2">
+                    <ul class="search_menu">
+                        <li class="search_submenu" ng-repeat="item in vm.option.subCategory track by $index"
+                            ng-class="{true: 'defaultChoice'}[item.choose]"
+                            ng-click="vm.radioType($index, vm.option.subCategory)">{{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+                </div>
+                <div class="search_nav"><span class="search_option">所属行业：</span>
+                    <ul class="search_menu">
+                        <li class="search_submenu" ng-repeat="item in vm.option.industry track by $index"
+                            ng-class="{true: 'defaultChoice'}[item.choose]"
+                            ng-click="vm.radioType($index, vm.option.industry)">{{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="search_nav"><span class="search_option">学历要求：</span>
+                    <ul class="search_menu">
+                        <li class="search_submenu" ng-repeat="item in vm.option.education track by $index"
+                            ng-class="{true: 'defaultChoice'}[item.choose]"
+                            ng-click="vm.radioType($index, vm.option.education)">{{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="search_nav"><span class="search_option">工作经验：</span>
+                    <ul class="search_menu">
+                        <li class="search_submenu" ng-repeat="item in vm.option.experience track by $index"
+                            ng-class="{true: 'defaultChoice'}[item.choose]"
+                            ng-click="vm.radioType($index, vm.option.experience)">{{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="search_nav"><span class="search_option">薪资水平：</span>
+                    <ul class="search_menu">
+                        <li class="search_submenu" ng-repeat="item in vm.option.compensation track by $index"
+                            ng-class="{true: 'defaultChoice'}[item.choose]"
+                            ng-click="vm.radioType($index, vm.option.compensation)">{{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="search_nav"><span class="search_option">发布时间：</span>
+                    <ul class="search_menu">
+                        <li class="search_submenu" ng-repeat="item in vm.option.publishAt track by $index"
+                            ng-class="{true: 'defaultChoice'}[item.choose]"
+                            ng-click="vm.radioType($index, vm.option.publishAt)">{{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+        <div class="search_button clearfix">
+            <button class="search-btn2" type="button" ng-click="vm.search()">搜索</button>
+            <button class="search-btn1" type="button" ng-click="vm.clear()">清空</button>
+        </div>
+    </div>
+    <!-- 搜索结果 -->
+    <div class="searchJob_main row" ng-hide="vm.paginationConf.totalItems == 0">
+        <div class="searchJob-content clearfix" ng-repeat="item in vm.plainJobList track by $index">
+            <div class="col-sm-6 searchJob_bor-rig" ui-sref="pageTab.jobDescription({id: item.professionId})">
+                <div class="searchJob_name">{{ item.professionName }}</div><span class="searchJob_time">发布时间：{{ item.publishAt | updateAtFilter }}</span>
+                <div class="searchJob_exper">{{ item.compensation | compensationTypeFilter }}</div>
+                <div class="searchJob_area">{{ item.city | cityFilter }}-{{ item.county | countyFilter }}
+                    / {{ item.education | educationTypeFilter }}
+                    / {{ item.experience | experienceTypeFilter }}</div>
+            </div>
+            <div class="col-sm-6 searchJob_padlef clearfix" ui-sref="pageTab.companyDetails.companyInfo({id: item.companyId})">
+                <div class="searchJob_inline-bl">
+                    <div class="searchJob_name1">{{ item.companyName }}</div>
+                    <div class="searchJob_exper1">
+                        <span>{{ item.industry | industryTypeFilter }}</span>
+                        <!--<span ng-repeat="x in item.industryList track by $index">-->
+                            <!--<span ng-if="!$first">| </span>{{ x.industry | industryTypeFilter }}</span>-->
+                    </div>
+                    <div class="searchJob_tag_container text-hidden">
+                        <span class="searchJob_tag" ng-repeat="x in item.companyTags track by $index">{{ x }}</span>
+                    </div>
+                </div>
+                <div class="searchJob-img"><img class="searchJob_logo" ng-src="{{ item.companyLogo }}"><span class="middle-img-box"></span></div>
+            </div>
+        </div>
+        <custom-flip conf="vm.paginationConf"></custom-flip>
+    </div>
+    <!-- 404页面 -->
+    <div class="error_page row clearfix" ng-show="vm.paginationConf.totalItems == 0">
+        <div class="col-sm-12 error_img">
+            <div class="error_pack">
+                <img src="images/404.png">
+                <div class="error_tips">
+                    <div class="font20 font-wei700">暂时没有符合该搜索条件的内容</div>
+                    <div class="font18 mar-top15">请重新修改搜索条件后再次进行搜索</div>
+                </div>
+            </div>
+        </div>
+        <div class="error_title col-sm-12">推荐职位</div>
+        <div class="groom_page clearfix row">
+            <div class="groom_content col-sm-4" ng-repeat="item in vm.eliteJob track by $index"
+                 ui-sref="pageTab.jobDescription({id: item.professionId})">
+                <div class="groom_head">
+                    <div class="groom_logo"><img class="groom_img" ng-src="{{ item.companyLogo }}"><span class="middle-img-box"></span></div>
+                    <div class="groom_colu">
+                        <div class="groom_exper">{{ item.compensation | compensationTypeFilter }}</div>
+                        <div style="width: 100%"><div class="groom_name">{{ item.professionName }}</div></div>
+                        <div style="width: 100%"><div class="groom_name">{{ item.companyName }}</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

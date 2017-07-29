@@ -1,0 +1,661 @@
+@charset "UTF-8";
+/* 重置样式 */
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset, input, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body {
+    line-height: 1.42857143;
+    font-size: 14px; /* Decide for yourself if you want to include this. */
+    font-family: "Microsoft YaHei", "Arial", "times", sans-serif;
+    background: #fff;
+}
+img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    border: 0 none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    padding: .6em 0;
+    margin: 0 15px;
+}
+ul, ol {list-style: none;}
+a {
+    color: #000;
+    text-decoration: none;
+    outline: none;
+}
+input,select,textarea,button {vertical-align: middle;}
+button {
+    border: 0 none;
+    background-color: transparent;
+    cursor: pointer;
+}
+a:active, a:hover {text-decoration: none; color: #000;}
+.floatLeft {
+    float: left;
+    padding: .5em .5em .5em 0;
+}
+.floatRight {
+    float: right;
+    padding: .5em 0 .5em .5em;
+}
+.clearfix:before,.clearfix:after{content: '';display: table;}
+.clearfix:after{clear: both;}
+/* angular-ui-bootstrap单独设置样式 */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+/* 原子类 */
+.padding-left {
+    padding-left: 85px;
+}
+.padding-right {
+    padding-right: 85px;
+}
+.padding-middle {
+    padding-left: 65px;
+}
+.publicpad {
+    padding-left: 85px;
+    padding-right: 85px;
+}
+.mar-lef5 {
+    margin-left: 5px;
+}
+.mar-lef10 {
+    margin-left: 10px;
+}
+.mar-rig10 {
+    margin-right: 10px;
+}
+.mar-lef15 {
+    margin-left: 15px;
+}
+.mar-top10 {
+    margin-top: 10px;
+}
+.mar-top15 {
+    margin-top: 15px;
+}
+.mar-top20 {
+    margin-top: 20px;
+}
+.mar-top25 {
+    margin-top: 25px;
+}
+.mar-top30 {
+    margin-top: 30px;
+}
+.mar-rig20 {
+    margin-right: 20px;
+}
+.mar-lef20 {
+    margin-left: 20px;
+}
+.mar-bot15 {
+    margin-bottom: 15px;
+}
+.mar-bot10 {
+    margin-bottom: 10px;
+}
+.mar-bot35 {
+    margin-bottom: 35px;
+}
+.mar-lef260 {
+    margin-left: 260px;
+}
+.mar-rig260 {
+    margin-right: 260px;
+}
+.vermiddle {
+    vertical-align: middle;
+}
+.font12 {
+    font-size: 1.2rem;
+}
+.font14 {
+    font-size: 1.4rem;
+}
+.font16 {
+    font-size: 1.6rem;
+}
+.font18 {
+    font-size: 1.8rem;
+}
+.font20 {
+    font-size: 2rem;
+}
+.font-wei400 {
+    font-weight: 400;
+}
+.font-wei700 {
+    font-weight: 700;
+}
+.red {
+    color: #fc2b47;
+}
+.cursor-pon {
+    cursor: pointer;
+}
+.middle-img-box {
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.text-hidden {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+/* 模态框样式 */
+.modal_btn {
+    font-size: 16px;
+}
+.mod_btn {
+    width: 80px;
+    padding: 8px 0;
+    margin-left: 20px;
+    margin-right: 10px;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.mod_btn:hover {
+    border: 1px solid #fc2b47;
+    color: #fc2b47;
+}
+.btn-1 {
+    display: inline-block;
+}
+.btn-2 {
+    margin: 15px 0 15px 89px;
+}
+.newBtn {
+    border: 1px solid #fc2b47;
+    color: #fc2b47;
+}
+.modal-dialog {
+    margin: 100px auto;
+}
+@media screen and (min-width: 768px) {
+    .modal-dialog {
+        margin: 200px auto;
+    }
+}
+.modal-SM {
+    width: 300px;
+}
+.modal-MD {
+    width: 500px;
+}
+@media screen and (max-width: 520px) {
+    .modal-MD {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+/* 分页样式 */
+.pagfot {
+    margin-top: 25px;
+}
+.pagin {
+    float: right;
+}
+.pagnum {
+    display: inline-block;
+    margin: 0 8px;
+    padding: 5px 12px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    vertical-align: middle;
+    font-size: 1.4rem;
+    color: #666;
+    background: #f4f4f4;
+    cursor: pointer;
+}
+.pagnum_t {
+    display: inline-block;
+    vertical-align: middle;
+}
+@media screen and (max-width: 480px) {
+    .pagnum {
+        margin-top: 8px;
+    }
+    .pagnum_t {
+        display: none;
+    }
+    .pag_mar {
+        display: none!important;
+    }
+}
+.pag_mar {
+    display: inline-block;
+    margin-right: 0;
+}
+.pagfot_input {
+    width: 40px;
+    padding: 5px 0;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #536a82;
+}
+.nochoice {
+    color: #d9d9da;
+    cursor: not-allowed;
+    background-color: #f4f4f4;
+    border-color: #e8e8e8;
+}
+.pitch {
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: #fc2b47;
+    border-color: #fc2b47;
+}
+.separate {
+    cursor: not-allowed;
+}
+/* 搜索面板 */
+.defaultChoice {
+    background-color: #eb5255;
+    color: #fff!important;
+    margin: 0 5px;
+}
+.search_panel {
+    padding: 16px 25px 30px 20px;
+    background: #fff;
+}
+.keyWord {
+    letter-spacing: 6.5px;
+}
+.keyWordShow {
+    margin-left: 20px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #999;
+}
+@media screen and (max-width: 767px) {
+    .keyWordShow {
+        display: inline-block;
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+}
+.search_option {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.search_input {
+    margin-left: 15px;
+    padding: 8px 0 8px 12px;
+    width: 400px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    color: #555;
+    font-weight: 400;
+}
+@media screen and (max-width: 600px) {
+    .search_input {
+        width: 60%;
+    }
+}
+input::-webkit-input-placeholder {
+    color: #d6d0ca!important;
+}
+.search_nav {
+    margin-top: 15px;
+}
+.search_menu {
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: middle;
+    font-size: 0;
+}
+@media screen and (max-width: 767px) {
+    .search_menu {
+        display: block;
+        margin-top: 10px;
+    }
+}
+.search_submenu {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 4px 10px;
+    font-size: 1.4rem;
+    color: #536a82;
+    cursor: pointer;
+}
+.search_button {
+    margin-top: 20px;
+}
+.search-btn1 {
+    float: right;
+    margin-right: 8px;
+    padding: 4px 10px;
+    font-size: 1.4rem;
+    color: #536a82;
+}
+.search-btn2 {
+    float: right;
+    margin-left: 8px;
+    padding: 4px 10px;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: #eb5255;
+}
+/* 职位搜索结果 */
+.searchJob_main {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 20px 35px;
+    background: #fff;
+}
+.searchJob-content {
+    position: relative;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.searchJob_bor-rig {
+    border-right: 1px solid #e8e8e8;
+}
+@media screen and (max-width: 767px) {
+    .searchJob_bor-rig {
+        border-right: none;
+    }
+}
+.searchJob_name {
+    display: inline-block;
+    margin-top: 10px;
+    vertical-align: bottom;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.searchJob_name1 {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+@media screen and (max-width: 767px) {
+    .searchJob_name1 {
+        width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+.searchJob_time {
+    display: inline-block;
+    vertical-align: bottom;
+    text-indent: 1rem;
+    font-size: 1.4rem;
+    color: #999;
+}
+@media screen and (max-width: 767px) {
+    .searchJob_time {
+        display: block;
+        text-indent: 0;
+    }
+}
+.searchJob_exper {
+    margin: 15px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fc2b47;
+}
+@media screen and (max-width: 767px) {
+    .searchJob_exper {
+        width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+.searchJob_exper1 {
+    margin: 15px 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #536a82;
+}
+.searchJob_area {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #536a82;
+}
+.searchJob_padlef {
+    position: absolute;
+    left: 49%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 65px;
+}
+@media screen and (max-width: 767px) {
+    .searchJob_padlef {
+        position: static;
+        left: 0;
+        top: 0;
+        transform: none;
+        padding-left: 15px;
+    }
+}
+.searchJob_inline-bl {
+    display: inline-block;
+    width: 50%;
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .searchJob_inline-bl {
+        width: 70%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .searchJob_inline-bl {
+        width: 55%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .searchJob_inline-bl {
+        width: 54%;
+    }
+}
+.searchJob-img {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    display: inline-block;
+    float: right;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+    .searchJob-img {
+        position: static;
+        transform: none;
+    }
+}
+.searchJob_logo {
+    max-height: 100%;
+}
+.searchJob_tag_container {
+    font-size: 1.2rem;
+    color: #536a82;
+}
+.searchJob_tag {
+    width: 70px;
+    display: inline-block;
+    padding: 5px 0;
+    margin-right: 10px;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    border-radius: 20px;
+}
+/* 404页面 */
+.error_page {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 25px 20px;
+    background: #fff;
+}
+.error_img {
+    padding: 120px 0 130px;
+    border-bottom: 1px solid #d9d9d9;
+    text-align: center;
+}
+.error_pack {
+    display: inline-block;
+    color: #2b3d51;
+}
+.error_tips {
+    display: inline-block;
+    margin-left: 15px;
+    padding-top: 70px;
+    text-align: left;
+    vertical-align: top;
+}
+.error_title {
+    margin: 25px 0 20px;
+    padding: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.error_mar-bot {
+    margin-bottom: 5px;
+}
+.groom_page {
+    padding-bottom: 35px;
+    border-bottom: 1px solid #e8e8e8;
+}
+.groom_content {
+    width: calc((100% - 90px) / 3);
+    padding: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.groom_content:hover {
+    box-shadow: 0 4px 7px #e7e7e7;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .groom_content {
+        width: calc((100% - 60px) / 2);
+        margin: 15px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .groom_content {
+        width: calc(100% - 30px);
+        margin: 15px;
+    }
+}
+.groom_head {
+    padding: 20px;
+}
+.groom_logo {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 115px;
+    height: 115px;
+    border: 1px solid #e8e8e8;
+    overflow: hidden;
+}
+.groom_img {
+    max-height: 100%;
+}
+.groom_colu {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 20px;
+    color: #2b3d51;
+}
+@media screen and (min-width: 481px) and (max-width: 1200px) {
+    .groom_colu {
+        width: 42%;
+    }
+}
+.groom_exper {
+    font-size: 1.6rem;
+    color: #fc2b47;
+    font-weight: 700;
+}
+.groom_name {
+    margin-top: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 1.4rem;
+    overflow: hidden;
+}
+.groom_name1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 1.6rem;
+    font-weight: 700;
+    overflow: hidden;
+}
+.groom_fot {
+    background: #fafafa;
+    font-size: 1.4rem;
+    color: #999;
+}
+.groom_fot_sub {
+    padding: 10px 0;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.groom_tab {
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 60%;
+}
+.groom_tab_text {
+    display: inline-block;
+    vertical-align: middle;
+}
+/* 其他 */
+.comdeta_tag {
+    width: calc(100% / 3 - 10px);
+}
+@media screen and (max-width: 991px) {
+    .comdeta_tag {
+        width: 60px;
+    }
+}

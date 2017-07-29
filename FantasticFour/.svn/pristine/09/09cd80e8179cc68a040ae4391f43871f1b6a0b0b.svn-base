@@ -1,0 +1,155 @@
+<div ng-controller="homePagePerson as vm">
+    <!-- Banner图 -->
+    <div>
+        <div uib-carousel active="vm.active" interval="vm.myInterval" no-transition="vm.noTransition" no-wrap="vm.noWrapSlides" template-url="homeBanner.html">
+            <div uib-slide ng-repeat="slide in vm.slides track by $index" index="$index">
+                <a ng-href="{{ slide.url }}" target="_blank"><img class="articleImg" ng-src="{{ slide.image }}"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 自定义轮播图模板 -->
+    <script type="text/ng-template" id="homeBanner.html">
+        <div class="carousel-inner homeCarous" ng-transclude></div>
+    </script>
+    <!-- 入职数据 -->
+    <div class="content_pad">
+        <div class="container">
+            <div class="row entry_top padding-left padding-right">
+                <div class="col-md-3 clear_pad text-center entry_mar">
+                    <img src="images/02.png">
+                    <div class="entry_title">超短响应时间</div>
+                    <div class="entryDepict">48小时高效推荐</div>
+                </div>
+                <div class="col-md-3 clear_pad text-center entry_mar">
+                    <img src="images/03.png">
+                    <div class="entry_title">行业1/3的价格</div>
+                    <div class="entryDepict">成功推荐仅收费1月工资</div>
+                </div>
+                <div class="col-md-3 clear_pad text-center entry_mar bor_rig">
+                    <img src="images/04.png">
+                    <div class="entry_title">三维的人才评测</div>
+                    <div class="entryDepict">技术人事背景三维评定</div>
+                </div>
+                <div class="col-md-3 clear_pad text-center num-wid">
+                    <div class="redColor">500+</div>
+                    <div class="text_color">人才入职</div>
+                    <div class="text_mar redColor">498人</div>
+                    <div class="text_color">成功转正</div>
+                    <div class="text_mar redColor">98%</div>
+                    <div class="text_color">成功率</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 最新职位 -->
+    <div class="newJob">
+        <div class="container">
+            <div class="row padding-left padding-right newJob-row">
+                <div class="col-sm-12">
+                    <div class="content_title">最新职位<span class="content_title_under"></span></div>
+                    <div class="content_title1">NEW POSITION</div>
+                    <div class="content_url" ui-sref="pageTab.searchJob({judgeItem: true})">更多 ></div>
+                </div>
+                <div class="col-sm-12">
+                    <div uib-carousel active="vm.active" interval="vm.myInterval" no-transition="vm.noTransition" no-wrap="vm.noWrapSlides" template-url="views/article-carousel-template.html">
+                        <div uib-slide ng-repeat="job in vm.jobs track by $index" index="$index">
+                            <div class="newJob_content" ng-repeat="jobInfo in vm.jobs[$index] track by $index">
+                                <div class="newJob_img" ui-sref="pageTab.jobDescription({id: jobInfo.professionId})"><img class="logo_img" ng-src="{{ jobInfo.companyLogo }}"><span class="middle-img-box"></span></div>
+                                <div style="width: 100%"><div class="newJob-name" ui-sref="pageTab.jobDescription({id: jobInfo.professionId})">{{ jobInfo.professionName }}<span class="content_title_under under_wid"></span></div></div>
+                                <div style="width: 100%"><div class="newJob-pro" ui-sref="pageTab.companyDetails.companyInfo({id: jobInfo.companyId})">{{ jobInfo.companyName }}</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 服务流程 -->
+    <div class="serfl">
+        <div class="container">
+            <div class="row publicpad newJob-row">
+                <div class="col-sm-12">
+                    <div class="content_title">服务流程<span class="content_title_under"></span></div>
+                    <div class="content_title1">SERVICE FLOW</div>
+                </div>
+                <div class="col-sm-12 serfl-content">
+                    <div class="serfl_page">
+                        <img class="serfl_img" src="images/flow-path1.png">
+                        <div class="serfl_content">1.意向洽谈，深入评审</div>
+                    </div>
+                    <div class="serfl_page1">
+                        <div><img class="serfl_img" src="images/fly.png"></div>
+                    </div>
+                    <div class="serfl_page">
+                        <img class="serfl_img" src="images/flow-path2.png">
+                        <div class="serfl_content">2.确认合作，签订合同</div>
+                    </div>
+                    <div class="serfl_page1">
+                        <div><img class="serfl_img" src="images/fly.png"></div>
+                    </div>
+                    <div class="serfl_page">
+                        <img class="serfl_img" src="images/flow-path3.png">
+                        <div class="serfl_content">3.提出需求，提供jd</div>
+                    </div>
+                </div>
+                <div class="col-sm-12 serfl-content1">
+                    <div class="serfl_page">
+                        <img class="serfl_img" src="images/flow-path4.png">
+                        <div class="serfl_content">4.开始招聘，人才海选</div>
+                    </div>
+                    <div class="serfl_page1">
+                        <div><img class="serfl_img" src="images/fly.png"></div>
+                    </div>
+                    <div class="serfl_page">
+                        <img class="serfl_img" src="images/flow-path5.png">
+                        <div class="serfl_content">5.人才评测，简历脱水</div>
+                    </div>
+                    <div class="serfl_page1">
+                        <div><img class="serfl_img" src="images/fly.png"></div>
+                    </div>
+                    <div class="serfl_page">
+                        <img class="serfl_img" src="images/flow-path6.png">
+                        <div class="serfl_content">6.上岗，转入售后</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 伙伴之言 -->
+    <div class="partner">
+        <div class="container">
+            <div class="row publicpad partner-row">
+                <div class="col-sm-12">
+                    <div class="content_title">伙伴之言<span class="content_title_under"></span></div>
+                    <div class="content_title1">PARTNER ADVICE</div>
+                </div>
+                <div class="partner-content">
+                    <div class="col-sm-6 col-md-3 partner-page partner-lef">
+                        <img src="images/partner01.png">
+                        <div class="partner_name">王思聪</div>
+                        <div class="partner_job">拓尔思集团创始人</div>
+                        <div class="partner_pre">作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 partner-page partner-rig1">
+                        <img src="images/partner02.png">
+                        <div class="partner_name">王思聪</div>
+                        <div class="partner_job">拓尔思集团创始人</div>
+                        <div class="partner_pre">作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 partner-page partner-lef1">
+                        <img src="images/partner03.png">
+                        <div class="partner_name">王思聪</div>
+                        <div class="partner_job">拓尔思集团创始人</div>
+                        <div class="partner_pre">作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 partner-page partner-rig">
+                        <img src="images/partner04.png">
+                        <div class="partner_name">王思聪</div>
+                        <div class="partner_job">拓尔思集团创始人</div>
+                        <div class="partner_pre">作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

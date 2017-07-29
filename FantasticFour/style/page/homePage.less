@@ -1,0 +1,431 @@
+@charset "UTF-8";
+@co1: #fc2b47;
+@co2: #2d3e50;
+@co3: #22415d;
+@co4: #f6f7f8;
+.pos(@pos: relative) {
+  position: @pos;
+}
+.top(@top) {
+  top: @top;
+}
+.rig(@rig) {
+  right: @rig;
+}
+.lef(@lef) {
+  left: @lef;
+}
+.bot(@bot) {
+  bottom: @bot;
+}
+.disp(@disp: inline-block) {
+  display: @disp;
+}
+.mar(@mar) {
+  margin: @mar;
+}
+.pad(@pad) {
+  padding: @pad;
+}
+.mar-top(@mar-top) {
+  margin-top: @mar-top;
+}
+.mar-bot(@mar-bot) {
+  margin-bottom: @mar-bot;
+}
+.mar-lef(@mar-lef) {
+  margin-left: @mar-lef;
+}
+.mar-rig(@mar-rig) {
+  margin-right: @mar-rig;
+}
+.pad-top(@pad-top) {
+  padding-top: @pad-top;
+}
+.pad-bot(@pad-bot) {
+  padding-bottom: @pad-bot;
+}
+.pad-lef(@pad-lef) {
+  padding-left: @pad-lef;
+}
+.pad-rig(@pad-rig) {
+  padding-right: @pad-rig;
+}
+.flo(@flo: left) {
+  float: @flo;
+}
+.bor(@bor: solid 1px @co4) {
+  border: @bor;
+}
+.bor-top(@bo-top) {
+  border-top: @bo-top;
+}
+.bor-lef(@bo-lef) {
+  border-left: @bo-lef;
+}
+.bor-rig(@bo-rig) {
+  border-right: @bo-rig;
+}
+.bor-bot(@bo-bot) {
+  border-bottom: @bo-bot;
+}
+.bor-rad(@bor-rad) {
+  border-radius: @bor-rad;
+}
+.max-wid(@max-wid: 768px) {
+  max-width: @max-wid;
+}
+.min-wid(@min-wid: 320px) {
+  min-width: @min-wid;
+}
+.wid(@wid) {
+  width: @wid;
+}
+.hei(@hei) {
+  height: @hei;
+}
+.font(@font) {
+  font-size: @font;
+}
+.font-wei(@font-wei) {
+  font-weight: @font-wei;
+}
+.text-a(@text-a: center) {
+  text-align: @text-a;
+}
+.ver-a(@ver-a: middle) {
+  vertical-align: @ver-a;
+}
+.col(@col) {
+  color: @col;
+}
+.bagr(@bagr) {
+  background: @bagr;
+}
+.tran(@tran: translateY(-50%)) {
+  transform: @tran;
+}
+.z-in(@z-in: 10) {
+  z-index: @z-in;
+}
+/* 本页公用样式 */
+.content_title {
+  .mar(80px auto 0);
+  .font(2rem);
+  color: @co3;
+  .font-wei(700);
+  .text-a;
+}
+.content_title1 {
+  .mar-top(12px);
+  .font(1.6rem);
+  .text-a;
+  color: @co3;
+}
+.content_title_under {
+  .disp(block);
+  .wid(30px);
+  .hei(2px);
+  .bor-bot(0 solid @co1);
+  background-color: @co1;
+  .mar(2px auto 0);
+}
+/* 首页Banner */
+.homeCarous {
+  .wid(100%);
+  .pad-bot(26.1%);
+  .hei(0);
+  .articleImg {
+    max-height: 100%;
+    .wid(100%);
+    .mar(0 auto);
+  }
+}
+/* 行业优势模块 */
+.content_pad {
+  .pad(0);
+  .wid(100%);
+}
+.clear_pad {
+  .pad(0);
+}
+.entry_mar {
+  .mar-top(42px);
+  .wid(27%);
+  @media screen and (max-width: 991px) {
+    .wid(100%);
+  }
+}
+.entry_top {
+  .pad-top(75px);
+  .pad-bot(75px);
+  @media screen and (max-width: 991px) {
+    .pad-top(33px);
+    .pad-lef(0);
+    .pad-rig(0);
+  }
+}
+.entry_title {
+  .mar-top(20px);
+  .font(1.6rem);
+  .font-wei(700);
+  color: @co3;
+}
+.entryDepict {
+  .mar-top(13px);
+  .font(1.4rem);
+  color: @co3;
+}
+.redColor {
+  .mar-bot(10px);
+  .font(1.6rem);
+  .font-wei(700);
+  color: @co1;
+}
+.text_color {
+  .font-wei(700);
+  color: @co3;
+}
+.text_mar {
+  .mar-top(25px);
+}
+.bor_rig {
+  .bor-rig(1px solid #e5e9eb);
+  @media screen and (max-width: 991px) {
+    .bor(none);
+  }
+}
+.num-wid {
+  .wid(19%);
+  @media screen and (max-width: 991px) {
+    .wid(100%);
+    .mar-top(42px);
+  }
+}
+/* 最新职位模块 */
+.newJob {
+  .pad-bot(80px);
+  .bagr(@co4);
+  .content_url {
+    .mar(40px 0 0);
+    .pad-rig(1%);
+    .font(1.6rem);
+    color: @co2;
+    .text-a(right);
+    cursor: pointer;
+    &:hover {
+      color: black;
+    }
+  }
+  .newJob_content {
+    .disp;
+    .mar(20px 1%);
+    .wid(23%);
+    border-radius: 5px;
+    .bagr(#fff);
+    @media screen and (max-width: 991px) {
+      .wid(100%);
+    }
+  }
+  .newJob_content:hover {
+    box-shadow: 0 4px 7px #e7e7e7;
+  }
+  .newJob_img {
+    .wid(100%);
+    .hei(188px);
+    .text-a;
+    .bor-bot(1px solid #e5e9eb);
+    overflow: hidden;
+  }
+  .logo_img {
+    max-height: 100%;
+  }
+  .middle-img-box {
+    .disp;
+    .hei(100%);
+    .wid(0);
+    .ver-a;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 767px) {
+  .newJob-row {
+    .pad(5%);
+  }
+}
+.newJob-carous_btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  background-color: rgba(0,0,0,0);
+  filter: alpha(opacity=50);
+  opacity: .5;
+  @media screen and (max-width: 767px) {
+    .disp(none);
+  }
+}
+.newJob-btn_img {
+  .pos(absolute);
+  .top(50%);
+  .tran;
+  .disp;
+  .wid(30px);
+  .hei(38px);
+}
+.btn-left {
+  .lef(-45px);
+}
+.btn-right {
+  .rig(-15px);
+}
+.newJob-name {
+  .mar-top(15px);
+  .font(1.6rem);
+  .font-wei(700);
+  color: @co3;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.under_wid {
+  .wid(20px);
+  .hei(1px);
+}
+.newJob-pro {
+  .mar(10px 0 15px);
+  .font(1.4rem);
+  color: @co2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* 服务流程模块 */
+.serfl {
+  .wid(100%);
+  .pad-bot(85px);
+  .serfl-content {
+    .mar-top(50px);
+    .font(0);
+  }
+  .serfl-content1 {
+    .mar-top(45px);
+    .font(0);
+    @media screen and (max-width: 991px) {
+      .mar-top(0);
+    }
+  }
+  .serfl_page {
+    .disp;
+    .wid(25%);
+    .bor(1px solid #e7e7e7);
+    border-radius: 5px;
+    .font(1.6rem);
+    .ver-a;
+    @media screen and (max-width: 991px) {
+      .wid(100%);
+      .mar-top(15px);
+      .bor(none);
+      .text-a;
+    }
+  }
+  .serfl_page1 {
+    .disp;
+    .wid(12.5%);
+    .font(1.6rem);
+    .ver-a;
+    overflow: hidden;
+    @media screen and (max-width: 991px) {
+      .disp(none);
+    }
+  }
+  .serfl_img {
+    .wid(100%);
+    @media screen and (max-width: 991px) {
+      .wid(auto);
+    }
+  }
+  .serfl_content {
+    .pad(20px 0 20px);
+    .text-a;
+  }
+}
+/* 伙伴之言模块 */
+.partner {
+  .bagr(@co4);
+  .pad-bot(75px);
+  .partner-content {
+    .mar-top(50px);
+    .flo;
+    @media screen and (max-width: 767px) {
+      .flo(none);
+    }
+  }
+  .partner-page {
+    .pad(34px 0);
+    border-radius: 5px;
+    .bagr(#fff);
+    .text-a;
+    &:hover {
+      box-shadow: 0 4px 7px #e7e7e7;
+    }
+    @media screen and (min-width: 992px) {
+      .wid(23.5%);
+      .mar(0 1%);
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      .wid(48%);
+      .mar(0 2%);
+    }
+    @media screen and (max-width: 767px) {
+      .mar-top(25px);
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .partner-lef {
+      .mar-lef(0);
+    }
+    .partner-rig {
+      .mar-rig(0);
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .partner-lef1 {
+      .mar-lef(0);
+      .mar-top(25px);
+    }
+    .partner-rig1 {
+      .mar-rig(0);
+    }
+    .partner-rig {
+      .mar-top(25px);
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .partner-row {
+      .pad(0 7%);
+    }
+  }
+  .partner_name {
+    .mar-top(20px);
+    .font(1.6rem);
+    color: @co2;
+    .font-wei(700);
+  }
+  .partner_job {
+    .mar-top(12px);
+    .font(1.4rem);
+    color: #666;
+  }
+  .partner_pre {
+    .mar-top(20px);
+    .pad(0 20px);
+    .text-a(justify);
+    .font(1.4rem);
+    color: #999;
+  }
+}

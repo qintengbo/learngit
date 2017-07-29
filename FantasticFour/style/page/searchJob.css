@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* 本页公用样式 */
+.searchJob-main {
+  width: 100%;
+  background: #f6f7f8;
+}
+/* 搜索面板 */
+.searchJob_title {
+  margin-top: 17px;
+  margin-bottom: 3px;
+  padding-left: 20px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}

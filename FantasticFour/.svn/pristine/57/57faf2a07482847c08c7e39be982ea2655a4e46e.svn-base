@@ -1,0 +1,22 @@
+/**
+ * Created by qintengbo on 2017/7/2.
+ */
+
+'use strict';
+angular.module("app")
+    .controller("findElitePerson", ['$scope', 'httpService', 'logicService', findElitePerson]);
+    function findElitePerson($scope, httpService, logicService) {
+        var vm = this;
+        // 跳转到本页面保持顶部
+        logicService.scrollTo(0, 0);
+        // 成功案例
+        httpService.getCompanyList(1, {size: 8})
+            .then(function(res) {
+                if(res.data.code === 0) {
+                    vm.companyList = res.data.data;
+                }
+                else {
+                    alert(res.data.message);
+                }
+            });
+    }

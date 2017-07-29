@@ -1,0 +1,38 @@
+<!-- 在招职位 -->
+<div class="comdeta_bid_bor col-md-8 col-xs-12" ng-controller="biddingJobPerson as vm">
+    <div class="comdeta_bid">
+        <div class="comdeta_bid_title">在招职位{{ vm.totalNum }}个</div>
+        <div class="comdeta_bid_panel">
+            <div><span class="search_option">职业类别</span>
+                <ul class="search_menu">
+                    <li class="search_submenu" ng-repeat="item in vm.option.category track by $index"
+                        ng-class="{true: 'defaultChoice'}[item.choose]"
+                        ng-click="radioType($index, vm.option.category); vm.search()">{{ item.name }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 搜索结果 -->
+        <div ng-hide="vm.totalNum == 0">
+            <div class="comdeta_bid_content" ng-repeat="item in vm.biddingJobList track by $index">
+                <div class="comdeta_bid_name"><div class="text-hidden">{{ item.name }}<span class="mar-lef10">[{{ item.province | provinceFilter }}]</span></div></div>
+                <span class="comdeta_bid_compen">{{ item.compensation | compensationTypeFilter }}</span>
+                <span class="comdeta_bid_exper">经验{{ item.experience | experienceTypeFilter }}
+                    / {{ item.education | educationTypeFilter }}
+                    / 全职
+                </span>
+                <span class="comdeta_bid_time">{{ item.updateAt | updateAtFilter }}发布</span>
+            </div>
+            <custom-flip conf="vm.paginationConf"></custom-flip>
+        </div>
+        <div class="comdeta_error" ng-show="vm.totalNum == 0">
+            <div class="error_pack">
+                <img src="/images/404.png">
+                <div class="error_tips">
+                    <div class="font20 font-wei700">暂时没有符合该搜索条件的内容</div>
+                    <div class="font18 mar-top15">请重新修改搜索条件后再次进行搜索</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

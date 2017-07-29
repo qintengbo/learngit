@@ -1,0 +1,147 @@
+@charset "UTF-8";
+@co1: #fc2b47;
+@co2: #2d3e50;
+@co3: #22415d;
+@co4: #f6f7f8;
+.pos(@pos: relative) {
+  position: @pos;
+}
+.top(@top) {
+  top: @top;
+}
+.rig(@rig) {
+  right: @rig;
+}
+.lef(@lef) {
+  left: @lef;
+}
+.bot(@bot) {
+  bottom: @bot;
+}
+.disp(@disp: inline-block) {
+  display: @disp;
+}
+.mar(@mar) {
+  margin: @mar;
+}
+.pad(@pad) {
+  padding: @pad;
+}
+.mar-top(@mar-top) {
+  margin-top: @mar-top;
+}
+.mar-bot(@mar-bot) {
+  margin-bottom: @mar-bot;
+}
+.mar-lef(@mar-lef) {
+  margin-left: @mar-lef;
+}
+.mar-rig(@mar-rig) {
+  margin-right: @mar-rig;
+}
+.pad-top(@pad-top) {
+  padding-top: @pad-top;
+}
+.pad-bot(@pad-bot) {
+  padding-bottom: @pad-bot;
+}
+.pad-lef(@pad-lef) {
+  padding-left: @pad-lef;
+}
+.pad-rig(@pad-rig) {
+  padding-right: @pad-rig;
+}
+.flo(@flo: left) {
+  float: @flo;
+}
+.bor(@bor: solid 1px @co4) {
+  border: @bor;
+}
+.bor-top(@bo-top) {
+  border-top: @bo-top;
+}
+.bor-lef(@bo-lef) {
+  border-left: @bo-lef;
+}
+.bor-rig(@bo-rig) {
+  border-right: @bo-rig;
+}
+.bor-bot(@bo-bot) {
+  border-bottom: @bo-bot;
+}
+.bor-rad(@bor-rad) {
+  border-radius: @bor-rad;
+}
+.max-wid(@max-wid: 768px) {
+  max-width: @max-wid;
+}
+.min-wid(@min-wid: 320px) {
+  min-width: @min-wid;
+}
+.wid(@wid) {
+  width: @wid;
+}
+.hei(@hei) {
+  height: @hei;
+}
+.font(@font) {
+  font-size: @font;
+}
+.font-wei(@font-wei) {
+  font-weight: @font-wei;
+}
+.text-a(@text-a: center) {
+  text-align: @text-a;
+}
+.ver-a(@ver-a: middle) {
+  vertical-align: @ver-a;
+}
+.col(@col) {
+  color: @col;
+}
+.bagr(@bagr) {
+  background: @bagr;
+}
+.tran(@tran: translateY(-50%)) {
+  transform: @tran;
+}
+.z-in(@z-in: 10) {
+  z-index: @z-in;
+}
+.comdeta_info {
+  .pad-top(20px);
+  .mar-lef(-15px);
+  .bor-top(1px solid #e8e8e8);
+}
+.comdeta_info_title {
+  .pad-lef(6px);
+  .bor-lef(4px solid @co1);
+  .font(1.6rem);
+  .font-wei(700);
+}
+.comdeta_bor {
+  .bor-rig(2px solid #e8e8e8);
+  .hei(auto);
+  min-height: 500px;
+  @media screen and (max-width: 991px) {
+    .bor-rig(0);
+  }
+}
+.comdeta_info_content {
+  .pad-top(15px);
+  .pad-bot(15px);
+}
+.comdeta_info_text {
+  .mar-top(35px);
+  .font(1.4rem);
+  .text-a(justify);
+}
+.comdeta_info_logo {
+  .pos;
+  .disp;
+  .ver-a;
+  .wid(150px);
+  .hei(150px);
+  .bor(1px solid #e8e8e8);
+  overflow: hidden;
+}

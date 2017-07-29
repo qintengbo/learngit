@@ -1,0 +1,238 @@
+{
+  "code": 0,
+  "message": "查询成功",
+  "data": [
+    {
+      "jobType": 1,
+      "jobTypeList": [
+        {
+          "secondType": 1,
+          "name": "产品",
+          "secondTypeList": [
+            {
+              "thirdType": 1,
+              "jobName": "助理"
+            },
+            {
+              "thirdType": 2,
+              "jobName": "初级"
+            },
+            {
+              "thirdType": 3,
+              "jobName": "中级"
+            },
+            {
+              "thirdType": 4,
+              "jobName": "高级"
+            },
+            {
+              "thirdType": 5,
+              "jobName": "总监"
+            }
+          ]
+        },
+        {
+          "secondType": 2,
+          "name": "UI",
+          "secondTypeList": [
+            {
+              "thirdType": 1,
+              "jobName": "初级"
+            },
+            {
+              "thirdType": 2,
+              "jobName": "中级"
+            },
+            {
+              "thirdType": 3,
+              "jobName": "高级"
+            },
+            {
+              "thirdType": 4,
+              "jobName": "总监"
+            }
+          ]
+        },
+        {
+          "secondType": 3,
+          "name": "QA",
+          "secondTypeList": [
+            {
+              "thirdType": 1,
+              "jobName": "初级"
+            },
+            {
+              "thirdType": 2,
+              "jobName": "中级"
+            },
+            {
+              "thirdType": 3,
+              "jobName": "高级"
+            }
+          ]
+        }
+      ],
+      "name": "用户体验"
+    },
+    {
+      "jobType": 2,
+      "jobTypeList": [
+        {
+          "secondType": 4,
+          "name": "Android",
+          "secondTypeList": [
+            {
+              "thirdType": 1,
+              "jobName": "初级"
+            },
+            {
+              "thirdType": 2,
+              "jobName": "中级"
+            },
+            {
+              "thirdType": 3,
+              "jobName": "高级"
+            }
+          ]
+        },
+        {
+          "secondType": 5,
+          "name": "IOS",
+          "secondTypeList": [
+            {
+              "thirdType": 1,
+              "jobName": "初级"
+            },
+            {
+              "thirdType": 2,
+              "jobName": "中级"
+            },
+            {
+              "thirdType": 3,
+              "jobName": "高级"
+            }
+          ]
+        },
+        {
+          "secondType": 6,
+          "name": "WEB",
+          "secondTypeList": [
+            {
+              "thirdType": 1,
+              "jobName": "初级"
+            },
+            {
+              "thirdType": 2,
+              "jobName": "中级"
+            },
+            {
+              "thirdType": 3,
+              "jobName": "高级"
+            }
+          ]
+        },
+        {
+          "secondType": 7,
+          "name": "OP",
+          "secondTypeList": [
+            {
+              "thirdType": 1,
+              "jobName": "初级"
+            },
+            {
+              "thirdType": 2,
+              "jobName": "中级"
+            },
+            {
+              "thirdType": 3,
+              "jobName": "高级"
+            }
+          ]
+        },
+        {
+          "secondType": 8,
+          "name": "JAVA",
+          "secondTypeList": [
+            {
+              "thirdType": 1,
+              "jobName": "初级"
+            },
+            {
+              "thirdType": 2,
+              "jobName": "中级"
+            },
+            {
+              "thirdType": 3,
+              "jobName": "高级"
+            },
+            {
+              "thirdType": 4,
+              "jobName": "总监"
+            }
+          ]
+        }
+      ],
+      "name": "研发"
+    },
+    {
+      "jobType": 3,
+      "jobTypeList": [
+        {
+          "secondType": 9,
+          "name": "NLP",
+          "secondTypeList": [
+            {
+              "thirdType": 1,
+              "jobName": "初级"
+            },
+            {
+              "thirdType": 2,
+              "jobName": "中级"
+            },
+            {
+              "thirdType": 3,
+              "jobName": "高级"
+            }
+          ]
+        },
+        {
+          "secondType": 10,
+          "name": "DM",
+          "secondTypeList": [
+            {
+              "thirdType": 1,
+              "jobName": "初级"
+            },
+            {
+              "thirdType": 2,
+              "jobName": "中级"
+            },
+            {
+              "thirdType": 3,
+              "jobName": "高级"
+            }
+          ]
+        },
+        {
+          "secondType": 11,
+          "name": "DL",
+          "secondTypeList": [
+            {
+              "thirdType": 1,
+              "jobName": "初级"
+            },
+            {
+              "thirdType": 2,
+              "jobName": "中级"
+            },
+            {
+              "thirdType": 3,
+              "jobName": "高级"
+            }
+          ]
+        }
+      ],
+      "name": "大数据"
+    }
+  ]
+}

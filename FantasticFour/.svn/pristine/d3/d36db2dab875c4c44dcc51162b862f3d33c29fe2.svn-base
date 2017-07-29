@@ -1,0 +1,139 @@
+@charset "UTF-8";
+.about_content {
+  padding: 20px 0;
+  color: #22415d;
+  background: #f6f7f8;
+}
+.about_nav {
+  width: 220px;
+  margin-right: 50px;
+  padding: 75px 0;
+  background: #fff;
+}
+@media screen and (max-width: 991px) {
+  .about_nav {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+.about_main {
+  float: none;
+  width: auto;
+  padding: 80px 60px;
+  overflow: auto;
+  background: #fff;
+}
+@media screen and (max-width: 991px) {
+  .about_main {
+    float: left;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about_main {
+    padding: 80px 5%;
+  }
+}
+.about_subnav {
+  width: 100%;
+  padding: 6px 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+.about_subnav:hover .about-wei {
+  background-position: -4px -5px;
+}
+.about_subnav:hover .contact-wei {
+  background-position: -52px -5px;
+}
+.about_subnav:hover .about_mar-lef10 {
+  color: #fc2b47;
+}
+.about_icon {
+  display: inline-block;
+  width: 18px;
+  height: 19px;
+  vertical-align: middle;
+  background: url(../../images/IconCollection.png) no-repeat;
+}
+.about-wei {
+  background-position: -28px -5px;
+}
+.about-wei-active {
+  background-position: -4px -5px;
+}
+.contact-wei {
+  background-position: -77px -5px;
+}
+.contact-wei-active {
+  background-position: -52px -5px;
+}
+.about_mar-lef10 {
+  display: inline-block;
+  vertical-align: sub;
+  text-align: center;
+  margin-left: 10px;
+  font-size: 1.6rem;
+}
+.about_hover {
+  color: #fc2b47 !important;
+  text-decoration: none!important;
+}
+.about_borlef {
+  border-left: 4px solid #fc2b47;
+  background: #f6f7f8;
+}
+.about_marlef4 {
+  margin-left: -4px;
+}
+.about_main_title {
+  padding-left: 10px;
+  border-left: 4px solid #fc2b47;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.about_main_content {
+  margin: 40px 0;
+  padding-left: 14px;
+  font-size: 1.4rem;
+}
+.about_mar-top20 {
+  margin-top: 20px;
+}
+.about_companyname {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.about_datail {
+  margin: 20px 0 30px;
+  font-size: 1.4rem;
+}
+.about_colu {
+  margin-top: 20px;
+  display: inline-block;
+}
+.about_colu span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+.about_wid {
+  width: 47%;
+}
+@media screen and (max-width: 767px) {
+  .about_wid {
+    width: 300px;
+  }
+}
+.about_wid2 {
+  width: 52%;
+}
+@media screen and (max-width: 767px) {
+  .about_wid2 {
+    width: 300px;
+  }
+}
+.about-img {
+  margin-top: 30px;
+  border: 1px solid #e8e8e8;
+}

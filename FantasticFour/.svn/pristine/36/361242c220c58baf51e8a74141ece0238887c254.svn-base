@@ -1,0 +1,15 @@
+<!-- 自定义轮播图模板 -->
+<div class="findJobBanner-carousel-inner carousel-inner" ng-transclude></div>
+<a role="button" href class="findJobbtn-left findJobBanner-carous_btn" ng-click="prev()" ng-class="{ disabled: isPrevDisabled() }" ng-show="slides.length > 1">
+    <span aria-hidden="true" class="findJobBanner-btn_img"><img src="/images/pre-2.png"></span>
+    <span class="sr-only">previous</span>
+</a>
+<a role="button" href class="findJobbtn-right findJobBanner-carous_btn" ng-click="next()" ng-class="{ disabled: isNextDisabled() }" ng-show="slides.length > 1">
+    <span aria-hidden="true" class="findJobBanner-btn_img"><img src="/images/next-2.png"></span>
+    <span class="sr-only">next</span>
+</a>
+<ol class="carousel-indicators hide_sides" ng-show="slides.length > 1">
+<li class="findJob_order" ng-repeat="slide in slides | orderBy:indexOfSlide track by $index" ng-class="{ active: isActive(slide) }" ng-click="select(slide)">
+<span class="sr-only">slide {{ $index + 1 }} of {{ slides.length }}<span ng-if="isActive(slide)">, currently active</span></span>
+</li>
+</ol>

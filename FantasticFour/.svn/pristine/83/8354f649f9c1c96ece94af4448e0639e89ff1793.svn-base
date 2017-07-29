@@ -1,0 +1,237 @@
+@charset "UTF-8";
+/* 轮播图 */
+.findEliteCarous {
+  width: 100%;
+  padding-bottom: 26.1%;
+  height: 0;
+}
+.findEliteCarous .findEliteImg {
+  max-height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+/* 行业优势模块 */
+.findEliteBanner {
+  width: 100%;
+}
+.findelite_page {
+  padding-top: 20px;
+  color: #2d3e50;
+  background: #f6f7f8;
+}
+.findelite_advt {
+  background: #fff;
+}
+.findelite_advt_content {
+  padding-top: 111px;
+  padding-bottom: 112px;
+  text-align: center;
+}
+.findelite_advt_content-mid {
+  padding-top: 70px;
+  padding-bottom: 71px;
+  text-align: center;
+}
+.findelite_advt_content-bot {
+  padding-top: 74px;
+  padding-bottom: 75px;
+  text-align: center;
+}
+.findelite_advt_text {
+  width: 270px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+.findelite_advt_img {
+  width: 270px;
+  display: inline-block;
+}
+@media screen and (max-width: 767px) {
+  .findelite_advt_img {
+    display: none;
+  }
+}
+.findelite_title {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.findelite_title_text1 {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.findelite_title_text2 {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  text-align: justify;
+}
+.findelite_pack {
+  display: inline-block;
+  text-align: left;
+}
+.elite-text_right {
+  text-align: right!important;
+}
+@media screen and (max-width: 767px) {
+  .elite-text_right {
+    text-align: left!important;
+  }
+}
+.elite-mar-rig {
+  margin-right: 10%;
+}
+@media screen and (max-width: 767px) {
+  .elite-mar-rig {
+    margin-right: 0;
+  }
+}
+/* 服务流程模块 */
+.findelite_serve_page {
+  padding-top: 75px;
+  padding-bottom: 65px;
+}
+.findelite_serve_title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.content_title_under {
+  display: block;
+  width: 30px;
+  height: 2px;
+  border-bottom: 0 solid #fc2b47;
+  background-color: #fc2b47;
+  margin: 2px auto 0;
+}
+.findelite_serve_container {
+  width: 100%;
+  margin-top: 45px;
+  text-align: center;
+}
+.findelite_serve_content {
+  display: inline-block;
+  width: 355px;
+}
+@media screen and (max-width: 767px) {
+  .findelite_serve_content {
+    width: 335px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 30px;
+  }
+}
+.findelite_serve_text {
+  display: inline-block;
+  width: 240px;
+  font-size: 1.4rem;
+  text-align: justify;
+}
+@media screen and (max-width: 767px) {
+  .findelite_serve_text {
+    float: none!important;
+    vertical-align: middle;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px!important;
+  }
+}
+.findelite_servr_arrow {
+  height: 100px;
+}
+.findelite_servr_arrow .line {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -14px;
+  height: 100%;
+  border-left: 2px dashed #f6d2d8;
+}
+@media screen and (max-width: 767px) {
+  .findelite_servr_arrow {
+    display: none;
+  }
+}
+.mar-top17 {
+  margin-top: 17px;
+}
+.mar-top27 {
+  margin-top: 27px;
+}
+@media screen and (min-width: 768px) {
+  .findelite_disp2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .findelite_disp1 {
+    display: none;
+  }
+  .findelite_disp2 {
+    display: inline-block;
+  }
+}
+/* 我们的优势模块 */
+.findelite_ouradvt_page {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.findelite_ouradvt_container {
+  margin-top: 45px;
+}
+@media screen and (max-width: 991px) {
+  .findelite_ouradvt_container {
+    margin-top: 20px;
+  }
+}
+.findelite_ouradvt_content {
+  text-align: center;
+}
+@media screen and (max-width: 991px) {
+  .findelite_ouradvt_content {
+    margin-top: 25px;
+  }
+}
+.findelite_ouradvt_text {
+  margin-top: 25px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+/* 成功案例 */
+.findelite_case_page {
+  padding-top: 75px;
+  padding-bottom: 30px;
+}
+.findelite_case_content {
+  margin-top: 40px;
+}
+.findelite_case_logo {
+  display: inline-block;
+  width: 260px;
+  height: 180px;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  background: #fff;
+}
+.findelite_case_img {
+  max-height: 100%;
+}
+.middle-img-box {
+  display: inline-block;
+  height: 100%;
+  width: 0;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.findelite_btn {
+  display: inline-block;
+  padding: 20px 40px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  background: #fc2a48;
+  outline: 0;
+}

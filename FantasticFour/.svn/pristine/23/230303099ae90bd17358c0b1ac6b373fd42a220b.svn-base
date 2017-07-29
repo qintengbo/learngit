@@ -1,0 +1,56 @@
+<div class="about_content" ng-controller="aboutUsPerson as vm">
+    <div class="container">
+        <div class="about_nav col-md-2 col-lg-2 col-xs-12">
+            <div class="about_subnav" ng-class="{'about_borlef': vm.toggle}">
+                <div ng-class="{'about_marlef4': vm.toggle}">
+                    <span class="about_icon about-wei" ng-class="{'about-wei-active': vm.toggle}"></span>
+                    <a class="about_mar-lef10" ng-class="{'about_hover': vm.toggle}" href="javascript:" ng-click="vm.toggle = true">关于我们</a>
+                </div>
+            </div>
+            <div class="about_subnav"  ng-class="{'about_borlef': !vm.toggle}">
+                <div ng-class="{'about_marlef4': !vm.toggle}">
+                    <span class="about_icon contact-wei" ng-class="{'contact-wei-active': !vm.toggle}"></span>
+                    <a class="about_mar-lef10" ng-class="{'about_hover': !vm.toggle}" href="javascript:" ng-click="vm.toggle = false">联系我们</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-lg-9 col-xs-12 about_main" ng-if="vm.toggle">
+            <div class="about_main_title">什么是萝卜多</div>
+            <div class="about_main_content">萝卜多是针对创业公司以及独立人才寻找伙伴合作，提供多对多服务，
+                以按需推荐的方式帮助创业团队以及人才解决、盲目寻找、茫然等待的问题。
+                萝卜多不同于其他招聘网站。萝卜多的合作企业和候选人，都是萝卜多精心筛选，认证，陪伴多年的伙伴。
+            </div>
+            <div class="about_main_title">萝卜多团队介绍</div>
+            <div class="about_main_content">
+                <p>成立于2014年，2015年3月开始运营，先后开启了IT修真院、草船云、萝卜多等三条项目主线，
+                    主打高质专业高效低价的理念，以卓越的技术实力和人才鉴别能力奠定基石，立足市场。
+                </p>
+                <p class="about_mar-top20">葡萄藤始终秉持促进中国企业创新与成长为愿景，凭借其团队丰富的行业经验和全球资源网络以及在业界的声誉，
+                    不遗余力地帮助创业家和他们的企业突破自我、不断创新、共创事业、共享成功！
+                </p>
+            </div>
+        </div>
+        <div class="col-md-9 col-lg-9 col-xs-12 about_main" ng-if="!vm.toggle">
+            <div class="about_companyname">北京葡萄藤信息技术有限公司</div>
+            <div class="about_detail">
+                <div>
+                    <div class="about_colu about_wid">
+                        <img src="/images/phone.png"><span>电话：(010)59478634</span>
+                    </div>
+                    <div class="about_colu about_wid2">
+                        <img src="/images/about-url.png"><span>网址：www.luoboduo.com</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="about_colu about_wid">
+                        <img src="/images/email.png"><span>邮箱：kefu@ptteng.com</span>
+                    </div>
+                    <div class="about_colu about_wid2">
+                        <img src="/images/location.png"><span>地址：北京市海淀区翠微路甲10院225室</span>
+                    </div>
+                </div>
+                <div class="about-img"><img src="/images/map.jpg"></div>
+            </div>
+        </div>
+    </div>
+</div>

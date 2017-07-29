@@ -1,0 +1,42 @@
+@charset "UTF-8";
+.comdeta_info {
+  padding-top: 20px;
+  margin-left: -15px;
+  border-top: 1px solid #e8e8e8;
+}
+.comdeta_info_title {
+  padding-left: 6px;
+  border-left: 4px solid #fc2b47;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.comdeta_bor {
+  border-right: 2px solid #e8e8e8;
+  height: auto;
+  min-height: 500px;
+}
+@media screen and (max-width: 991px) {
+  .comdeta_bor {
+    border-right: 0;
+  }
+}
+.comdeta_info_content {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: auto;
+  min-height: 180px;
+}
+.comdeta_info_text {
+  margin-top: 35px;
+  font-size: 1.4rem;
+  text-align: justify;
+}
+.comdeta_info_logo {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+}

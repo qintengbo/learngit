@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>萝卜多人才招聘</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="bower/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/public.css">
+</head>
+<body>
+<ui-view></ui-view>
+</body>
+<script src="bower/jquery/dist/jquery.min.js"></script>
+<script src="bower/angular-1.6.1/angular.min.js"></script>
+<script src="bower/angular-ui-router.js"></script>
+<script src="bower/angular-file-upload.min.js"></script>
+<script src="bower/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</html>

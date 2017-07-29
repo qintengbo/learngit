@@ -1,0 +1,52 @@
+/**
+ * Created by qintengbo on 2017/7/17.
+ */
+
+'use strict';
+angular.module("app", ['ui.bootstrap'])
+    .controller("jobDescriptionPerson", ['$scope', '$state', 'httpService', 'logicService', '$uibModal', jobDescriptionPerson]);
+    function jobDescriptionPerson($scope, $state, httpService, logicService, $uibModal) {
+        var vm = this;
+        vm.id = $state.params.id;
+        // 跳转到本页面保持顶部
+        logicService.scrollTo(0, 0);
+        // 分享
+        vm.share = function(type) {
+            logicService.shareFn(type, vm.url, vm.companyInfo.companyName, vm.jobInfo.name, vm.companyInfo.companyLogo);
+        };
+        // 获取职位信息
+        httpService.getJobDetails(vm.id)
+            .then(function(res) {
+                console.log(res)
+                if(res.data.code === 0) {
+                    vm.jobInfo = res.data.professionData;
+                    vm.companyInfo = res.data.companyData;
+                    vm.tags = res.data.professionTagList;
+                    var host = window.location.host;
+                    vm.url = " http://" + host + "/sharing-page/sharing-page.html?id=" + vm.jobInfo.id;
+                }
+                else {
+                    alert(res.data.message);
+                }
+            });
+        // 模态框
+        vm.interest = function() {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'shareModalContent.html',
+                controller: 'ModalCtrl',
+                controllerAs: 'vm',
+                size: 'MD'
+            });
+            modalInstance.result.then(function() {});
+        };
+    }
+
+// 模态框单独控制器
+angular.module('app').controller('ModalCtrl', function ($uibModalInstance) {
+    var vm = this;
+    vm.close = function () {
+        $uibModalInstance.close();
+    };
+});

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+.companyList_page {
+  background: #f6f7f8;
+}
+.companyList_banner {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.companyList_main {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0 5px 35px;
+  background: #fff;
+}
+.companyList_pagin {
+  width: 100%;
+  float: left;
+  padding-right: 15px;
+}

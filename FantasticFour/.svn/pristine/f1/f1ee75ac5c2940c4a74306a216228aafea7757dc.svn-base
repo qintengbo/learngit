@@ -1,0 +1,118 @@
+<div ng-controller="searchCompanyPerson as vm">
+    <!-- 搜索条件选择 -->
+    <div class="row search_panel">
+        <form class="clearfix">
+            <div class="col-sm-12">
+                <label><span class="search_option keyWord">关键词</span>:
+                    <input class="search_input" name="name" type="text" ng-model="vm.data.name" placeholder="IT修真院">
+                    <span class="keyWordShow" ng-show="vm.data.name !== undefined && vm.data.name !== ''">当前关键词：{{ vm.data.name }}</span>
+                </label>
+                <div class="search_nav"><span class="search_option">所在地区：</span>
+                    <ul class="search_menu">
+                        <li class="search_submenu" ng-repeat="item in vm.option.city track by $index"
+                            ng-class="{true: 'defaultChoice'}[item.choose]"
+                            ng-click="vm.radioType($index, vm.option.city)">{{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="search_nav"><span class="search_option">所属行业：</span>
+                    <ul class="search_menu">
+                        <li class="search_submenu" ng-repeat="item in vm.option.industry track by $index"
+                            ng-class="{true: 'defaultChoice'}[item.choose]"
+                            ng-click="vm.radioType($index, vm.option.industry)">{{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="search_nav"><span class="search_option">融资规模：</span>
+                    <ul class="search_menu">
+                        <li class="search_submenu" ng-repeat="item in vm.option.financing track by $index"
+                            ng-class="{true: 'defaultChoice'}[item.choose]"
+                            ng-click="vm.radioType($index, vm.option.financing)">{{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+        <div class="search_button clearfix">
+            <button class="search-btn2" type="button" ng-click="vm.search()">搜索</button>
+            <button class="search-btn1" type="button" ng-click="vm.clear()">清空</button>
+        </div>
+    </div>
+    <!-- 搜索结果 -->
+    <div class="searchCompany_main row clearfix" ng-hide="vm.paginationConf.totalItems == 0">
+        <div class="groom_content col-sm-4 mar-top20" ng-repeat="item in vm.companyList track by $index"
+             ui-sref="pageTab.companyDetails.companyInfo({id: item.id})">
+            <div class="groom_head">
+                <div class="groom_logo"><img class="groom_img" ng-src="{{ item.logo }}"><span class="middle-img-box"></span></div>
+                <div class="groom_colu">
+                    <div style="width: 100%"><div class="groom_name1">{{ item.name }}</div></div>
+                    <div style="width: 100%"><div class="groom_name">{{ item.slogan }}</div></div>
+                    <div style="width: 100%"><div class="groom_name"><span class="red font-wei700">{{ item.professionNum }}</span>个在招职位</div></div>
+                </div>
+            </div>
+            <div class="groom_fot clearfix">
+                <div class="groom_fot_sub col-xs-4">
+                    <img src="/images/phone-url.png">
+                    <div class="groom_tab">
+                        <span class="groom_tab_text">{{ item.industry | industryTypeFilter }}</span>
+                        <!--<span class="groom_tab_text" ng-repeat="x in item.industryList track by $index">-->
+                        <!--<span ng-if="!$first">/</span>{{ $index | industryTypeFilter }}</span>-->
+                    </div>
+                </div>
+                <div class="groom_fot_sub col-xs-4">
+                    <img src="/images/shangshi.png">
+                    <span class="vermiddle">{{ item.financing | financingTypeFilter }}</span>
+                </div>
+                <div class="groom_fot_sub col-xs-4">
+                    <img src="/images/location-company.png">
+                    <span class="vermiddle">{{ item.province | provinceFilter }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="searchCompany_pagin"><custom-flip conf="vm.paginationConf"></custom-flip></div>
+    </div>
+    <!-- 404页面 -->
+    <div class="error_page row clearfix" ng-show="vm.paginationConf.totalItems == 0">
+        <div class="col-sm-12 error_img">
+            <div class="error_pack">
+                <img src="/images/404.png">
+                <div class="error_tips">
+                    <div class="font20 font-wei700">暂时没有符合该搜索条件的内容</div>
+                    <div class="font18 mar-top15">请重新修改搜索条件后再次进行搜索</div>
+                </div>
+            </div>
+        </div>
+        <div class="error_title col-sm-12 error_mar-bot">推荐公司</div>
+        <div class="groom_page clearfix row">
+            <div class="groom_content col-sm-4 mar-top20" ng-repeat="item in vm.groomCompany track by $index"
+                 ui-sref="pageTab.companyDetails.companyInfo({id: item.id})">
+                <div class="groom_head">
+                    <div class="groom_logo"><img class="groom_img" ng-src="{{ item.logo }}"><span class="middle-img-box"></span></div>
+                    <div class="groom_colu">
+                        <div style="width: 100%"><div class="groom_name1">{{ item.name }}</div></div>
+                        <div style="width: 100%"><div class="groom_name">{{ item.slogan }}</div></div>
+                        <div style="width: 100%"><div class="groom_name"><span class="red font-wei700">{{ item.professionNum }}</span>个在招职位</div></div>
+                    </div>
+                </div>
+                <div class="groom_fot clearfix">
+                    <div class="groom_fot_sub col-xs-4">
+                        <img src="/images/phone-url.png">
+                        <div class="groom_tab">
+                            <span class="groom_tab_text">{{ item.industry | industryTypeFilter }}</span>
+                            <!--<span class="groom_tab_text" ng-repeat="x in item.industryList track by $index">-->
+                                <!--<span ng-if="!$first">/</span>{{ $index | industryTypeFilter }}</span>-->
+                        </div>
+                    </div>
+                    <div class="groom_fot_sub col-xs-4">
+                        <img src="/images/shangshi.png">
+                        <span class="vermiddle">{{ item.financing | financingTypeFilter }}</span>
+                    </div>
+                    <div class="groom_fot_sub col-xs-4">
+                        <img src="/images/location-company.png">
+                        <span class="vermiddle">{{ item.province | provinceFilter }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

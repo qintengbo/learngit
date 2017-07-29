@@ -1,0 +1,74 @@
+@charset "UTF-8";
+.comdeta_bid {
+  padding-top: 20px;
+  margin-left: -15px;
+  border-top: 1px solid #e8e8e8;
+}
+.comdeta_bid_title {
+  padding-left: 6px;
+  border-left: 4px solid #fc2b47;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.comdeta_bid_bor {
+  border-right: 2px solid #e8e8e8;
+  height: auto;
+  min-height: 500px;
+}
+@media screen and (max-width: 991px) {
+  .comdeta_bid_bor {
+    border-right: 0;
+  }
+}
+.comdeta_bid_panel {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+}
+.comdeta_bid_content {
+  margin-top: 15px;
+  padding: 25px 30px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.comdeta_bid_content:hover {
+  background: #f6f7f8;
+}
+.comdeta_bid_name {
+  display: inline-block;
+  vertical-align: middle;
+  width: 25%;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+@media screen and (max-width: 480px) {
+  .comdeta_bid_name {
+    width: 70%;
+  }
+}
+.comdeta_bid_compen {
+  margin-left: 5%;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fc2b47;
+}
+.comdeta_bid_exper {
+  margin-left: 5%;
+  font-size: 1.4rem;
+}
+@media screen and (max-width: 767px) {
+  .comdeta_bid_exper {
+    display: block;
+    margin: 5px 0;
+  }
+}
+.comdeta_bid_time {
+  float: right;
+  font-size: 1.4rem;
+  color: #999;
+}
+.comdeta_error {
+  padding-top: 100px;
+  text-align: center;
+}

@@ -1,0 +1,133 @@
+@charset "UTF-8";
+/* 公司基本信息 */
+.comdeta_page {
+  background: #f6f7f8;
+  color: #2d3e50;
+}
+.comdeta_head {
+  margin-top: 20px;
+  background: #fff;
+}
+@media screen and (max-width: 480px) {
+  .comdeta_head {
+    text-align: center;
+  }
+}
+.comdeta_head_logo {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 195px;
+  height: 195px;
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+}
+.comdeta_head_img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  max-height: 100%;
+}
+.comdeta_head_content {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 30px;
+}
+@media screen and (max-width: 480px) {
+  .comdeta_head_content {
+    padding-bottom: 20px;
+    display: block;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+.comdeta_head_title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.comdeta_head_title .ver-mid {
+  vertical-align: middle;
+}
+.comdeta_content {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 20px 20px 35px;
+  background: #fff;
+}
+.comdeta_content_text {
+  display: inline-block;
+  padding: 0px 10px 10px;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.comdeta_choose {
+  color: #fc2b47;
+  border-bottom: 2px solid #fc2b47;
+  font-weight: 700;
+}
+/* 公司信息及福利 */
+.comdeta_fot_page {
+  padding: 0 50px;
+}
+@media screen and (max-width: 991px) {
+  .comdeta_fot_page {
+    border-left: 0;
+    margin-top: 35px;
+    padding: 0;
+  }
+}
+.comdeta_fot {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 70px;
+  border-top: 1px solid #e8e8e8;
+  text-align: center;
+  font-size: 1.4rem;
+}
+@media screen and (max-width: 991px) {
+  .comdeta_fot {
+    text-align: left;
+  }
+}
+.comdeta_fot_container {
+  display: inline-block;
+  text-align: left;
+}
+@media screen and (max-width: 991px) {
+  .comdeta_fot_container {
+    margin-left: 100px;
+  }
+}
+.comdeta_fot_text {
+  vertical-align: middle;
+  margin-left: 15px;
+}
+.comdeta_fot_text1 {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.comdeta_fot_title {
+  position: absolute;
+  left: 0;
+  top: -11px;
+  display: inline-block;
+  padding-right: 15px;
+  font-weight: 700;
+  background: #fff;
+}
+.comdeta_tag {
+  display: inline-block;
+  margin: 0 5px 20px;
+  padding: 2px 0;
+  font-size: 1.2rem;
+  text-align: center;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+}
+.comdeta_tag_text {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

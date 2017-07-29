@@ -1,0 +1,9 @@
+<div class="searchToggle_page">
+    <div class="container">
+        <div class="row searchToggle_nav">
+            <span class="searchToggle_subnav" ui-sref="pageTab.searchToggle.searchCompany" ng-class="{'ischoose': $state.includes('pageTab.searchToggle.searchCompany')}">公司</span>
+            <span class="searchToggle_subnav" ui-sref="pageTab.searchToggle.searchJobList" ng-class="{'ischoose': $state.includes('pageTab.searchToggle.searchJobList')}">职位</span>
+        </div>
+        <ui-view></ui-view>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+.searchToggle_page {
+    background: #f6f7f8;
+}
+.searchToggle_nav {
+    margin-top: 15px;
+    border-bottom: 3px solid #fc2b47;
+}
+.searchToggle_subnav {
+    display: inline-block;
+    padding: 5px 20px;
+    font-size: 1.6rem;
+    color: #22415d;
+    cursor: pointer;
+}
+.ischoose {
+    color: #fff;
+    background: #fc2b47;
+}

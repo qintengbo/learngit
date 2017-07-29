@@ -1,0 +1,643 @@
+@charset "UTF-8";
+/* 搜索导航 */
+.findJob_page {
+  padding-top: 20px;
+  background: #f6f7f8;
+}
+.findJob_header {
+  font-size: 0;
+  background: #fff;
+}
+.findJob_nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 21%;
+  height: 460px;
+  font-size: 1.4rem;
+  background: #f43851;
+}
+@media screen and (max-width: 991px) {
+  .findJob_nav {
+    display: none;
+  }
+}
+.findJob_submenu {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+.findJob_menu_hover {
+  position: absolute;
+  width: 700px;
+  top: 0;
+  left: 100%;
+  z-index: 99;
+  background: #fff;
+  min-height: 460px;
+  padding: 20px 0 30px 40px;
+  border-top: 1px solid #f43851;
+  border-right: 1px solid #f43851;
+  border-bottom: 1px solid #f43851;
+}
+.findJob_menu_hover:hover {
+  display: inline-block;
+}
+.findJob_menu {
+  padding: 8px 25px 8px 15px;
+  position: static !important;
+  flex: 1;
+  color: #fff;
+  border-bottom: solid 1px #f43851;
+  border-top: solid 1px #f43851;
+  border-left: solid 1px #f43851;
+}
+.findJob_menu:hover {
+  color: #f43851;
+  background: #fff;
+}
+.findJob_menu:hover .disp1 {
+  display: none;
+}
+.findJob_menu:hover .disp2 {
+  display: inline-block;
+}
+.findJob_menu:hover .findJob_nav_title {
+  color: #f43851;
+}
+.findJob_nav_title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #fff;
+}
+.findJob_nav_icon {
+  margin: 0 10px;
+}
+.disp1 {
+  display: inline-block;
+}
+.newdisp1 {
+  display: inline-block !important;
+}
+@media screen and (max-width: 767px) {
+  .newdisp1 {
+    display: none !important;
+  }
+}
+.disp2 {
+  display: none;
+}
+.newdisp2 {
+  display: none !important;
+}
+@media screen and (max-width: 767px) {
+  .newdisp2 {
+    display: inline-block !important;
+  }
+}
+.i_marbot {
+  margin-bottom: 3px;
+}
+.findjob-dettype {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: right;
+  width: 64px;
+  color: #f43851;
+  font-size: 1.6rem;
+}
+.findJob_hover_a {
+  padding: 0 16px;
+  text-decoration: none;
+  border-right: 1px solid #e9e9e9;
+  color: #536a82;
+  font-size: 1.4rem;
+  line-height: 12px;
+}
+.findJob_hover_a:hover {
+  color: #f43851;
+}
+.findJob_hover_a:last-of-type {
+  border: 0;
+}
+.findJob_banner {
+  position: relative;
+  float: right;
+  width: 79%;
+}
+@media screen and (max-width: 991px) {
+  .findJob_banner {
+    width: 100%;
+  }
+}
+.findJob_banner-container {
+  padding-bottom: 460px;
+  height: 0;
+}
+@media screen and (max-width: 767px) {
+  .findJob_banner-container {
+    padding-bottom: 0;
+    height: auto;
+  }
+}
+.findJobBanner-carousel-inner {
+  width: 100%;
+  padding-bottom: 460px;
+  height: 0;
+}
+@media screen and (max-width: 767px) {
+  .findJobBanner-carousel-inner {
+    padding-bottom: 50%;
+  }
+}
+.findJob_banner_Img {
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  .findJob_banner_Img {
+    position: relative;
+    height: auto;
+  }
+}
+.findJob_banner_img {
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 767px) {
+  .findJob_banner_img {
+    height: auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hide_sides {
+    display: none;
+  }
+}
+.findJobBanner-carous_btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
+  filter: alpha(opacity=50);
+  opacity: .7;
+}
+@media screen and (max-width: 767px) {
+  .findJobBanner-carous_btn {
+    display: none;
+  }
+}
+.findJobBanner-btn_img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: 30px;
+  height: 38px;
+}
+.findJobbtn-left {
+  left: 40px;
+}
+.findJobbtn-right {
+  right: 70px;
+}
+.findJob_order {
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+.findJob_search_container {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 84%;
+  margin-left: -36%;
+  z-index: 10;
+}
+.findJob_form {
+  border-radius: 8px;
+  width: 86%;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.3);
+}
+.findJob_search_btn {
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  background: #eb5255;
+  outline: 0;
+}
+.findJob_search_input {
+  border: none;
+  color: #536a82;
+}
+.findJob_search_title {
+  color: #2d3e50;
+  font-weight: 700;
+  font-size: 15px;
+  margin: 16px 0 8px;
+  background: #fff;
+  border: none;
+}
+.findJob_companyname {
+  background: #eb5255;
+  font-size: 1.5rem;
+  border: none;
+}
+/* 推荐职位/最新职位 */
+.findJob_groom_page {
+  color: #2d3e50;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  font-size: 1.4rem;
+}
+.findJob_recom_title {
+  margin-right: 5px;
+  cursor: pointer;
+}
+.findJob_recom_title1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.findJob_more {
+  float: right;
+  cursor: pointer;
+}
+.findJob_recom_main {
+  padding: 15px 5px 45px 15px;
+  background: #fff;
+}
+.findJob_recom_content {
+  margin-top: 15px;
+  padding-left: 0;
+  padding-right: 10px;
+  cursor: pointer;
+}
+.findJob_recom_container {
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  padding: 10px;
+}
+.findJob_recom_container:hover {
+  box-shadow: 0 0 7px #dae0e3;
+}
+.findJob_recom_logo {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  height: 110px;
+  width: 110px;
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+}
+.findJob_recom_img {
+  max-height: 100%;
+}
+.findJob_recom_colu {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-left: 30px;
+  color: #2b3d51;
+}
+@media screen and (min-width: 481px) {
+  .findJob_recom_colu {
+    width: 42%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .findJob_recom_colu {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .findJob_recom_colu {
+    margin-left: 2%;
+  }
+}
+/* 推荐公司 */
+.findJob_company_page {
+  color: #2d3e50;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.findJob_company_main {
+  padding-left: 15px;
+  background: #fff;
+  padding-top: 35px;
+  padding-bottom: 45px;
+}
+.findJob_company_container {
+  width: 395px;
+  padding-left: 0;
+  padding-right: 20px;
+}
+.findJob_company_content {
+  position: relative;
+  width: 375px;
+  height: 215px;
+  color: #fff;
+  cursor: pointer;
+}
+.findJob_company_content:hover {
+  box-shadow: 0 0 7px #dae0e3;
+}
+.findJob_company_logo {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+.findJob_company_info {
+  width: 305px;
+  position: absolute;
+  left: 35px;
+  bottom: 15px;
+}
+.findJob_company_padlef {
+  width: calc((100% - 395px) / 4);
+  padding-left: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .findJob_company_padlef {
+    width: 25%;
+    margin-bottom: 0;
+    margin-top: 15px;
+    display: inline-block;
+    float: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .findJob_company_padlef {
+    width: 50%;
+    margin-bottom: 0;
+    margin-top: 15px;
+    display: inline-block;
+    float: none;
+  }
+}
+.findJob_company_subLogo {
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  height: 100px;
+  cursor: pointer;
+}
+.findJob_company_subLogo:hover {
+  box-shadow: 0 0 7px #dae0e3;
+}
+.padlef0 {
+  padding-left: 0;
+}
+.padrig0 {
+  padding-right: 0;
+}
+.findJob_mar {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.findJob_carousel {
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  color: #2b3d51;
+  width: 96%;
+}
+@media screen and (max-width: 991px) {
+  .findJob_carousel {
+    margin-top: 15px;
+    width: 100%;
+    padding-left: 20px;
+  }
+}
+.findJob_carousel_mainlef {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 15%;
+  border-right: 1px solid #e8e8e8;
+}
+@media screen and (max-width: 991px) {
+  .findJob_carousel_mainlef {
+    border-right: none;
+    width: 50%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-right: 0;
+  }
+}
+.findJob_carousel_logo {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 175px;
+  height: 125px;
+  border: 1px solid #e8e8e8;
+}
+.findJob_exper1 {
+  margin: 15px 0 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #2b3d51;
+}
+@media screen and (max-width: 991px) {
+  .findJob_carousel_logo {
+    display: none;
+  }
+}
+.findJob_carousel_container {
+  width: 270px;
+  margin-left: 30px;
+  display: inline-block;
+  vertical-align: middle;
+}
+@media screen and (max-width: 991px) {
+  .findJob_carousel_container {
+    width: 100%;
+    margin-left: 0;
+  }
+  .findJob_carousel_text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+.findJob_carousel_industry {
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 75px;
+  text-align: center;
+  font-size: 1.4rem;
+  border: 1px solid #e8e8e8;
+}
+.findJob_carousel_content {
+  width: 28%;
+  display: inline-block;
+  padding-left: 30px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+@media screen and (max-width: 991px) {
+  .findJob_carousel_content {
+    padding-left: 0;
+    width: 45%;
+  }
+  .findJob_carousel_job {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+.findJob_carousel_job {
+  display: inline-block;
+  vertical-align: middle;
+}
+.findJob_carousel_ol {
+  width: 2%;
+  margin-top: 10px;
+  padding: 0 0 0 20px!important;
+}
+@media screen and (max-width: 991px) {
+  .findJob_carousel_ol {
+    display: none;
+  }
+}
+.findJob_indicators {
+  position: static;
+}
+.findJob_carousel_li {
+  margin: 8px 0 !important;
+  border: 1px solid #eaeaea !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+.Active {
+  width: 14px !important;
+  height: 14px !important;
+  background-color: #FC2949 !important;
+  border-radius: 50%;
+  border: none !important;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel-inner > .Item {
+    -webkit-transition: -webkit-transform .6s ease-in-out;
+    -o-transition: -o-transform .6s ease-in-out;
+    transition: transform .6s ease-in-out;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+  }
+
+  .carousel-inner > .Item.next,
+  .carousel-inner > .Item.active.right {
+    left: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  .carousel-inner > .Item.prev,
+  .carousel-inner > .Item.active.left {
+    left: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  .carousel-inner > .Item.next.left,
+  .carousel-inner > .Item.prev.right,
+  .carousel-inner > .Item.active {
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+/* 优势模块 */
+.findJob_advt_page {
+  padding-top: 111px;
+  padding-bottom: 112px;
+  text-align: center;
+  color: #2d3e50;
+  background: #fff;
+}
+.findJob_advt_img {
+  width: 270px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+@media screen and (max-width: 767px) {
+  .findJob_advt_img {
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+.findJob-mar-rig {
+  margin-right: 10%;
+}
+@media screen and (max-width: 767px) {
+  .findJob-mar-rig {
+    margin-right: 0;
+  }
+}
+.findJob_title {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.findJob_title_text2 {
+  max-width: 320px;
+  margin: 10px auto 0;
+  font-size: 1.4rem;
+  text-align: justify;
+}
+@media screen and (max-width: 767px) {
+  .findJob_title_text2 {
+    text-align: center;
+  }
+}
+.findJob_advt_text {
+  width: 270px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+@media screen and (max-width: 767px) {
+  .findJob_advt_text {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .findJob_advt_padtop {
+    padding-top: 82px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .findJob_advt_padbot {
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,350 @@
+@charset "UTF-8";
+/* 本页公用样式 */
+.content_title {
+  margin: 80px auto 0;
+  font-size: 2rem;
+  color: #22415d;
+  font-weight: 700;
+  text-align: center;
+}
+.content_title1 {
+  margin-top: 12px;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #22415d;
+}
+.content_title_under {
+  display: block;
+  width: 30px;
+  height: 2px;
+  border-bottom: 0 solid #fc2b47;
+  background-color: #fc2b47;
+  margin: 2px auto 0;
+}
+/* 首页Banner */
+.homeCarous {
+  width: 100%;
+  padding-bottom: 26.1%;
+  height: 0;
+}
+.homeCarous .articleImg {
+  max-height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+/* 行业优势模块 */
+.content_pad {
+  padding: 0;
+  width: 100%;
+}
+.clear_pad {
+  padding: 0;
+}
+.entry_mar {
+  margin-top: 42px;
+  width: 27%;
+}
+@media screen and (max-width: 991px) {
+  .entry_mar {
+    width: 100%;
+  }
+}
+.entry_top {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+@media screen and (max-width: 991px) {
+  .entry_top {
+    padding-top: 33px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.entry_title {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #22415d;
+}
+.entryDepict {
+  margin-top: 13px;
+  font-size: 1.4rem;
+  color: #22415d;
+}
+.redColor {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fc2b47;
+}
+.text_color {
+  font-weight: 700;
+  color: #22415d;
+}
+.text_mar {
+  margin-top: 25px;
+}
+.bor_rig {
+  border-right: 1px solid #e5e9eb;
+}
+@media screen and (max-width: 991px) {
+  .bor_rig {
+    border: none;
+  }
+}
+.num-wid {
+  width: 19%;
+}
+@media screen and (max-width: 991px) {
+  .num-wid {
+    width: 100%;
+    margin-top: 42px;
+  }
+}
+/* 最新职位模块 */
+.newJob {
+  padding-bottom: 80px;
+  background: #f6f7f8;
+}
+.newJob .content_url {
+  margin: 40px 0 0;
+  padding-right: 1%;
+  font-size: 1.6rem;
+  color: #2d3e50;
+  text-align: right;
+  cursor: pointer;
+}
+.newJob .content_url:hover {
+  color: black;
+}
+.newJob .newJob_content {
+  display: inline-block;
+  margin: 20px 1%;
+  width: 23%;
+  border-radius: 5px;
+  background: #fff;
+}
+@media screen and (max-width: 991px) {
+  .newJob .newJob_content {
+    width: 100%;
+  }
+}
+.newJob .newJob_content:hover {
+  box-shadow: 0 4px 7px #e7e7e7;
+}
+.newJob .newJob_img {
+  width: 100%;
+  height: 188px;
+  text-align: center;
+  border-bottom: 1px solid #e5e9eb;
+  overflow: hidden;
+}
+.newJob .logo_img {
+  max-height: 100%;
+}
+.newJob .middle-img-box {
+  display: inline-block;
+  height: 100%;
+  width: 0;
+  vertical-align: middle;
+  overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  .newJob-row {
+    padding: 5%;
+  }
+}
+.newJob-carous_btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+@media screen and (max-width: 767px) {
+  .newJob-carous_btn {
+    display: none;
+  }
+}
+.newJob-btn_img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: 30px;
+  height: 38px;
+}
+.btn-left {
+  left: -45px;
+}
+.btn-right {
+  right: -15px;
+}
+.newJob-name {
+  margin-top: 15px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #22415d;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.under_wid {
+  width: 20px;
+  height: 1px;
+}
+.newJob-pro {
+  margin: 10px 0 15px;
+  font-size: 1.4rem;
+  color: #2d3e50;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* 服务流程模块 */
+.serfl {
+  width: 100%;
+  padding-bottom: 85px;
+}
+.serfl .serfl-content {
+  margin-top: 50px;
+  font-size: 0;
+}
+.serfl .serfl-content1 {
+  margin-top: 45px;
+  font-size: 0;
+}
+@media screen and (max-width: 991px) {
+  .serfl .serfl-content1 {
+    margin-top: 0;
+  }
+}
+.serfl .serfl_page {
+  display: inline-block;
+  width: 25%;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+@media screen and (max-width: 991px) {
+  .serfl .serfl_page {
+    width: 100%;
+    margin-top: 15px;
+    border: none;
+    text-align: center;
+  }
+}
+.serfl .serfl_page1 {
+  display: inline-block;
+  width: 12.5%;
+  font-size: 1.6rem;
+  vertical-align: middle;
+  overflow: hidden;
+}
+@media screen and (max-width: 991px) {
+  .serfl .serfl_page1 {
+    display: none;
+  }
+}
+.serfl .serfl_img {
+  width: 100%;
+}
+@media screen and (max-width: 991px) {
+  .serfl .serfl_img {
+    width: auto;
+  }
+}
+.serfl .serfl_content {
+  padding: 20px 0 20px;
+  text-align: center;
+}
+/* 伙伴之言模块 */
+.partner {
+  background: #f6f7f8;
+  padding-bottom: 75px;
+}
+.partner .partner-content {
+  margin-top: 50px;
+  float: left;
+}
+@media screen and (max-width: 767px) {
+  .partner .partner-content {
+    float: none;
+  }
+}
+.partner .partner-page {
+  padding: 34px 0;
+  border-radius: 5px;
+  background: #fff;
+  text-align: center;
+}
+.partner .partner-page:hover {
+  box-shadow: 0 4px 7px #e7e7e7;
+}
+@media screen and (min-width: 992px) {
+  .partner .partner-page {
+    width: 23.5%;
+    margin: 0 1%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .partner .partner-page {
+    width: 48%;
+    margin: 0 2%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .partner .partner-page {
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .partner .partner-lef {
+    margin-left: 0;
+  }
+  .partner .partner-rig {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .partner .partner-lef1 {
+    margin-left: 0;
+    margin-top: 25px;
+  }
+  .partner .partner-rig1 {
+    margin-right: 0;
+  }
+  .partner .partner-rig {
+    margin-top: 25px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .partner .partner-row {
+    padding: 0 7%;
+  }
+}
+.partner .partner_name {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  color: #2d3e50;
+  font-weight: 700;
+}
+.partner .partner_job {
+  margin-top: 12px;
+  font-size: 1.4rem;
+  color: #666;
+}
+.partner .partner_pre {
+  margin-top: 20px;
+  padding: 0 20px;
+  text-align: justify;
+  font-size: 1.4rem;
+  color: #999;
+}

@@ -1,0 +1,16 @@
+<!-- 公司详情 -->
+<div class="comdeta_bor col-md-8 col-xs-12">
+    <div class="comdeta_info">
+        <div class="comdeta_info_title">公司产品</div>
+        <div class="comdeta_info_content" ng-repeat="item in vm.data.productList track by $index">
+            <div class="comdeta_info_logo"><img class="comdeta_head_img" ng-src="{{ item.logo }}"></div>
+            <div class="comdeta_head_content">
+                <div class="comdeta_head_title">{{ item.name }}</div>
+                <div class="mar-top25">{{ item.summary }}</div>
+                <div class="mar-top20">{{ item.slogan }}</div>
+            </div>
+        </div>
+        <div class="comdeta_info_title" ng-class="{'mar-top30': vm.data.productList.length == 0}">公司介绍</div>
+        <div class="comdeta_info_text">{{ vm.data.company.summary }}</div>
+    </div>
+</div>

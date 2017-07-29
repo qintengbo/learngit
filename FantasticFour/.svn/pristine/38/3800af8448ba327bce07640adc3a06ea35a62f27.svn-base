@@ -1,0 +1,167 @@
+<div class="container" ng-controller="findJobPerson">
+    <!-- Banner和搜索导航 -->
+    <div class="row">
+        <div>
+            <div>
+                <div>产品<span>></span></div>
+                <ul>
+                    <li>网页产品经理</li>
+                </ul>
+            </div>
+            <div>
+                <div>技术<span>></span></div>
+                <ul>
+                    <li>PHP</li>
+                </ul>
+            </div>
+            <div>
+                <div>设计<span>></span></div>
+                <ul>
+                    <li>ui设计</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <!-- Banner图 -->
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="./images/banner-0.jpg" >
+                    </div>
+                    <div class="item">
+                        <img src="./images/banner-1.jpg" >
+                    </div>
+                    <div class="item">
+                        <img src="./images/banner-2.jpg" >
+                    </div>
+                    <div class="item">
+                        <img src="./images/banner-3.jpg" >
+                    </div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                </a>
+            </div>
+            <div>
+                <label>公司名称<input type="text"><button type="button"></button></label>
+            </div>
+            <div>
+                <div>产品
+                    <ul>
+                        <li>助理</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 推荐职位/最新职位 -->
+    <div class="row">
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary">
+                <input type="checkbox">推荐职位
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox">最新职位
+            </label>
+        </div>
+        <span>查看更多 ></span>
+        <!-- ng-repeat进行渲染 -->
+        <div class="">
+            <div class="col-sm-3">
+                <img src="">
+                <div>
+                    <div>6K-10K</div>
+                    <div>产品经理</div>
+                    <div>携程</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div>推荐公司<span>查看更多 ></span></div>
+        <div class="">
+            <div>
+                <img src="">
+                <div>
+                    <div>北京葡萄藤信息技术有限公司</div>
+                    <div>携程在手说走就走</div>
+                    <span>移动互联网</span><span>上市</span><span>北京</span>
+                </div>
+            </div>
+            <div>
+                <div><img src=""></div>
+            </div>
+            <!-- 竖向轮播 -->
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="./images/banner-0.jpg" >
+                    </div>
+                    <div class="item">
+                        <img src="./images/banner-1.jpg" >
+                    </div>
+                    <div class="item">
+                        <img src="./images/banner-2.jpg" >
+                    </div>
+                    <div class="item">
+                        <img src="./images/banner-3.jpg" >
+                    </div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="">
+            </div>
+            <div class="col-sm-6">
+                <div>无成本，零风险</div>
+                <div>无任何隐含费用全程免费</div>
+                <div>人才从投递到成功入职不需要任何费用，通过测试后还可免费提供从业建议，不浪费每一分天赋。</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div>高效匹配，高度契合</div>
+                <div>1-3天发送首个聘请通知</div>
+                <div>甄选职位 深度匹配  发送聘请通知</div>
+                <div>3-5天安排候选人面试</div>
+                <div>安排面试 协助客户快速入职</div>
+                <div>平均15天推荐成功</div>
+                <div>多方洽谈 售后服务</div>
+            </div>
+            <div class="col-sm-6">
+                <img src="">
+            </div>
+        </div>
+    </div>
+    <img src="">
+</div>
