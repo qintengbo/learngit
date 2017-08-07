@@ -1,0 +1,97 @@
+<div class="pd-top-2">
+    <form class="form-horizontal">
+        <div class="panel panel-default">
+            <div class=" clearfix" style="padding: 20px 15px 20px 20px">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">开奖时间</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" size="20" bs-datepicker
+                                       data-date-format="yyyy-MM-dd" autoclose="true" data-date-type="number" max-date={{vm.searchParams.endAt||nowDate}}
+                                       ng-model="vm.searchParams.startAt">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">至</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" size="20" bs-datepicker
+                                       data-date-format="yyyy-MM-dd" autoclose="true" data-date-type="number" min-date={{vm.searchParams.startAt}} data-max-date="{{nowDate}}"
+                                       ng-model="vm.searchParams.endAt">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">开奖期数</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="vm.searchParams.issue"/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-8 text-right">
+                        <!--<button type="button" class="btn btn-danger margin-10" ng-click="vm.cleanSearch()">清空</button>-->
+                        <!--<button type="button" class="btn btn-success" ng-click="vm.cashDetailsGo()">搜索</button>-->
+                        <search params="vm.params"></search>
+                    </div>
+                </div>
+
+                <!--搜索清空-->
+            </div>
+        </div>
+    </form>
+</div>
+<div class="panel panel-default">
+    <!--<div class="panel panel-default ">-->
+        <div class="panel-heading white">
+            <h5 class="bold"><span ng-bind="vm.LotteryDetails[0].lotteryName"></span>开奖详情</h5>
+        </div>
+        <div class="panel-body ">
+            <!--详情内容开始-->
+            <div class="table-responsive border">
+                <table class="table">
+                    <thead>
+                    <tr class="active">
+                        <th>开奖期数</th>
+                        <th>开奖时间</th>
+                        <th>开奖号码</th>
+                        <th>本期销量</th>
+                        <th>奖池奖金</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in vm.LotteryDetails track by $index">
+                        <td>{{item.issue}}</td>
+                        <td>
+                            {{item.lotteryAt|date:"yyyy-MM-dd HH:mm"}}</br>
+                            {{item.lotteryAt|date:"HH:mm"}}
+                        </td>
+                        <td>{{item.result?item.result:'/'}}</td>
+                        <td>{{item.buyMoney|number:2}}</td>
+                        <td>{{item.awardMoney|number:2}}</td>
+                        <td>
+                            <button class="btn btn-default btn-xs" ui-sref="field.LotteryRedact({id:item.id})">编辑
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--详情内容结束-->
+
+            <!--分页开始-->
+            <pagination ng-if="vm.total" total="{{vm.total}}"></pagination>
+            <!--分页结束-->
+        <!--</div>-->
+    </div>
+</div>

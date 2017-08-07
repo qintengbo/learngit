@@ -1,0 +1,110 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">内容</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="vm.searchParams.content">
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label col-md-4">创建者</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-model="vm.searchParams.createByName">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label col-md-4">状态</label>
+                    <div class="col-md-8">
+                        <select class="form-control ng-pristine ng-valid ng-touched" ng-model="vm.searchParams.status">
+                            <option value="">全部&emsp;&emsp;&emsp;&emsp;</option>
+                            <option value="1">草稿</option>
+                            <option value="2">上线</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">创建时间</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" size="20" bs-datepicker
+                                   data-date-format="yyyy-MM-dd" data-max-date="{{vm.searchParams.endAt||nowDate}}" data-date-type="number" autoclose="true" ng-model="vm.searchParams.startAt">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">至</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" size="20" bs-datepicker
+                                   data-date-format="yyyy-MM-dd" data-date-type="number" autoclose="true" data-max-date="{{nowDate}}" data-min-date="{{vm.searchParams.startAt}}" ng-model="vm.searchParams.endAt">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 text-right">
+                    <search params="vm.searchParams"></search>
+                </div>
+            </div>
+
+
+
+        </form>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading white">
+        <strong>频道广告列表</strong>
+        <button class="btn btn-primary btn-xs margin-right-10 pull-right" ui-sref="field.adviertisementDetail">+新增</button>
+        <button class="btn btn-primary btn-xs margin-right-10 pull-right" ng-click="vm.saveDrop()">保存排序</button>
+    </div>
+    <div class="panel-body">
+        <ul class="ul-table-head grey">
+            <li class="grey">
+                <div class="width15">序号</div>
+                <div class="width20">内容</div>
+                <div class="width15">状态</div>
+                <div class="width15">创建者</div>
+                <div class="width15">创建时间</div>
+                <div class="width20">操作</div>
+            </li>
+        </ul>
+        <ul dnd-list="vm.list" class="ul-table">
+            <li ng-repeat="li in vm.list"
+                dnd-draggable="li"
+                data-dnd-moved="vm.list.splice($index, 1)"
+                data-dnd-effect-allowed="move"
+                data-dnd-selected="vm.list.selected = li"
+                ng-class="{'selected': vm.list.selected == li}">
+                <div class="width15">{{$index+1}}</div>
+                <div class="width20">{{li.content}}</div>
+                <div class="width15">{{li.status==2?'上线':'草稿'}}</div>
+                <div class="width15">{{li.createByName}}</div>
+                <div class="width15">{{li.createAt| date:'yyyy-MM-dd HH:mm'}}</div>
+                <div class="width20">
+                    <button class="btn btn-default btn-xs" ui-sref="field.adviertisementDetail({id:li.id})">编辑</button>
+                    <button class="btn btn-danger btn-xs" ng-click="vm.adviertisementSetDel(li.id,$index)">删除</button>
+                </div>
+            </li>
+        </ul>
+        
+        <pagination ng-if="vm.total" total="{{vm.total}}"></pagination>
+    </div>
+</div>
+
+

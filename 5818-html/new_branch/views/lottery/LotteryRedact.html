@@ -1,0 +1,89 @@
+    <div class="panel panel-default ">
+        <div class="panel-heading">
+            <h5 class="bold">编辑</h5>
+        </div>
+        <form class="">
+            <div class="panel-body">
+                <div class="col-md-12 pd-bottom-2">
+                    <label class="col-md-2 col-md-offset-1 control-label text-right margin-top-5">开奖期数</label>
+                    <div class="col-md-7">
+                        <p class="form-control" disabled>{{vm.params.issue}}</p>
+                    </div>
+                </div>
+                <div class="col-md-12 pd-bottom-2">
+                    <label class="col-md-2 col-md-offset-1 control-label text-right margin-top-5">开奖时间</label>
+                    <div class="col-md-7">
+                        <p class="form-control" disabled>{{vm.params.lotteryAt|date:"yyyy-MM-dd HH:mm"}}</p>
+                    </div>
+                </div>
+                <div class="col-md-12 pd-bottom-2">
+                    <label class="col-md-2 col-md-offset-1 control-label text-right margin-top-5">开奖号码</label>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control " only-lottery-num ng-model="vm.params.result"/>
+                    </div>
+                </div>
+                <div class="col-md-12 pd-bottom-2">
+                    <label class="col-md-2 col-md-offset-1 control-label text-right margin-top-5">本期销量</label>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control " ng-model="vm.params.buyMoney" numberic/>
+                    </div>
+                </div>
+                <div class="col-md-12 pd-bottom-2">
+                    <label class="col-md-2 col-md-offset-1 control-label text-right margin-top-5">奖池奖金</label>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control " ng-model="vm.params.awardMoney" numberic/>
+                    </div>
+                </div>
+
+
+
+            <!--中奖注数 只有在双色球和大乐透的时候有-->
+                <div class="col-md-12 pd-bottom-2" ng-if="vm.params.typeCode==001||vm.params.typeCode==004">
+                    <div class="row">
+                        <div class="col-md-12 pd-bottom-2">
+                        <label class="col-md-2 col-md-offset-1 control-label text-right margin-top-5">中奖注数</label>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-2 col-md-offset-1 control-label text-right margin-top-5">  </label>
+
+                        <div class="col-md-9">
+                            <div ng-repeat="win in vm.params.wining track by $index">
+                                <div class="row margin-top-35">
+                                    <div class="col-md-2">
+                                        <label for="winc">{{win.t}}</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input id="winc" type="text" class="form-control" ng-model="win.c" numberic>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <label for="winp">{{win.t}}加奖</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input id="winp" type="text" class="form-control" ng-model="win.p" numberic>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px">
+                                    <div class="col-md-2">
+                                        <label for="winp">{{win.t}}注数</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input id="wina" type="text" class="form-control" ng-model="win.a" numberic>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+</div>
+                <div class="col-md-12 text-center margin-top-20">
+                    <button class="btn btn-success" ng-click="vm.LotteryChange()">确定</button>
+                    <button class="btn btn-danger" ui-sref="field.LotteryDetails({typeCode:vm.params.typeCode})">取消</button>
+                </div>
+            </div>
+        </form>
+    </div>
+

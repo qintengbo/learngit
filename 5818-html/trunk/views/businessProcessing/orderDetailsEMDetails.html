@@ -1,0 +1,97 @@
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        {{vm.orderDetailsEMList.name||vm.orderDetailsEMList.mobile}}的订单详情
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-default">
+            <div class="panel-heading blod">
+                {{vm.orderDetailsEMList.name||vm.orderDetailsEMList.mobile}}的个人信息
+            </div>
+            <div class="panel-body">
+                <form class="form-inline ">
+
+
+                    <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                        <label class="control-label">&emsp;&emsp;&emsp;姓名</label>
+                        <input type="text" class="form-control" size="17" ng-model="vm.orderDetailsEMList.name" disabled >
+                    </div>
+                    <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                        <label class="control-label">&emsp;&emsp;手机号</label>
+                        <input type="text" class="form-control " size="17" ng-model="vm.orderDetailsEMList.mobile"disabled>
+                    </div>
+                    <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                        <label class="control-label">&emsp;&emsp;投注数</label>
+                        <input type="text" class="form-control" size="17" ng-model="vm.orderDetailsEMList.item"disabled>
+                    </div>
+
+
+
+
+                    <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                        <label class="control-label">&emsp;&emsp;&emsp;彩种</label>
+                        <input type="text" class="form-control" size="17" ng-model="vm.orderDetailsEMList.lotteryName" disabled>
+                    </div>
+                    <div class="form-group col-lg-4 col-sm-6  pd-bottom-2 ">
+                        <label class="control-label">&emsp;&emsp;&emsp;平台</label>
+                        <input type="text" class="form-control" size="17" ng-model="vm.orderDetailsEMList.platform" disabled>
+                    </div>
+                    <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                        <label class="control-label">使用体验金</label>
+                        <input type="text" class="form-control" size="17" ng-model="vm.orderDetailsEMList.price" disabled>
+                    </div>
+
+
+
+
+                    <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                        <label class="control-label">&emsp;开奖期数</label>
+                        <input type="text" class="form-control" size="17" ng-model="vm.orderDetailsEMList.issue" disabled>
+                    </div>
+                    <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                        <label class="control-label">&emsp;购彩时间</label>
+                        <input type="text" class="form-control" size="17" date-format value="{{vm.orderDetailsEMList.lotteryTime|date:'yyyy-MM-dd HH:mm'}}" disabled>
+                    </div>
+                    <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                        <label class="control-label">&emsp;返奖时间</label>
+                        <input type="text" class="form-control" size="17" date-format value="{{vm.orderDetailsEMList.awardAt|date:'yyyy-MM-dd HH:mm'}}" disabled>
+                    </div>
+
+
+
+                    <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                        <label class="control-label">&emsp;&emsp;&emsp;奖金</label>
+                        <input type="text" class="form-control" size="17" ng-model="vm.orderDetailsEMList.awardMoney" disabled>
+                    </div>
+                </form>
+
+
+
+
+
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading blod">
+                投注号码
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered  table-hover" ng-repeat="item in vm.orderDetailsEMList.detailJson track by $index">
+                    <thead>
+                    <th>玩法</th>
+                    <th>投注号码</th>
+                    <th>倍数</th>
+                    <th>出票状态</th>
+                    <th>出票渠道订单号</th>
+                    </thead>
+                    <tr>
+                        <td>{{item.subtypeName}}</td>
+                        <td>{{item.number}}</td>
+                        <td>{{item.multiple}}</td>
+                        <td>{{item.status}}</td>
+                        <td>{{item.sysId}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

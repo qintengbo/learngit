@@ -1,0 +1,103 @@
+<!--搜索框-->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="channelName" class="control-label col-md-4">渠道名称</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="channelName" size="15"
+                                   ng-model="vm.params.channelName">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">统计时间</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" size="15" bs-datepicker
+                                   data-date-format="yyyy-MM-dd" data-date-type="number"
+                                   data-max-date={{vm.params.endAt||nowDate}} autoclose="true"
+                                   ng-model="vm.params.startAt">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">至</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" size="15" bs-datepicker data-max-date="{{nowDate}}"
+                                   data-date-format="yyyy-MM-dd" autoclose=true data-date-type="number"
+                                   data-min-date={{vm.params.startAt}}
+                                   ng-model="vm.params.endAt">
+                        </div>
+                    </div>
+                </div>
+                <!--清空搜索按钮-->
+                <div class="col-md-4 text-right">
+                    <search params="vm.params"></search>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>渠道统计</strong></div>
+    <div class="panel-body" style="overflow-x:scroll">
+        <div class="table border">
+            <table class="table border table-striped text-center" style="width: 1800px">
+                <thead>
+                <th>序号</th>
+                <th>渠道名称</th>
+                <th>激活量</th>
+                <th>注册量</th>
+                <th>充值人数</th>
+                <th>充值金额</th>
+                <th>首次充值人数</th>
+                <th>首次充值总额</th>
+                <th>购彩人数</th>
+                <th>购彩金额</th>
+                <th>首次购彩人数</th>
+                <th>首次购彩金额</th>
+                <th>中奖人数</th>
+                <th>中奖金额</th>
+                <th>操作</th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in vm.data track by $index">
+                    <td ng-bind="$index+1"></td>
+                    <td ng-bind="item.channelName"></td>
+                    <td ng-bind="item.activationCount"></td>
+                    <td ng-bind="item.userCount"></td>
+                    <td ng-bind="item.paymentCount"></td>
+                    <td ng-bind="item.paymentSum"></td>
+                    <td ng-bind="item.firstPayCount"></td>
+                    <td ng-bind="item.firstPaySum"></td>
+                    <td ng-bind="item.buyCount"></td>
+                    <td ng-bind="item.buySum"></td>
+                    <td ng-bind="item.firstBuyCount"></td>
+                    <td ng-bind="item.firstBuySum"></td>
+                    <td ng-bind="item.awardCount"></td>
+                    <td ng-bind="item.awardSum"></td>
+                    <td>
+                        <button class="btn btn-default btn-sm" ui-sref="field.dayList({channelNo:item.channelNo})">明细
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <pagination ng-if="vm.totalPage" total="{{vm.totalPage}}"></pagination>
+    </div>
+        </div>
+
+</div>

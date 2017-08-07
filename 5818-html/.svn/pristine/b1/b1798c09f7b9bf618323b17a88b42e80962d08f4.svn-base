@@ -1,0 +1,19 @@
+{
+  "code": 0,
+  "message": "ok",
+  "total": 5,
+  "size":10,
+  "page":2,
+  "data": [
+    {
+      "createAt": 1468851372000,
+      "successCount":14,
+      "buySum":150,
+      "failureCount": 1,
+      "failureSum":1000,
+      "prizeCount":1,
+      "prizeSum": 1,
+      "returnSum":1
+    }
+  ]
+}

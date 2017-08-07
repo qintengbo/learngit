@@ -1,0 +1,87 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong ng-if="!vm.id">新增内容</strong>
+        <strong ng-if="vm.id">编辑内容</strong>
+
+    </div>
+    <div class="panel-body detail-padding-5">
+        <form class="form-horizontal" name="startpage">
+            <div class="form-group">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">标题名称</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" ng-model="vm.params.title" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">小图片</label>
+                    <div class="col-md-10">
+                        <div class="col-md-12">
+                            <label class="btn btn-primary" for="file">选择文件</label>
+                            <input id="file" style="display: none" type="file" nv-file-select uploader="vm.uploader" required/>
+                        </div>
+                        <div class="col-md-12">
+                            <img ng-src="{{vm.params.img}}" alt="配图预览" class="img-responsive">
+                        </div>
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <th>图片名</th>
+                                    <th>文件大小</th>
+                                    <th>进度</th>
+                                    <th>操作</th>
+                                    <th>操作</th>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="item in vm.uploader.queue" class="ng-scope" ng-if="$first">
+                                        <td><strong class="ng-binding">{{item.file.name}}</strong></td>
+                                        <td ng-show="vm.uploader.isHTML5" nowrap="" class="ng-binding">{{ item.file.size/1024/1024 | number:2 }} MB</td>
+                                        <td ng-show="vm.uploader.isHTML5">
+                                            <div class="progress" style="margin-bottom: 0;">
+                                                <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                            <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                            <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                        </td>
+                                        <td nowrap="">
+                                            <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                                <span class="glyphicon glyphicon-upload"></span> 上传
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove(); vm.clearImg()">
+                                                <span class="glyphicon glyphicon-trash"></span> 删除
+                                            </button>
+                                        </td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <div class="col-md-7">
+                            <button class="btn btn-sm btn-success" ng-click="vm.newStartPage(2,startpage.$invalid)">推送</button>
+                            <button class="btn btn-sm btn-default" ng-click="vm.newStartPage(1,startpage.$invalid)">存为草稿</button>
+                            <button class="btn btn-sm btn-danger" style="margin-left:20px" ui-sref="field.startPageSet">取消</button>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="control-label text-red" ng-if="vm.error">请补全信息</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

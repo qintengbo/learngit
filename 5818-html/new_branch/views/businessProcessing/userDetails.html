@@ -1,0 +1,211 @@
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        {{vm.showName||vm.userdetails.mobile}} 的用户详情
+    </div>
+    <div class=" panel-body">
+
+
+        <!--身份证列表-->
+
+        <div class="panel panel-default">
+            <div class="panel-heading blod">
+                个人信息
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal ">
+                    <fieldset disabled>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-5">用户ID</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" ng-model="vm.userdetails.id">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-5">真实姓名</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" ng-model="vm.userdetails.name">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-5">手机号码</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" ng-model="vm.userdetails.mobile">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-5">注册时间</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" bs-datepicker
+                                           data-date-format="yyyy-MM-dd" data-date-type="number"
+                                           ng-model="vm.userdetails.registerAt">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-5">身份证号码</label>
+                                <div class="col-md-7">
+                                    <input style="font-size:10px;" type="text" class="form-control" ng-model="vm.userdetails.idNo">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-5">渠道来源</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" ng-model="vm.userdetails.channelName">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-lg-7  col-md-7 pd-bottom-2  ">
+                            <button type="button" class="btn btn-default  margin-left-2"
+                                    ui-sref="field.prizeMoneyDetail({userId:vm.params.userId,showName:vm.showName||vm.userdetails.mobile})">
+                                彩金明细
+                            </button>
+                            <button type="button" class="btn btn-default  margin-left-2"
+                                    ui-sref="field.experienceMoney ({userId:vm.params.userId,showName:vm.showName||vm.userdetails.mobile})">
+                                体验金明细
+                            </button>
+                            <button type="button" class="btn btn-default  margin-left-2"
+                                    ui-sref="field.redMoneyDetail ({userId:vm.params.userId,showName:vm.showName||vm.userdetails.mobile})">
+                                红包明细
+                            </button>
+                            <button type="button" class="btn btn-default  margin-left-2"
+                                    ui-sref="field.rechargeRecord ({userId:vm.params.userId,showName:vm.showName||vm.userdetails.mobile})">
+                                充值记录
+                            </button>
+                            <button type="button" class="btn btn-default  margin-left-2"
+                                    ui-sref="field.withdrawalsRecord ({userId:vm.params.userId,showName:vm.showName||vm.userdetails.mobile})">
+                                提现记录
+                            </button>
+                        </div>
+
+                        <div class="col-lg-5  col-md-5 text-right pd-bottom-2 ">
+                            <button type="button" class="btn btn-default margin-left-2"
+                                    ui-sref="field.orderDetailsPM({userId:vm.params.userId,showName:vm.userdetails.name||vm.userdetails.mobile})">
+                                购彩明细(彩金)
+                            </button>
+                            <button type="button" class="btn btn-default margin-left-2"
+                                    ui-sref="field.orderDetailsEM({userId:vm.params.userId,showName:vm.userdetails.name||vm.userdetails.mobile})">
+                                购彩明细(体验金)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--账户-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="bold">账户信息</h5>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal ">
+                    <fieldset disabled>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-6">可提现金额(元)</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control " size="17"
+                                           ng-model="vm.userdetails.cashMoney">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-6">彩金余额(元)</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control " size="17" ng-model="vm.userdetails.money">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-6">可用红包余额(元)</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" size="17" ng-model="vm.userPM.sumSubmoney">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-6">可用红包数量(个)</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" size="17" ng-model="vm.userPM.redCount">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-6">体验金余额(元)</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" size="17" ng-model="vm.userdetails.score">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-6">累计投注金额(元)</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" size="17" ng-model="vm.userPM.buyMoney">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label col-md-6">累计中奖金额(元)</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" size="17" ng-model="vm.userPM.awardMoney">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+
+        <!--银行卡-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="bold">银行卡信息</h5>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal ">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-md-4">银行开户行</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control " size="45" ng-model="vm.userbank.bank" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-md-4">银行账号</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control " size="45" ng-model="vm.userbank.cardNo" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

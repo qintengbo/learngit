@@ -1,0 +1,18 @@
+{
+  "code": 0,
+  "message": "ok",
+  "total": 200,
+  "size":10,
+  "page":2,
+  "data": [
+    {
+      "id":1,
+      "luck": "满60减5红包",
+      "total": "20",
+      "luckNum":18,
+      "createMan":"admin",
+      "createTime": 1468851372000,
+      "status":"草稿"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+<div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">手机号码</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="vm.searchParams.mobile">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">真实姓名</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="vm.searchParams.name">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">充值渠道</label>
+                            <div class="col-md-8">
+                                <select class="form-control" ng-model="vm.searchParams.rechargePath">
+                                    <option value="" selected>全部</option>
+                                    <option value="1">银行转账(线下)</option>
+                                    <option value="2">微信转账(线下)</option>
+                                    <option value="3">支付宝转账(线下)</option>
+                                    <option value="4">银行转账(线下)</option>
+                                    <option value="5">赠送</option>
+                                    <option value="6">易宝线上</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">充值时间</label>
+                            <div class="col-md-8">
+                                <input class="form-control" size="20" bs-datepicker
+                                       data-date-format="yyyy-MM-dd" data-date-type="number"
+                                       data-max-date={{vm.searchParams.endAt||nowDate}} autoclose="true" ng-model="vm.searchParams.startAt">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">至</label>
+                            <div class="col-md-8">
+                                <input class="form-control" size="20" bs-datepicker
+                                       data-date-format="yyyy-MM-dd" data-date-type="number" autoclose="true" data-max-date="{{nowDate}}"
+                                       data-min-date={{vm.searchParams.startAt}} ng-model="vm.searchParams.endAt">
+                            </div>
+                        </div>
+
+
+                    </div>
+                            <div class="col-md-4 text-right">
+                                <search params="vm.searchParams"></search>
+                            </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>充值列表(合计:{{vm.totalRecharge|thousandPoints}}元)</strong>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <div class="table-responsive border">
+                <thead>
+                <tr class="grey">
+                    <th>序号</th>
+                    <th>用户充值时间</th>
+                    <th>手机号</th>
+                    <th>姓名</th>
+                    <th>充值金额(元)</th>
+                    <th>充值渠道</th>
+                    <th>充值账户</th>
+                    <th>入账时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in vm.list track by $index">
+                    <td>{{$index + 1}}</td>
+                    <td>{{item.rechargeTime|date:'yyyy-MM-dd HH:mm'}}</td>
+                    <td>{{item.mobile}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.money | thousandPoints}}</td>
+                    <td>{{item.rechargePath|rechargePathFilter}}</td>
+                    <!--若是易宝 则显示银行卡 若不是 则显示rechargeAccount-->
+                    <td ng-if="item.rechargePath!=6">{{item.rechargeAccount}}</td>
+                    <td ng-if="item.rechargePath==6">{{item.cardNo}}</td>
+                    <td>{{item.accountTime|date:'yyyy-MM-dd HH:mm'}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <pagination ng-if="vm.total" total="{{vm.total}}"></pagination>
+        </div>
+    </div>
+</div>
+
+</div>

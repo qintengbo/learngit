@@ -1,0 +1,80 @@
+<!--搜索栏-->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <!--彩票种类选择-->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="LotteryType">彩种</label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="LotteryType" ng-model="vm.params.typeCode">
+                                <option value="">请选择彩种</option>
+                                <option value={{li.typeCode}} ng-selected="li.typeCode==vm.params.typeCode" ng-repeat="li in vm.list | filter:{status:2}">{{li.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--清空,搜索按钮-->
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4" >日期</label>
+                        <div class="col-md-8">
+                            <input class="form-control" size="15" data-max-date={{vm.params.endAt||nowDate}} ng-model = "vm.params.startAt"
+                                   data-date-format="yyyy-MM-dd" data-date-type="number"
+                                   bs-datepicker  autoclose="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">至</label>
+                        <div class="col-md-8">
+                            <input class="form-control" size="15" data-min-date={{vm.params.startAt}} ng-model = "vm.params.endAt" data-max-date="{{nowDate}}"
+                                   data-date-format="yyyy-MM-dd" data-date-type="number"
+                                   bs-datepicker  autoclose="true" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-right">
+                    <button type="reset" class="btn btn-danger  " ng-click="vm.clear()">清空</button>
+                    <button type="button" class="btn btn-success" ng-click="vm.search()">搜索</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!--中奖统计-->
+
+<div class="panel panel-default">
+    <div class="panel-heading" >
+        <strong>中奖统计</strong>
+    <strong ng-if="vm.heading">{{vm.choseArr.type|lotteryType}}</strong><strong ng-if="vm.choseArr.startAt||vm.choseArr.endAt">-- {{(vm.choseArr.startAt|date:'yyyy-MM-dd')}} ~ {{vm.choseArr.endAt|date:'yyyy-MM-dd'}}</strong>
+</div>
+    <div class="panel-body table-responsive">
+        <table class="table border">
+            <thead>
+                <th>开奖期数</th>
+                <th>中奖金额</th>
+                <th>返奖金额</th>
+            </thead>
+            <tbody>
+                <tr ng-if="vm.params.showList" ng-repeat="item in vm.winCount track by $index">
+                <td ng-bind="item.issue"></td>
+                <td ng-bind="item.prizeMoney"></td>
+                <td ng-bind="item.paymentMoney"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <pagination ng-if="vm.total" total="{{vm.total}}"></pagination>
+</div>
+

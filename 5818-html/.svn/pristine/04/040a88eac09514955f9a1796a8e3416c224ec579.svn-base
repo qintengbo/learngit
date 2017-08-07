@@ -1,0 +1,1 @@
+angular.module("admin").controller("userDetails",["$rootScope","$scope","$state","userService",function(a,e,r,s){var t=this;t.params=r.params,s.userManagementDetails(t.params.userId).then(function(a){t.userdetails=a.data.data,t.userPM=a.data,t.userbank=a.data.bankCardList[0]})}]);

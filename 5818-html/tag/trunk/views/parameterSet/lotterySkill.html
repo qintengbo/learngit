@@ -1,0 +1,123 @@
+<!--搜索框-->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="row">
+                <!--状态-->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">名称</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="vm.searchParams.title">
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label col-md-4">状态</label>
+                        <div class="col-md-8">
+                            <select class="form-control" style="min-width: 160px" ng-model="vm.searchParams.status">
+                                <option value="" selected>全部&emsp;&emsp;&emsp;&emsp;</option>
+                                <option value="1">草稿&emsp;&emsp;&emsp;&emsp;</option>
+                                <option value="2">已上线&emsp;&emsp;&emsp;&emsp;</option>
+                            </select>
+                        </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label col-md-4">创建者</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-model="vm.searchParams.createByName">
+                        </div>
+                </div>
+            </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">创建时间</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" size="20" bs-datepicker
+                                   data-date-format="yyyy-MM-dd" data-date-type="number" autoclose="true"
+                                   ng-model="vm.searchParams.startAt"/>
+                        </div>
+                    </div>
+                    </div>
+                   <div class="col-md-4">
+                       <div class="form-group">
+                           <label class="control-label col-md-4">至</label>
+                           <div class="col-md-8">
+                           <input type="text" class="form-control" size="20" bs-datepicker
+                                  data-date-format="yyyy-MM-dd" data-date-type="number" autoclose="true" data-min-date="{{vm.searchParams.startAt}}"
+                                  ng-model="vm.searchParams.endAt"/>
+                       </div>
+                </div>
+                   </div>
+
+                <div class="col-md-4 text-right">
+                    <search params="vm.searchParams"></search>
+                </div>
+            </div>
+
+
+
+
+
+        </form>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>{{vm.lotteryInfo.lotteryName}}购彩技巧列表</strong>
+        <button class="btn btn-xs btn-default pull-right" ui-sref="field.lotterySkillDetail({lotteryType:vm.searchParams.lotteryType,lotteryName:vm.lotteryName})">+新增</button>
+        <button class="btn btn-xs btn-default pull-right" ng-click="saveDrop()">保存排序</button>
+
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+
+                <ul class="ul-table-head grey">
+                <li>
+                    <div class="width10">序号</div>
+                    <div class="width20">标题名称</div>
+                    <div class="width10">状态</div>
+                    <div class="width20">创建者</div>
+                    <div class="width20">创建时间</div>
+                    <div class="width20">操作</div>
+
+                </li>
+                </ul>
+                <ul dnd-list="vm.list"  class="ul-table">
+                <li ng-repeat="li in vm.list"
+                    dnd-draggable="li"
+                    data-dnd-moved="vm.list.splice($index, 1)"
+                    data-dnd-effect-allowed="move"
+
+                >
+                    <div class="width10">{{$index+1}}</div>
+                    <div class="width20">{{li.title}}</div>
+                    <div class="width10">{{li.status==1?'草稿':'已上线'}}</div>
+                    <div class="width20">{{li.createByName}}</div>
+                    <div class="width20">{{li.createAt|date:'yyyy-MM-dd HH:mm'}}</div>
+                    <div class="width20">
+                        <button class="btn btn-default btn-xs" ui-sref="field.lotterySkillDetail({id:li.id})">编辑</button>
+                        <button class="btn btn-danger btn-xs" ng-click="deleteLottery(li.id)">删除</button>
+                    </div>
+
+                </li>
+
+                </ul>
+
+
+        </div>
+        <pagination ng-if="vm.total" total="{{vm.total}}"></pagination>
+
+    </div>
+</div>

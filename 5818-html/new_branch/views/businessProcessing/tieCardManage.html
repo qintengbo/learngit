@@ -1,0 +1,122 @@
+    <form class="form-horizontal">
+    <div class="panel panel-default">
+        <div class="clearfix" style="padding: 20px 15px 20px 20px">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">手机号码</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" numberic ng-model="vm.searchParams.mobile"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">真实姓名</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="vm.searchParams.name"/>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">开户行</label>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="vm.searchParams.bank">
+                                <option value="" ng-selected="vm.searchParams.bank==null" >全部</option>
+                                <option ng-selected="vm.searchParams.bank==bank.bankCode" ng-value="{{bank.bankCode}}" ng-repeat="bank in vm.bankList">{{bank.bank}}</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">绑卡时间</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" size="20" bs-datepicker
+                                   data-date-format="yyyy-MM-dd" data-date-type="number"
+                                   max-date={{vm.searchParams.endAt||nowDate}} autoclose="true"
+                                   ng-model="vm.searchParams.startAt"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">至</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" size="20" bs-datepicker
+                                   data-date-format="yyyy-MM-dd" data-date-type="number"
+                                   min-date={{vm.searchParams.startAt}} autoclose="true" data-max-date="{{nowDate}}"
+                                   ng-model="vm.searchParams.endAt"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group pd-bottom-2 ">
+                        <label class="control-label col-md-4">银行卡号</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" numberic ng-model="vm.searchParams.cardNo"/>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="text-right col-md-offset-8 col-md-4">
+                    <!--搜索清空指令-->
+                    <search params="vm.searchParams"></search>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>绑卡列表</strong>
+    </div>
+
+    <div class="panel-body">
+
+        <div class="table-responsive border">
+            <table class="table" style="margin-bottom: 0;">
+                <tr class="active">
+                    <th>序号</th>
+                    <th>手机号</th>
+                    <th>姓名</th>
+                    <th>银行开户行</th>
+                    <th>银行卡号</th>
+                    <th>绑卡时间</th>
+                    <th>操作</th>
+                </tr>
+                <tr ng-repeat="item in vm.tieCardManageList track by $index">
+                    <td>{{$index*1+1}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.bank}}</td>
+                    <td>{{item.cardNo}}</td>
+                    <td>{{item.createAt|date :'yyyy-MM-dd HH:mm'}}</td>
+                    <td>
+                        <button class="btn btn-default btn-xs btn-primary" ng-click="deletever(item.id,$index)">解除绑定</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <pagination ng-if="vm.searchParams.total" total="{{vm.searchParams.total}}"></pagination>
+
+    </div>
+
+
+</div>

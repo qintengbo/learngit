@@ -1,0 +1,1 @@
+angular.module("admin").directive("pwCheck",[function(){return{require:"ngModel",link:function(n,a,e,i){var t="#"+e.pwCheck;a.add(t).on("keyup",function(){n.$apply(function(){var n=a.val()===$(t).val();i.$setValidity("pwmatch",n)})})}}}]);

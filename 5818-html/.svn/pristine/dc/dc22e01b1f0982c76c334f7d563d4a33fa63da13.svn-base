@@ -1,0 +1,53 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <b>彩票管理</b>
+        <button class="btn btn-xs btn-default pull-right" ng-click="saveDrop()">保存排序</button>
+    </div>
+    <div class="panel-body">
+            <ul class="ul-table-head grey">
+                <li class="grey">
+                    <div class="width10">序号</div>
+                    <div class="width10">彩种</div>
+                    <div class="width10">出票方</div>
+                    <div class="width10">彩种广告</div>
+                    <div class="width10">小图片</div>
+                    <div class="width10">编辑者</div>
+                    <div class="width10">编辑时间</div>
+                    <div class="width10">状态</div>
+                    <div class="width20">操作</div>
+
+                </li>
+            </ul>
+
+            <ul dnd-list="vm.list" class="ul-table">
+                <li ng-repeat="li in vm.list"
+                    dnd-draggable="li"
+                    data-dnd-moved="vm.list.splice($index, 1)"
+                    data-dnd-effect-allowed="move"
+                    data-dnd-selected="vm.list.selected = li"
+                    ng-class="{'selected': vm.list.selected == li}">
+                    <div class="width10">{{$index+1}}</div>
+                    <div class="width10">{{li.name}}</div>
+                    <div class="width10">{{li.introduce}}</div>
+                    <div class="width10">{{li.slogan}}</div>
+                    <div class="width10"><img style="max-width:50px;width:100%" ng-src="{{li.img}}" alt=""></div>
+                    <div class="width10">{{li.updateByName}}</div>
+                    <div class="width10">{{li.updateAt|date:'yyyy-MM-dd HH:mm'}}</div>
+                    <div class="width10">{{li.status==2?'开售':'停售'}}</div>
+                    <div class="width20">
+                        <button class="btn btn-xs btn-danger" ng-click="lotteryStartEnd(li.id,1)" ng-if="li.status==2">停售</button>
+                        <button class="btn btn-xs btn-success" ng-click="lotteryStartEnd(li.id,2)" ng-if="li.status==1">开售</button>
+                        <button class="btn btn-xs btn-default" ui-sref="field.lotteryTypeDetail({id:li.id})">编辑</button>
+                        <button class="btn btn-xs btn-danger" ng-click="goToSkill(li)">技巧</button>
+                    </div>
+                </li>
+            </ul>
+
+        <pagination  ng-if="vm.totalPage"  total="{{vm.totalPage}}"></pagination>
+
+    </div>
+
+
+</div>
+

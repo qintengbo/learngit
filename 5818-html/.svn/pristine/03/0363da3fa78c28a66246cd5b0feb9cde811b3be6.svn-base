@@ -1,0 +1,99 @@
+{
+  "code": 0,
+  "message": "ok",
+  "total": 200,
+  "size":10,
+  "page":2,
+  "data": [
+    {
+      "date": 1468851372000,
+      "lotteryType": "双色球",
+      "successCount":2016,
+      "successBuyCount":150,
+      "lostCount": 1,
+      "lostBuyCount":1000,
+      "awardCount":1
+    },
+    {
+      "date": 1468851372000,
+      "lotteryType": "双色球",
+      "successCount":2016,
+      "successBuyCount":150,
+      "lostCount": 1,
+      "lostBuyCount":1000,
+      "awardCount":1
+    },
+    {
+      "date": 1468851372000,
+      "lotteryType": "双色球",
+      "successCount":2016,
+      "successBuyCount":150,
+      "lostCount": 1,
+      "lostBuyCount":1000,
+      "awardCount":1
+    },
+    {
+      "date": 2468851372001,
+      "lotteryType": "双色球",
+      "successCount":2048,
+      "successBuyCount":150,
+      "lostCount": 1,
+      "lostBuyCount":1000,
+      "awardCount":1
+    },
+    {
+      "date": 2468851372001,
+      "lotteryType": "双色球",
+      "successCount":2048,
+      "successBuyCount":150,
+      "lostCount": 1,
+      "lostBuyCount":1000,
+      "awardCount":1
+    },
+    {
+      "date": 3468851372002,
+      "lotteryType": "大乐透",
+      "successCount":2079,
+      "successBuyCount":150,
+      "lostCount": 1,
+      "lostBuyCount":1000,
+      "awardCount":1
+    },
+    {
+      "date": 4468851372003,
+      "lotteryType": "双色球",
+      "successCount":2111,
+      "successBuyCount":150,
+      "lostCount": 1,
+      "lostBuyCount":1000,
+      "awardCount":1
+    },
+    {
+      "date": 4468851372003,
+      "lotteryType": "双色球",
+      "successCount":2111,
+      "successBuyCount":150,
+      "lostCount": 1,
+      "lostBuyCount":1000,
+      "awardCount":1
+    },
+    {
+      "date": 4468851372003,
+      "lotteryType": "双色球",
+      "successCount":2111,
+      "successBuyCount":150,
+      "lostCount": 1,
+      "lostBuyCount":1000,
+      "awardCount":1
+    },
+    {
+      "date": 5468851372004,
+      "lotteryType": "大乐透",
+      "successCount":2143,
+      "successBuyCount":150,
+      "lostCount": 1,
+      "lostBuyCount":1000,
+      "awardCount":1
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+angular.module("admin").controller("lotteryTypesDetailController",["$state","drawerCountService",function(a,t){vm=this,vm.searchParams=a.params,t.lotteryTypeDetailList(vm.searchParams).then(function(a){0==a.data.code&&(vm.data=a.data.data.list,vm.total=a.data.data.total)})}]);

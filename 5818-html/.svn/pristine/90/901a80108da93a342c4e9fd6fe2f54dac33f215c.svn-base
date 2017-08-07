@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <strong class="panel-title">{{vm.rNameMobile.name||vm.showName||vm.rNameMobile.mobile}}的充值记录</strong>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped text-center add-table-border">
+            <thead>
+            <tr>
+                <th class="text-center">序号</th>
+                <th class="text-center">充值日期</th>
+                <th class="text-center">手机号</th>
+                <th class="text-center">姓名</th>
+                <th class="text-center">充值金额（元）</th>
+                <th class="text-center">充值渠道</th>
+                <th class="text-center">充值账户</th>
+                <th class="text-center">入账时间</th>
+
+            </tr>
+            </thead>
+            <tr ng-repeat=" item in vm.rechargeRecordList track by $index">
+                <td>{{$index*1+1}}</td>
+                <td>{{item.rechargeTime|date :'yyyy-MM-dd HH:mm' }}</td>
+                <td>{{vm.rNameMobile.mobile}}</td>
+                <td>{{vm.rNameMobile.name}}</td>
+                <td>{{item.money}}</td>
+                <td>{{item.typeReadable}}</td>
+                <td>{{item.rechargeAccount}}</td>
+                <td>{{item.accountTime|date:'yyyy-MM-dd HH:mm'}}</td>
+            </tr>
+        </table>
+        <pagination ng-if="vm.params.total" total="{{vm.params.total}}"></pagination>
+    </div>
+</div>

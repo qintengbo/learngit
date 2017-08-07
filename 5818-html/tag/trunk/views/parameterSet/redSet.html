@@ -1,0 +1,129 @@
+<!--搜索框-->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="row">
+                <!--状态-->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">名称</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="vm.searchParams.name">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">创建者</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="vm.searchParams.createByName">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">状态</label>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="vm.searchParams.status">
+                                <option value="" selected>全部&emsp;&emsp;&emsp;&emsp;</option>
+                                <option value="1" ng-checked="vm.searchParams.status==1">
+                                    草稿&emsp;&emsp;&emsp;&emsp;</option>
+                                <option value="2" ng-checked="vm.searchParams.status==2">
+                                    上线&emsp;&emsp;&emsp;&emsp;</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">创建时间</label>
+                        <div class="col-md-8"><input type="text" class="form-control" size="20" bs-datepicker
+                                                     data-date-format="yyyy-MM-dd" data-date-type="number"
+                                                     autoclose="true" data-max-date="{{vm.searchParams.endAt||nowDate}}"
+                                                     ng-model="vm.searchParams.startAt" autoclose="true"/></div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">至</label>
+                        <div class="col-md-8">
+                        <input type="text" class="form-control" size="20" bs-datepicker
+                               data-date-format="yyyy-MM-dd" data-date-type="number" autoclose="true"
+                               ng-model="vm.searchParams.endAt" autoclose="true" data-min-date="{{vm.searchParams.startAt}}" data-max-date="{{nowDate}}"/>
+                    </div>
+                        </div>
+                </div>
+
+                <div class="col-md-4 text-right">
+                        <search params="vm.searchParams"></search>
+                </div>
+
+
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading white">
+        <strong>红包明细</strong>
+        <button class="pull-right btn btn-xs btn-default" ui-sref="field.redSetDetail">新增</button>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive border">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>红包名称</th>
+                    <th>用途</th>
+                    <th>满减金额(元)</th>
+                    <th>优惠金额(元)</th>
+                    <th>有效期</th>
+                    <th>创建者</th>
+                    <th>创建时间</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="li in vm.list">
+                    <td>{{$index+1}}</td>
+                    <td>{{li.name}}</td>
+                    <td>{{li.typeReadable}}</td>
+                    <td>{{li.total}}</td>
+                    <td>{{li.submoney}}</td>
+                    <td>{{li.endAt|date:'yyyy-MM-dd HH:mm'}}</td>
+                    <td>{{li.createByName}}</td>
+                    <td>{{li.createAt|date:'yyyy-MM-dd HH:mm'}}</td>
+                    <td>{{li.status==2?'上线':'草稿'}}</td>
+                    <td>
+                        <button class="btn btn-xs btn-success" ui-sref="field.redSetDetail({id:li.id})">编辑</button>
+                        <button class="btn btn-xs btn-danger" ng-click="deleteRed(li.id,$index)">删除</button>
+                    </td>
+                </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <pagination ng-if="vm.totalPage" total="{{vm.totalPage}}"></pagination>
+
+    </div>
+</div>
+

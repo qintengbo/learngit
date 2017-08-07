@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <strong class="panel-title">{{vm.withdrawalsNameMobile.name||vm.showName||vm.withdrawalsNameMobile.mobile}}的提现记录</strong>
+    </div>
+    <div class="panel-body table-responsive">
+        <table class="table table-striped text-center add-table-border" style="width:1800px;">
+            <thead>
+            <tr>
+                <th class="text-center">序号</th>
+                <th class="text-center">日期</th>
+                <th class="text-center">手机号</th>
+                <th class="text-center">姓名</th>
+                <th class="text-center">可提余额（元）</th>
+                <th class="text-center">提现余额（元）</th>
+                <th class="text-center">开户行</th>
+                <th class="text-center">提现账户</th>
+                <th class="text-center">付款日期</th>
+                <th class="text-center">提现状态</th>
+                <th class="text-center">批次号</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="item in vm.withdrawalsRecordList track by $index">
+                <td>{{$index*1+1}}</td>
+                <td>{{item.withdrawalsAt|date:'yyyy-mm-dd HH:mm'}}</td>
+                <td>{{item.mobile}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.availableBalance}}</td>
+                <td>{{item.withdrawals}}</td>
+                <td>{{item.bank}}</td>
+                <td>{{item.withdrawalAccount}}</td>
+                <td>{{item.payAt}}</td>
+                <td>{{item.presentState|cashHandle}}</td>
+                <td>{{item.batchNo}}</td>
+            </tr>
+        </table>
+        <pagination ng-if="vm.params.total" total="{{vm.params.total}}"></pagination>
+    </div>
+</div>

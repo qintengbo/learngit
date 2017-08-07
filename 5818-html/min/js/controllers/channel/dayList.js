@@ -1,0 +1,1 @@
+angular.module("admin").controller("dayList",["$rootScope","$scope","$state","channelListService",function(a,t,s,e){var d=this;d.params=s.params,e.dayList(d.params.channelNo,d.params).then(function(t){0===t.data.code?(d.dayList=t.data.data.list,d.params.total=t.data.data.total,d.params.size=t.data.data.size,d.params.page=t.data.data.page):a.alert(t.data.message)})}]);

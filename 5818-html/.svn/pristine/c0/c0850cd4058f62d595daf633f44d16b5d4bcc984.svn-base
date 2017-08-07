@@ -1,0 +1,82 @@
+
+<form class="form-horizontal">
+    <div class="panel panel-default">
+    <div class="clearfix" style="padding: 20px 15px 20px 20px">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label col-md-4">统计时间</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" size="20" bs-datepicker
+                               data-date-format="yyyy-MM-dd" data-date-type="number" autoclose="true" data-max-date="{{vm.searchParams.endAt||nowDate}}"
+                               ng-model="vm.searchParams.startAt"/>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label col-md-4">至</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" size="20" bs-datepicker
+                               data-date-format="yyyy-MM-dd" data-date-type="number" autoclose="true"
+                               ng-model="vm.searchParams.endAt" data-min-date="{{vm.searchParams.startAt}}" data-max-date="{{nowDate}}"/>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 text-right">
+                <search params="vm.searchParams"></search>
+            </div>
+        </div>
+
+    </div>
+</div>
+</form>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>国信彩统计</strong>
+    </div>
+
+    <div class="panel-body">
+
+        <div class="table-responsive border">
+            <table class="table">
+                <thead>
+                <tr class="">
+                    <th>日期</th>
+                    <th>成功注数</th>
+                    <th>投注金额</th>
+                    <th>失败注数</th>
+                    <th>失败金额</th>
+                    <th>中奖注数</th>
+                    <th>中奖金额</th>
+                    <th>返奖金额</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="data in vm.list track by $index">
+
+                    <td>{{data.createAt|date:'yyyy-MM-dd HH:mm'}}</td>
+                    <td>{{data.successCount}}</td>
+                    <td>{{data.buySum}}</td>
+                    <td>{{data.failureCount}}</td>
+                    <td>{{data.failureSum}}</td>
+                    <td>{{data.prizeCount}}</td>
+                    <td>{{data.prizeSum}}</td>
+                    <td>{{data.returnSum}}</td>
+                    <td><button class="btn btn-xs btn-success" ui-sref="field.dayLotteryTypes({createAt:data.createAt})">查看明细</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <pagination ng-if="vm.total" total="{{vm.total}}"></pagination>
+    </div>
+</div>
+

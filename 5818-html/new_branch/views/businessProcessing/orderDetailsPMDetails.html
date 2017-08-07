@@ -1,0 +1,115 @@
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        {{vm.orderDetailsPMList.name||vm.orderDetailsPMList.mobile}}的订单详情
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-default margin-bottom-1">
+            <div class="panel-heading blod">
+                {{vm.orderDetailsPMList.name||vm.orderDetailsPMList.mobile}}个人信息
+            </div>
+            <div class="panel-body margin-bottom-1">
+                <form class="form-inline ">
+                    <fieldset disabled>
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288&#12288&#12288姓名</label>
+                            <input type="text" class="form-control " size="17" value={{vm.orderDetailsPMList.name}}>
+                        </div>
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288&#12288手机号</label>
+                            <input type="text" class="form-control " size="17" value={{vm.orderDetailsPMList.mobile}}>
+                        </div>
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288&#12288订单号</label>
+                            <input type="text" class="form-control" size="17"  value={{vm.orderDetailsPMList.orderNum}}>
+                        </div>
+
+
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288&#12288&#12288彩种</label>
+                            <input type="text" class="form-control" size="17" value={{vm.orderDetailsPMList.lotteryName}}>
+                        </div>
+                        <div class="form-group col-lg-4 col-sm-6  pd-bottom-2 ">
+                            <label class="control-label">&#12288&#12288&#12288平台</label>
+                            <input type="text" class="form-control" size="17" value={{vm.orderDetailsPMList.platform}}>
+                        </div>
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288订单状态</label>
+                            <input type="text" class="form-control" size="17" value={{vm.orderDetailsPMList.ticketStatus|ticketFilter}}>
+                        </div>
+
+
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288开奖期数</label>
+                            <input type="text" class="form-control" size="17" value={{vm.orderDetailsPMList.issue}}>
+                        </div>
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288&#12288投注数</label>
+                            <input type="text" class="form-control" size="17" value={{vm.orderDetailsPMList.item}}>
+                        </div>
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288订单金额</label>
+                            <input type="text" class="form-control" size="17" value={{vm.orderDetailsPMList.price}}>
+                        </div>
+
+
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288税前奖金</label>
+                            <input type="text" class="form-control" size="17" value={{vm.orderDetailsPMList.awardMoney}}>
+                        </div>
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288使用彩金</label>
+                            <input type="text" class="form-control" size="17" value={{vm.orderDetailsPMList.money}}>
+                        </div>
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288红包减免</label>
+                            <input type="text" class="form-control" size="17" value={{vm.orderDetailsPMList.submoney}}>
+                        </div>
+
+
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288税后奖金</label>
+                            <input type="text" class="form-control" size="17" value={{vm.orderDetailsPMList.awardAfterMoney}}>
+                        </div>
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288购彩时间</label>
+                            <input type="text" class="form-control" size="17" value={{(vm.orderDetailsPMList.lotteryTime|date:'yyyy-MM-dd')}}>
+                        </div>
+                        <div class="form-group col-lg-4 col-sm-6 pd-bottom-2 ">
+                            <label class="control-label">&#12288返奖时间</label>
+                            <input type="text" class="form-control" size="17" value={{(vm.orderDetailsPMList.awardAt|date:'yyyy-MM-dd')}}>
+                        </div>
+                    </fieldset>
+                </form>
+
+
+            </div>
+        </div>
+        <div class="panel panel-default" >
+            <div class="panel-heading blod">
+                投注号码
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered  table-hover" ng-repeat="item in vm.orderDetailsPMList.detailJson track by $index">
+                    <thead>
+                    <tr>
+                        <th>玩法</th>
+                        <th>投注号码</th>
+                        <th>倍数</th>
+                        <th>出票状态</th>
+                        <th>出票渠道订单号</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <td>{{item.subtypeName}}</td>
+                        <td>{{item.number}}</td>
+                        <td>{{item.multiple}}</td>
+                        <td>{{item.status}}</td>
+                        <td>{{item.sysId}}</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

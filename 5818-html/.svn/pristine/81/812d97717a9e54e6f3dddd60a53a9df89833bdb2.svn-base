@@ -1,0 +1,44 @@
+    <div class="panel panel-default ">
+        <div class="panel-heading">
+            <h5 class="bold">开奖号管理</h5>
+        </div>
+        <div class="panel-body">
+            <!--详情内容开始-->
+                <table class="table table-striped border">
+                    <thead>
+                    <tr class="active">
+                        <th>彩种</th>
+                        <th>开奖期数</th>
+                        <th>开奖时间</th>
+                        <th>开奖号码</th>
+                        <th>本期销量</th>
+                        <th>奖池奖金</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr ng-repeat="item in vm.LotteryList">
+                        <td>{{item.lotteryName}}</td>
+                        <td>{{item.issue}}</td>
+                        <td>
+                            {{item.lotteryAt|date:"yyyy-MM-dd HH:mm"}}
+                        </td>
+                        <td>{{item.result?item.result:'/'}}</td>
+                        <td>{{item.buyMoney|number:2}}</td>
+                        <td>{{item.awardMoney|number:2}}</td>
+                        <td>
+                            <button class="btn btn-default btn-xs"
+                                    ui-sref="field.LotteryDetails({typeCode:item.typeCode})">查看详情
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            <!--详情内容结束-->
+
+            <!--分页开始-->
+            <!--<pagination ng-if="vm.total" total="{{vm.total}}"></pagination>-->
+            <!--分页结束-->
+        </div>
+    </div>

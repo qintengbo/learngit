@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+    <div class="panel-heading" ng-bind="vm.params.name + '购彩明细'+'&emsp;(' +(vm.params.createAt|date:'yyyy-MM-dd')+')'"></div>
+    <div class="panel-body table-responsive">
+        <table class="table border">
+            <thead>
+                <th>序号</th>
+                <th>彩种</th>
+                <th>购彩量(注)</th>
+                <th>购彩总额(元)</th>
+                <th>购彩人数</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in vm.shoppingList track by $index">
+                <td ng-bind="$index*1+1"></td>
+                <td ng-bind="item.lotteryName"></td>
+                <td ng-bind="item.betCount	"></td>
+                <td ng-bind="item.betMoney"></td>
+                <td ng-bind="item.betPeople"></td>
+            </tr>
+            </tbody>
+        </table>
+        <pagination ng-if="vm.params.total" total="{{vm.params.total}}"></pagination>
+    </div>
+</div>

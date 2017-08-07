@@ -1,0 +1,45 @@
+{
+  "code": 0,
+  "message": "ok",
+  "total": 200,
+  "size":10,
+  "page":2,
+  "data": [
+    {
+      "id":1,
+      "eventName": "新人好福利，注册有礼",
+      "eventCondition": "注册",
+      "youxiaoqi":1468851372000,
+      "createMan":"admin",
+      "createTime": 1468851372000,
+      "status":"草稿"
+    },
+    {
+      "id":1,
+      "eventName": "新人好福利，注册有礼",
+      "eventCondition": "注册",
+      "youxiaoqi":1468851372000,
+      "createMan":"admin",
+      "createTime": 1468851372000,
+      "status":"草稿"
+    },
+    {
+      "id":1,
+      "eventName": "新人好福利，注册有礼",
+      "eventCondition": "注册",
+      "youxiaoqi":1468851372000,
+      "createMan":"admin",
+      "createTime": 1468851372000,
+      "status":"草稿"
+    },
+    {
+      "id":1,
+      "eventName": "新人好福利，注册有礼",
+      "eventCondition": "注册",
+      "youxiaoqi":1468851372000,
+      "createMan":"admin",
+      "createTime": 1468851372000,
+      "status":"草稿"
+    }
+  ]
+}

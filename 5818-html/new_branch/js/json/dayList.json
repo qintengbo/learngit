@@ -1,0 +1,38 @@
+{
+  "code": 0,
+  "message": "ok",
+  "total": 4,
+  "size": 10,
+  "objs":[
+    {
+      "id":"1",
+      "date":"1465660800000",
+      "registryCount":"89239",
+      "chargePeople":"89239",
+      "chargeMoney":"89239",
+      "firstchargePeople":"10000",
+      "firstchargeMoney":"89239.00",
+      "betPeople":"3333",
+      "betMoney":"9999",
+      "firstBetPeople":"8888",
+      "firstBetMoney":"2333",
+      "winPeople":"1233",
+      "winMoney":"6666"
+    },
+    {
+      "id":"2",
+      "date":"1434038400000",
+      "registryCount":"89239",
+      "chargePeople":"89239",
+      "chargeMoney":"89239",
+      "firstchargePeople":"10000",
+      "firstchargeMoney":"89239.00",
+      "betPeople":"3333",
+      "betMoney":"9999",
+      "firstBetPeople":"8888",
+      "firstBetMoney":"2333",
+      "winPeople":"1233",
+      "winMoney":"6666"
+    }
+  ]
+}

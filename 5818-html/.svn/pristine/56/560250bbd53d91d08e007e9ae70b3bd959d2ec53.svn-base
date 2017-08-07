@@ -1,0 +1,1 @@
+angular.module("admin").controller("lotteryDetails",["$rootScope","$scope","$state","userService",function(a,e,r,o){var t=this;t.params=r.params}]);

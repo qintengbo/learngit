@@ -1,0 +1,139 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong ng-if="!vm.id">新增内容</strong>
+        <strong ng-if="vm.id">编辑内容</strong>
+
+    </div>
+    <div class="panel-body detail-padding-5">
+        <form class="form-horizontal" name="bannerdetail">
+            <div class="form-group">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">标题名称</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" ng-model="vm.params.title">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">类型</label>
+                    <div class="col-md-3">
+                    <select class="form-control" ng-model="vm.params.jumpType" ng-change="vm.params.url=''">
+                        <option ng-selected="vm.params.jumpType==type.jumpType" value="{{type.jumpType}}" ng-repeat="type in vm.selectType">{{type.name}}</option>
+                    </select>
+                </div>
+                    <!--类型为彩票时-->
+                    <div class="col-md-3" ng-if="vm.params.jumpType==3">
+                        <select class="form-control" ng-model="vm.params.url">
+                            <option ng-selected="vm.params.url==lottery.typeCode" value="{{lottery.typeCode}}" ng-repeat="lottery in vm.lotteryList">{{lottery.name}}</option>
+                        </select>
+                    </div>
+
+                    <!--类型为彩票时-->
+                    <div class="col-md-3" ng-if="vm.params.jumpType==4">
+                        <select class="form-control" ng-model="vm.params.url">
+                            <option ng-selected="vm.params.url==activity.type"  value="{{activity.type}}" ng-repeat="activity in vm.activityType">{{activity.name}}</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            <!--类型为h5时-->
+            <div class="form-group" ng-if="vm.params.jumpType==2">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">跳转链接</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" ng-model="vm.params.url">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">小图片</label>
+                    <div class="col-md-10">
+                        <div class="col-md-12">
+                            <label class="btn btn-primary" for="file">选择文件</label>
+                            <input id="file" style="display: none" type="file" nv-file-select uploader="vm.uploader" required/>
+                        </div>
+                        <div class="col-md-12">
+                            <img ng-src="{{vm.params.img}}" alt="配图预览" class="img-responsive">
+                        </div>
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <th>图片名</th>
+                                    <th>文件大小</th>
+                                    <th>进度</th>
+                                    <th>操作</th>
+                                    <th>操作</th>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="item in vm.uploader.queue" class="ng-scope" ng-if="$first">
+                                        <td><strong class="ng-binding">{{item.file.name}}</strong></td>
+                                        <td ng-show="vm.uploader.isHTML5" nowrap="" class="ng-binding">{{ item.file.size/1024/1024 | number:2 }} MB</td>
+                                        <td ng-show="vm.uploader.isHTML5">
+                                            <div class="progress" style="margin-bottom: 0;">
+                                                <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                            <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                            <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                        </td>
+                                        <td nowrap="">
+                                            <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                                <span class="glyphicon glyphicon-upload"></span> 上传
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove(); vm.clearImg()">
+                                                <span class="glyphicon glyphicon-trash"></span> 删除
+                                            </button>
+                                        </td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="form-group">-->
+                <!--<div class="form-group">-->
+                    <!--<label class="col-md-2 control-label">内容</label>-->
+                    <!--<div class="col-md-10">-->
+                        <!--<script id="myEditor" type="text/plain"-->
+                                <!--style="width:100%;height:200px;margin-right:0;"></script>-->
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
+            <div class="form-group">
+                <div class="form-group">
+                    <label class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <div class="col-md-7"> <button class="btn btn-sm btn-success" ng-click="newOrPut(2,bannerdetail.$invalid)">立即上线</button>
+                            <button class="btn btn-sm btn-default" ng-click="newOrPut(1,bannerdetail.$invalid)">存为草稿</button>
+                            <button class="btn btn-sm btn-danger" style="margin-left:20px" ng-click="back()"
+                                    ui-sref="field.bannerSet">取消
+                            </button></div>
+
+                        <div class="col-md-4">
+                            <label class="control-label text-red" ng-if="vm.error">请补全信息</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+</div>

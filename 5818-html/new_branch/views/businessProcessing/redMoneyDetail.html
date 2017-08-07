@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <strong class="panel-title">{{vm.redNameMobile.name||vm.showName||vm.redNameMobile .mobile}}的红包明细</strong>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped text-center add-table-border">
+            <thead>
+            <tr>
+                <th class="text-center">序号</th>
+                <th class="text-center">日期</th>
+                <th class="text-center">手机号</th>
+                <th class="text-center">姓名</th>
+                <th class="text-center">来源/去向</th>
+                <th class="text-center">红包类型</th>
+                <th class="text-center">红包名称</th>
+                <th class="text-center">红包金额</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="item in vm.redMoneyDetailList track by $index">
+                <td ng-bind="$index*1+1"></td>
+                <td><span ng-bind="item.happenAt|date:'yyyy-MM-dd HH:mm'"></span></td>
+                <td ng-bind="vm.redNameMobile.mobile"></td>
+                <td ng-bind="vm.redNameMobile.name"></td>
+                <td ng-bind="item.sourceReadable"></td>
+                <td>{{item.type|lotteryType}}</td>
+                <td ng-bind="item.name"></td>
+                <td ng-bind="item.subMoney"></td>
+            </tr>
+        </table>
+        <pagination ng-if="vm.params.total" total="{{vm.params.total}}"></pagination>
+
+    </div>
+</div>

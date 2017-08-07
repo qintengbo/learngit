@@ -1,0 +1,123 @@
+<div class="panel panel-default">
+
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="row">
+                <!--手机号,姓名-->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="phoneNumber" class="control-label col-md-4">手机号码</label>
+                        <div class="col-md-8">
+                            <input class="form-control" id="phoneNumber" numberic size="15" ng-model="vm.searchParams.mobile">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="tureName" class="control-label col-md-4">真实姓名</label>
+                        <div class="col-md-8">
+                            <input class="form-control" id="tureName" size="15" ng-model="vm.searchParams.name">
+                        </div>
+                    </div>
+                </div>
+
+                <!--昵名,ID-->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="name" class="control-label col-md-4">昵称</label>
+                        <div class="col-md-8">
+                            <input class="form-control" id="name" size="15" ng-model="vm.searchParams.alias">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">注册时间</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" size="15" bs-datepicker
+                                   data-date-format="yyyy-MM-dd" data-date-type="number"
+                                   data-max-date={{vm.searchParams.endAt||nowDate}} autoclose="true"
+                                   ng-model="vm.searchParams.startAt">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">至</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" size="15" bs-datepicker
+                                   data-date-format="yyyy-MM-dd" data-date-type="number" data-max-date="{{nowDate}}"
+                                   data-min-date={{vm.searchParams.startAt}} autoclose="true"
+                                   ng-model="vm.searchParams.endAt">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="id" class="col-md-4 control-label">用户ID</label>
+                        <div class="col-md-8">
+                            <input class="form-control" id="id" numberic size="15" ng-model="vm.searchParams.id">
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-offset-8 col-md-4 text-right">
+                    <search params="vm.searchParams"></search>
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <strong>用户列表</strong>
+    </div>
+    <form class="form-inline">
+        <div class="panel-body">
+            <table class="table table-bordered table-hover">
+                <thead class="grey">
+                <th>用户ID</th>
+                <th>注册时间</th>
+                <th>手机号</th>
+                <th>真实姓名</th>
+                <th>昵称</th>
+                <th>是否绑卡</th>
+                <th>是否实名认证</th>
+                <th>账户状态</th>
+                <th>操作</th>
+                </thead>
+                <tr ng-repeat="item in vm.userManagementList track by $index">
+                    <td>{{item.id}}</td>
+                    <td>{{item.registerAt|date:'yyyy-MM-dd HH:mm'}}</td>
+                    <td>{{item.mobile}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.alias}}</td>
+                    <td>{{item.cardStatus|userManagementFilter}}</td>
+                    <td>{{item.identifyStatus|verifiedFilter}}</td>
+                    <td>{{item.status|accountstatusFilter}}</td>
+                    <td style="width: 10%;">
+                        <button class="btn btn-danger btn-xs" ng-if="item.status==1" ng-click="vm.frozen(item.id,2)">
+                            冻结
+                        </button>
+                        <button class="btn btn-danger btn-xs" ng-if="item.status==2" ng-click="vm.frozen(item.id,1)">
+                            解冻
+                        </button>
+                        <button class="btn btn-primary btn-xs" ui-sref="field.userDetails({userId:item.id})">查看</button>
+                    </td>
+                </tr>
+            </table>
+            <pagination ng-if="vm.searchParams.total" total="{{vm.searchParams.total}}"></pagination>
+        </div>
+    </form>
+</div>

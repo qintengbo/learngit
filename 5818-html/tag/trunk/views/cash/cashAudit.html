@@ -1,0 +1,147 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">批次号</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="vm.searchParams.batchNo">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">处理状态</label>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="vm.searchParams.dealStatus">
+                                <option value="">全部</option>
+                                <option value="4">待处理</option>
+                                <option value="5">处理中</option>
+                                <option value="6">处理完成</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">审核状态</label>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="vm.searchParams.checkStatus">
+                                <option value="">全部</option>
+                                <option value="1">待审核</option>
+                                <option value="2">审核中</option>
+                                <option value="3">审核完成</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">处理时间</label>
+                        <div class="col-md-8">
+                            <input class="form-control" size="20" bs-datepicker
+                                   data-date-format="yyyy-MM-dd" data-date-type="number" autoclose="true" data-max-date={{vm.searchParams.dealEnd||nowDate}}
+                                   ng-model="vm.searchParams.dealStart">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">至</label>
+                        <div class="col-md-8">
+                            <input class="form-control" size="20" bs-datepicker
+                                   data-date-format="yyyy-MM-dd" data-date-type="number" autoclose="true" data-min-date={{vm.searchParams.dealStart}} data-max-date="{{nowDate}}"
+                                   ng-model="vm.searchParams.dealEnd">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">完成时间</label>
+                        <div class="col-md-8">
+                            <input class="form-control" size="20" bs-datepicker
+                                   data-date-format="yyyy-MM-dd" data-date-type="number"
+                                   data-max-date="{{vm.searchParams.completeEnd||nowDate}}" autoclose="true" ng-model="vm.searchParams.completeStart">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">至</label>
+                        <div class="col-md-8">
+                            <input class="form-control" size="20" bs-datepicker
+                                   data-date-format="yyyy-MM-dd" data-date-type="number"
+                                   data-min-date={{vm.searchParams.completeStart}} autoclose="true" data-max-date="{{nowDate}}" ng-model="vm.searchParams.completeEnd">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 text-right">
+                    <search params="vm.searchParams"></search>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>提现审核</strong>
+    </div>
+    <div class="panel-body table-responsive">
+        <table class="table add-table-border table-striped">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>提现批次</th>
+                <th>提现笔数</th>
+                <th>提现完成笔数</th>
+                <th>提现总额</th>
+                <th>审核状态</th>
+                <th>审核完成时间</th>
+                <th>处理状态</th>
+                <th>处理完成时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="item in vm.cashList track by $index">
+                <td>{{$index+1}}</td>
+                <td>{{item.batchNo}}</td>
+                <td>{{item.total}}</td>
+                <td>{{item.complete}}</td>
+                <td>{{item.money}}</td>
+                <td>{{item.checkStatus |cashAudit}}</td>
+                <td>{{item.checkAt|date:'yyyy-MM-dd HH:mm'}}</td>
+                <td>{{item.dealStatus|cashHandle}}</td>
+                <td>{{item.completeAt|date:'yyyy-MM-dd HH:mm'}}</td>
+                <td>
+                    <!--<button class="btn btn-xs" ng-class="item.status === 1?'btn-default':'btn-success'"-->
+                            <!--ui-sref="field.cashAuditDetailsControl({batchNo:item.batchNo,type:1})">-->
+                        <!--{{item.checkStatus|cashCheckFilter}}-->
+                    <!--</button>-->
+                    <button class="btn btn-xs btn-default" ng-if="item.checkStatus==1||item.checkStatus==2" ui-sref="field.cashAuditDetailsControl({batchNo:item.batchNo,type:1})">审核</button>
+                    <button class="btn btn-xs btn-default" ng-if="item.checkStatus==3" ui-sref="field.cashAuditDetailsControl({batchNo:item.batchNo,type:1})">查看</button>
+
+                </td>
+            </tr>
+        </table>
+        <pagination ng-if="vm.total" total="{{vm.total}}"></pagination>
+    </div>
+</div>
+
+

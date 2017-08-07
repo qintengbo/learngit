@@ -1,0 +1,23 @@
+
+{
+  "code": 0,
+  "message": "ok",
+  "total": 4,
+  "size": 10,
+  "objs":[
+    {
+      "id":"1",
+      "lotteryName":"百度助手",
+      "betCount":"8888",
+      "betMoney":"8888",
+      "betPeople":"9999"
+    },
+    {
+      "id":"2",
+      "lotteryName":"豌豆荚",
+      "betCount":"8888",
+      "betMoney":"8888",
+      "betPeople":"9999"
+    }
+  ]
+}

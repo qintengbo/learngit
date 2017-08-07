@@ -1,0 +1,1 @@
+"use strict";angular.module("admin").controller("versionControllerCtrl",["parameterService",function(t){var e=this;t.getArticleList({type:8}).then(function(t){0==t.data.code&&(e.versionList=t.data.data.articleList)})}]);
